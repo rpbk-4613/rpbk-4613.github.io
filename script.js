@@ -1,19 +1,16 @@
-particlesJS.load('container', 'particles.json');
-
-const background = document.getElementById('interactive-background');
-
-window.addEventListener('mousemove', (event) => {
-    // You'll add code to create interactive effects here based on mouse position (event.clientX, event.clientY)
-});
-
 particlesJS('interactive-background', {
-    "particles": { /* Customization options for the particles go here */ },
-    "interactivity": {
-        "events": {
-            "onhover": {
-                "enable": true,
-                "mode": "repulse" /* Example - particles are repelled by the cursor*/
-            }
+    particles: {
+        number: { value: 80, density: { enable: true, value_area: 800 } },
+        color: { value: "#ffffff" },
+        shape: { type: "circle" },
+        opacity: { value: 0.5, random: true, anim: { enable: false } },
+        size: { value: 3, random: true, anim: { enable: false } },
+        line_linked: { enable: true, distance: 150, color: "#ffffff", opacity: 0.4, width: 1 },
+        move: { enable: true, speed: 2, direction: "none", random: false, out_mode: "out" }
+    },
+    interactivity: {
+        events: {
+            onhover: { enable: true, mode: "repulse" }
         }
     }
 });
