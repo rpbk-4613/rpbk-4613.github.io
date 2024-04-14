@@ -1,42 +1,45 @@
 body {
-    background-color: #f0f0f0;  
+    background-color: #f0f0f0;
     font-family: Arial, sans-serif;
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 100vh;  
+    min-height: 100vh;
     margin: 0;
     overflow: hidden;
 }
 
-/*
+
 #interactive-background {
     width: 100% !important;
     height: 100% !important;
     position: fixed !important;
-    z-index: 0 !important; 
+    z-index: -1 !important;
     top: 0px !important;
-    left: 0px !important; 
+    left: 0px !important;
     background-color: rgb(0, 0, 0);
-    pointer-events: none; 
+    pointer-events: none;
 }
-*/
+
 
 .container {
-    text-align: center; 
+    text-align: center;
+    z-index: 1;
 }
 
 .profile-photo {
-    width: 250px; /* Make the image bigger */
+    width: 250px;
+    /* Make the image bigger */
     height: 250px;
-    border-radius: 50%; 
-    object-fit: cover; /* Keeps the photo within the circle without stretching */
+    border-radius: 50%;
+    object-fit: cover;
+    /* Keeps the photo within the circle without stretching */
 }
 
 .your-name {
     margin-top: 20px;
-    font-size: 2.5em;  
+    font-size: 2.5em;
     font-weight: bold;
 }
 
@@ -50,11 +53,12 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0 15px; 
-    text-decoration: none; /* Removes link underline */
+    margin: 0 15px;
+    text-decoration: none;
+    /* Removes link underline */
 }
 
 .icon-box img {
     width: 50px;
     height: 50px;
-} 
+}
