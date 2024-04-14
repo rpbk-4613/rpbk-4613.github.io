@@ -1,11 +1,11 @@
 body {
-    background-color: #f0f0f0;  
+    background-color: #f0f0f0;
     font-family: Arial, sans-serif;
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 100vh;  
+    min-height: 100vh;
     margin: 0;
     overflow: hidden;
 }
@@ -15,11 +15,11 @@ body {
     width: 100% !important;
     height: 100% !important;
     position: fixed !important;
-    z-index: -1 !important; 
+    z-index: -1 !important;
     top: 0px !important;
-    left: 0px !important; 
+    left: 0px !important;
     background-color: rgb(0, 0, 0);
-    pointer-events: none; 
+    pointer-events: none;
 }
 
 
@@ -29,32 +29,37 @@ body {
 }
 
 .profile-photo {
-    width: 350px; /* Make the image bigger */
+    width: 350px;
+    /* Make the image bigger */
     height: 350px;
-    border-radius: 50%; 
-    object-fit: cover; /* Keeps the photo within the circle without stretching */
+    border-radius: 50%;
+    object-fit: cover;
+    /* Keeps the photo within the circle without stretching */
 }
 
 .your-name {
     margin-top: 20px;
-    font-size: 2.5em;  
+    font-size: 2.5em;
     font-weight: bold;
     color: #fff;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .designation {
-    font-weight: normal;  /* If you want it less bold than the name */
+    font-weight: normal;
+    /* If you want it less bold than the name */
     margin-top: 10px;
-    margin-bottom: 20px;  /* Add some spacing if desired */
+    margin-bottom: 20px;
+    /* Add some spacing if desired */
     color: #fff;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
- }
+}
 
 .icon-boxes {
     display: flex;
     /* justify-content: center; */
-    justify-content: space-around; /* Distribute space around boxes */ 
+    justify-content: space-around;
+    /* Distribute space around boxes */
     margin-top: 40px;
     color: #fff;
 }
@@ -63,17 +68,27 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0 15px; 
-    text-decoration: none; /* Removes link underline */
-    background-color: rgba(0, 0, 0, 0.2);  /* Semi-transparent background */
+    margin: 0 15px;
+    text-decoration: none;
+    /* Removes link underline */
+    background-color: rgba(0, 0, 0, 0.2);
+    /* Semi-transparent background */
+    transition: transform 0.2s ease-in-out;
+    /* Add a smooth transition */
 }
 
 .icon-box img {
     width: 50px;
     height: 50px;
-} 
+}
 
 .icon-box p {
     /* Ensure text color contrasts well */
     color: #fff;
+}
+
+.icon-box:hover {
+    transform: scale(1.2);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    /* Adds a subtle shadow */
 }
