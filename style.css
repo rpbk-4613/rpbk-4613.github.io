@@ -10,6 +10,7 @@ body {
     overflow: hidden;
 }
 
+/*
 #interactive-background {
     width: 100% !important;
     height: 100% !important;
@@ -17,9 +18,10 @@ body {
     z-index: 0 !important; 
     top: 0px !important;
     left: 0px !important; 
-    background-color: rgb(0, 0, 0); /* Start with basic black background */
+    background-color: rgb(0, 0, 0);
     pointer-events: none; 
 }
+*/
 
 .container {
     text-align: center; 
