@@ -29,8 +29,8 @@ body {
 }
 
 .profile-photo {
-    width: 250px; /* Make the image bigger */
-    height: 250px;
+    width: 350px; /* Make the image bigger */
+    height: 350px;
     border-radius: 50%; 
     object-fit: cover; /* Keeps the photo within the circle without stretching */
 }
@@ -45,6 +45,7 @@ body {
 
 .designation {
     font-weight: normal;  /* If you want it less bold than the name */
+    margin-top: 10px;
     margin-bottom: 20px;  /* Add some spacing if desired */
     color: #fff;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
@@ -54,7 +55,7 @@ body {
     display: flex;
     /* justify-content: center; */
     justify-content: space-around; /* Distribute space around boxes */ 
-    margin-top: 30px;
+    margin-top: 40px;
     color: #fff;
 }
 
