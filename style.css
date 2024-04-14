@@ -10,7 +10,6 @@ body {
     overflow: hidden;
 }
 
-
 #interactive-background {
     width: 100% !important;
     height: 100% !important;
@@ -22,16 +21,15 @@ body {
     pointer-events: none;
 }
 
-
 .container {
     text-align: center;
     z-index: 1;
 }
 
 .profile-photo {
-    width: 350px;
+    width: 300px;
     /* Make the image bigger */
-    height: 350px;
+    height: 300px;
     border-radius: 50%;
     object-fit: cover;
     /* Keeps the photo within the circle without stretching */
@@ -78,8 +76,8 @@ body {
 }
 
 .icon-box img {
-    width: 50px;
-    height: 50px;
+    width: 55px;
+    height: 55px;
 }
 
 .icon-box p {
