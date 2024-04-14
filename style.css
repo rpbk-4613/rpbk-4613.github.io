@@ -10,7 +10,6 @@ body {
     overflow: hidden;
 }
 
-
 #interactive-background {
     position: fixed;
     top: 0;
@@ -21,7 +20,6 @@ body {
     /* background-color: rgb(0, 0, 0);
     pointer-events: none; */
 }
-
 
 .container {
     /* text-align: center;
@@ -66,8 +64,8 @@ body {
     flex-direction: column;
     align-items: center;
     margin: 0 15px;
-    text-decoration: none;  /* Removes link underline */
-    transition: transform 0.2s ease-in-out;  /* Smooth transition */
+    text-decoration: none;
+    /* Removes link underline */
 }
 
 .icon-box img {
@@ -75,8 +73,4 @@ body {
     color: #fff;
     width: 50px;
     height: 50px;
-}
-
-.icon-box:hover img {
-    transform: scale(1.2); /* Increase size by 20% */
 }
