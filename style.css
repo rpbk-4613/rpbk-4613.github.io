@@ -1,76 +1,79 @@
 body {
-    background-color: #f0f0f0;
+    background-color: #f0f0f0;  
     font-family: Arial, sans-serif;
     display: flex;
-    flex-direction: column;
+    flex-direction: column; 
     align-items: center;
     justify-content: center;
-    min-height: 100vh;
+    min-height: 100vh;  
     margin: 0;
     overflow: hidden;
 }
 
+
 #interactive-background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    /* background-color: rgb(0, 0, 0);
-    pointer-events: none; */
+    width: 100% !important;
+    height: 100% !important;
+    position: fixed !important;
+    z-index: -1 !important; 
+    top: 0px !important;
+    left: 0px !important; 
+    background-color: rgb(0, 0, 0);
+    pointer-events: none; 
 }
 
+
 .container {
-    /* text-align: center;
-    z-index: 1; */
-    width: 80%;
-    /* Adjust as needed */
-    max-width: 700px;
-    /* Limit container width on larger screens */
+    text-align: center;
+    z-index: 1;
 }
 
 .profile-photo {
-    /* Adjust styles for photo size and positioning */
-    border-radius: 50%;
-    width: 200px;
-    height: 200px;
-    /* width: 250px; */
-    /* height: 250px; */
-    margin-bottom: 20px;
-    object-fit: cover;
-    /* Keeps the photo within the circle without stretching */
+    width: 350px; /* Make the image bigger */
+    height: 350px;
+    border-radius: 50%; 
+    object-fit: cover; /* Keeps the photo within the circle without stretching */
 }
 
 .your-name {
     margin-top: 20px;
-    font-size: 2.5em;
+    font-size: 2.5em;  
     font-weight: bold;
     color: #fff;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
+.designation {
+    font-weight: normal;  /* If you want it less bold than the name */
+    margin-top: 10px;
+    margin-bottom: 20px;  /* Add some spacing if desired */
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+ }
+
 .icon-boxes {
     display: flex;
-    justify-content: center;
-    margin-top: 30px;
+    /* justify-content: center; */
+    justify-content: space-around; /* Distribute space around boxes */ 
+    margin-top: 40px;
     color: #fff;
 }
 
 .icon-box {
-    background-color: rgba(0, 0, 0, 0.2);
-    /* Semi-transparent background */
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0 15px;
-    text-decoration: none;
-    /* Removes link underline */
+    margin: 0 15px; 
+    text-decoration: none; /* Removes link underline */
+    background-color: rgba(0, 0, 0, 0.2);  /* Semi-transparent background */
 }
 
 .icon-box img {
-    /* Ensure text color contrasts well */
-    color: #fff;
     width: 50px;
     height: 50px;
+} 
+
+.icon-box p {
+    /* Ensure text color contrasts well */
+    color: #fff;
 }
