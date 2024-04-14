@@ -1,0 +1,46 @@
+body {
+    background-color: #f0f0f0;  
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;  
+    margin: 0;
+}
+
+.container {
+    text-align: center; 
+}
+
+.profile-photo {
+    width: 250px; /* Make the image bigger */
+    height: 250px;
+    border-radius: 50%; 
+    object-fit: cover; /* Keeps the photo within the circle without stretching */
+}
+
+.your-name {
+    margin-top: 20px;
+    font-size: 2.5em;  
+    font-weight: bold;
+}
+
+.icon-boxes {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.icon-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 15px; 
+    text-decoration: none; /* Removes link underline */
+}
+
+.icon-box img {
+    width: 50px;
+    height: 50px;
+} 
