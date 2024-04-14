@@ -39,12 +39,15 @@ body {
     margin-top: 20px;
     font-size: 2.5em;  
     font-weight: bold;
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .icon-boxes {
     display: flex;
     justify-content: center;
     margin-top: 30px;
+    color: #fff;
 }
 
 .icon-box {
@@ -53,9 +56,15 @@ body {
     align-items: center;
     margin: 0 15px; 
     text-decoration: none; /* Removes link underline */
+    background-color: rgba(0, 0, 0, 0.2);  /* Semi-transparent background */
 }
 
 .icon-box img {
     width: 50px;
     height: 50px;
 } 
+
+.icon-box p {
+    /* Ensure text color contrasts well */
+    color: #fff;
+}
