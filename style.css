@@ -28,7 +28,6 @@ body {
 
 .profile-photo {
     width: 300px;
-    /* Make the image bigger */
     height: 300px;
     border-radius: 50%;
     object-fit: cover;
