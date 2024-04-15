@@ -14,122 +14,122 @@ particlesJS('interactive-background', {
     //     }
     // }
 
-    "interactivity": {
-        "detectsOn": "window",
-        "events": {
-          "onClick": {
-            "enable": true,
-            "mode": "push"
+    interactivity: {
+        detectsOn: "window",
+        events: {
+          onClick: {
+            enable: true,
+            mode: "push"
           },
-          "onDiv": {
-            "selectors": [],
-            "enable": false,
-            "mode": [],
-            "type": "circle"
+          onDiv: {
+            selectors: [],
+            enable: false,
+            mode: [],
+            type: "circle"
           },
-          "onHover": {
-            "enable": true,
-            "mode": "repulse",
-            "parallax": {
-              "enable": false,
-              "force": 2,
-              "smooth": 10
+          onHover: {
+            enable: true,
+            mode: "repulse",
+            parallax: {
+              enable: false,
+              force: 2,
+              smooth: 10
             }
           },
-          "resize": {
-            "delay": 0.5,
-            "enable": true
+          resize: {
+            delay: 0.5,
+            enable: true
           }
         },
-        "modes": {
-          "trail": {
-            "delay": 1,
-            "pauseOnStop": false,
-            "quantity": 1
+        modes: {
+          trail: {
+            delay: 1,
+            pauseOnStop: false,
+            quantity: 1
           },
-          "attract": {
-            "distance": 200,
-            "duration": 0.4,
-            "easing": "ease-out-quad",
-            "factor": 1,
-            "maxSpeed": 50,
-            "speed": 1
+          attract: {
+            distance: 200,
+            duration: 0.4,
+            easing: "ease-out-quad",
+            factor: 1,
+            maxSpeed: 50,
+            speed: 1
           },
-          "bounce": {
-            "distance": 200
+          bounce: {
+            distance: 200
           },
-          "bubble": {
-            "distance": 200,
-            "duration": 0.4,
-            "mix": false,
-            "divs": {
-              "distance": 200,
-              "duration": 0.4,
-              "mix": false,
-              "selectors": []
+          bubble: {
+            distance: 200,
+            duration: 0.4,
+            mix: false,
+            divs: {
+              distance: 200,
+              duration: 0.4,
+              mix: false,
+              selectors: []
             }
           },
-          "connect": {
-            "distance": 80,
-            "links": {
-              "opacity": 0.5
+          connect: {
+            distance: 80,
+            links: {
+              opacity: 0.5
             },
-            "radius": 60
+            radius: 60
           },
-          "grab": {
-            "distance": 100,
-            "links": {
-              "blink": false,
-              "consent": false,
-              "opacity": 1
+          grab: {
+            distance: 100,
+            links: {
+              blink: false,
+              consent: false,
+              opacity: 1
             }
           },
-          "push": {
-            "default": true,
-            "groups": [],
-            "quantity": 4
+          push: {
+            default: true,
+            groups: [],
+            quantity: 4
           },
-          "remove": {
-            "quantity": 2
+          remove: {
+            quantity: 2
           },
-          "repulse": {
-            "distance": 200,
-            "duration": 0.4,
-            "factor": 100,
-            "speed": 1,
-            "maxSpeed": 50,
-            "easing": "ease-out-quad",
-            "divs": {
-              "distance": 200,
-              "duration": 0.4,
-              "factor": 100,
-              "speed": 1,
-              "maxSpeed": 50,
-              "easing": "ease-out-quad",
-              "selectors": []
+          repulse: {
+            distance: 200,
+            duration: 0.4,
+            factor: 100,
+            speed: 1,
+            maxSpeed: 50,
+            easing: "ease-out-quad",
+            divs: {
+              distance: 200,
+              duration: 0.4,
+              factor: 100,
+              speed: 1,
+              maxSpeed: 50,
+              easing: "ease-out-quad",
+              selectors: []
             }
           },
-          "slow": {
-            "factor": 3,
-            "radius": 200
+          slow: {
+            factor: 3,
+            radius: 200
           },
-          "light": {
-            "area": {
-              "gradient": {
-                "start": {
-                  "value": "#ffffff"
+          light: {
+            area: {
+              gradient: {
+                start: {
+                  value: "#ffffff"
                 },
-                "stop": {
-                  "value": "#000000"
+                stop: {
+                  value: "#000000"
                 }
               },
-              "radius": 1000
+              radius: 1000
             },
-            "shadow": {
-              "color": {
-                "value": "#000000"
+            shadow: {
+              color: {
+                value: "#000000"
               },
-              "length": 2000
+              length: 2000
             }
           }
         }
