@@ -37,3 +37,10 @@ particlesJS('interactive-background', {
         },
     }
 });
+
+VanillaTilt.init(document.querySelectorAll(".profile-photo"), {
+    max: 25,     // Maximum tilt angle in degrees
+    speed: 400,  // Speed of the tilt transition (in milliseconds)
+    glare: true, // Enable glare effect
+    "max-glare": 1, // Maximum glare intensity (0 to 1)
+});

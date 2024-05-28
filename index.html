@@ -9,10 +9,14 @@
 </head>
 
 <body class="h-screen bg-black overflow-hidden">
-    <div id="interactive-background"></div>
+    <header class="header">
+        <a href="/">
+            <img src="images/your-logo.png" alt="Your Website Logo" class="logo">
+        </a>
+    </header>
 
     <div class="container flex flex-col items-center justify-center min-h-screen">
-        <img src="images/my-profile-photo.jpg" alt="Your Photo" class="profile-photo">
+        <img src="images/my-profile-photo.jpg" alt="Bharathkumar Prabakar" class="profile-photo" data-tilt-glare data-tilt-max-glare="0.8">
         <h1 class="your-name text-4x1 font-bold text-white mb-4">Bharathkumar Prabakar</h1>
         <h3 class="designation text-2x1 text-white">Quality Analyst | SIT Pune '22</h3>
 
@@ -38,6 +42,7 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="js/vanilla-tilt.js"></script>
     <script src="script.js"></script>
 </body>
 
