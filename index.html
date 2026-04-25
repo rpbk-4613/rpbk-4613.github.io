@@ -1,44 +1,1898 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Bharathkumar's Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Salesforce Europe Roadmap — 6-Month Execution Plan</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0a0f;
+    --bg2: #0f0f18;
+    --bg3: #14141f;
+    --card: #111118;
+    --border: #1e1e2e;
+    --border-bright: #2a2a40;
+    --amber: #f5a623;
+    --amber-dim: #b87a1a;
+    --amber-glow: rgba(245, 166, 35, 0.12);
+    --green: #3dd68c;
+    --green-dim: rgba(61, 214, 140, 0.15);
+    --red: #ff5f57;
+    --red-dim: rgba(255, 95, 87, 0.12);
+    --blue: #60a5fa;
+    --blue-dim: rgba(96, 165, 250, 0.12);
+    --purple: #a78bfa;
+    --purple-dim: rgba(167, 139, 250, 0.12);
+    --text: #e8e8f0;
+    --text-dim: #8888a8;
+    --text-muted: #55556a;
+    --mono: 'Space Mono', monospace;
+    --display: 'Syne', sans-serif;
+    --body: 'Inter', sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--body);
+    font-size: 14px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* HEADER */
+  .header {
+    background: var(--bg2);
+    border-bottom: 1px solid var(--border);
+    padding: 48px 60px 40px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(245,166,35,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .header-tag {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--amber);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .header-tag::before {
+    content: '';
+    display: inline-block;
+    width: 20px; height: 1px;
+    background: var(--amber);
+  }
+
+  h1 {
+    font-family: var(--display);
+    font-size: clamp(28px, 4vw, 48px);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -1px;
+    color: #fff;
+    margin-bottom: 12px;
+  }
+
+  h1 span { color: var(--amber); }
+
+  .header-sub {
+    font-size: 15px;
+    color: var(--text-dim);
+    max-width: 600px;
+    margin-bottom: 28px;
+  }
+
+  .header-meta {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .meta-chip {
+    font-family: var(--mono);
+    font-size: 11px;
+    background: var(--amber-glow);
+    border: 1px solid rgba(245,166,35,0.25);
+    color: var(--amber);
+    padding: 5px 12px;
+    border-radius: 2px;
+  }
+
+  /* NAV */
+  .toc {
+    background: var(--bg3);
+    border-bottom: 1px solid var(--border);
+    padding: 14px 60px;
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .toc a {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--text-muted);
+    text-decoration: none;
+    padding: 4px 10px;
+    border-radius: 2px;
+    letter-spacing: 0.5px;
+    transition: all 0.15s;
+  }
+
+  .toc a:hover {
+    color: var(--amber);
+    background: var(--amber-glow);
+  }
+
+  /* LAYOUT */
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  section {
+    padding: 56px 60px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  section:last-child { border-bottom: none; }
+
+  .section-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--amber);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  h2 {
+    font-family: var(--display);
+    font-size: 24px;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 6px;
+    letter-spacing: -0.5px;
+  }
+
+  h3 {
+    font-family: var(--display);
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 10px;
+  }
+
+  .section-intro {
+    font-size: 14px;
+    color: var(--text-dim);
+    max-width: 700px;
+    margin-bottom: 36px;
+    border-left: 2px solid var(--amber);
+    padding-left: 16px;
+  }
+
+  /* PHASE TIMELINE */
+  .phase-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    border: 1px solid var(--border-bright);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 40px;
+  }
+
+  .phase {
+    padding: 24px 20px;
+    border-right: 1px solid var(--border-bright);
+    position: relative;
+  }
+
+  .phase:last-child { border-right: none; }
+
+  .phase-1 { background: rgba(96,165,250,0.05); }
+  .phase-2 { background: rgba(167,139,250,0.05); }
+  .phase-3 { background: rgba(245,166,35,0.05); }
+  .phase-4 { background: rgba(61,214,140,0.05); }
+
+  .phase-num {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 2px;
+    margin-bottom: 6px;
+  }
+
+  .phase-1 .phase-num { color: var(--blue); }
+  .phase-2 .phase-num { color: var(--purple); }
+  .phase-3 .phase-num { color: var(--amber); }
+  .phase-4 .phase-num { color: var(--green); }
+
+  .phase-title {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 14px;
+    color: #fff;
+    margin-bottom: 4px;
+  }
+
+  .phase-weeks {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+  }
+
+  .phase-tags {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .ptag {
+    font-size: 11px;
+    color: var(--text-dim);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .ptag::before {
+    content: '▸';
+    font-size: 9px;
+  }
+
+  /* CARDS */
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 20px 22px;
+  }
+
+  .card.full { grid-column: 1 / -1; }
+
+  .card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 14px;
+  }
+
+  .card-title {
+    font-family: var(--display);
+    font-size: 13px;
+    font-weight: 700;
+    color: #fff;
+  }
+
+  .badge {
+    font-family: var(--mono);
+    font-size: 10px;
+    padding: 3px 8px;
+    border-radius: 2px;
+    letter-spacing: 0.5px;
+  }
+
+  .badge-blue { background: var(--blue-dim); color: var(--blue); border: 1px solid rgba(96,165,250,0.2); }
+  .badge-purple { background: var(--purple-dim); color: var(--purple); border: 1px solid rgba(167,139,250,0.2); }
+  .badge-amber { background: var(--amber-glow); color: var(--amber); border: 1px solid rgba(245,166,35,0.2); }
+  .badge-green { background: var(--green-dim); color: var(--green); border: 1px solid rgba(61,214,140,0.2); }
+  .badge-red { background: var(--red-dim); color: var(--red); border: 1px solid rgba(255,95,87,0.2); }
+
+  /* CHECKLIST */
+  .checklist {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+  }
+
+  .checklist li {
+    font-size: 13px;
+    color: var(--text-dim);
+    padding-left: 18px;
+    position: relative;
+    line-height: 1.5;
+  }
+
+  .checklist li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--amber);
+    font-size: 11px;
+    top: 1px;
+  }
+
+  .checklist li strong {
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  /* CERT TIMELINE */
+  .cert-track {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    position: relative;
+  }
+
+  .cert-track::before {
+    content: '';
+    position: absolute;
+    left: 24px;
+    top: 0; bottom: 0;
+    width: 1px;
+    background: var(--border-bright);
+  }
+
+  .cert-item {
+    display: flex;
+    gap: 20px;
+    padding: 0 0 28px 0;
+    position: relative;
+  }
+
+  .cert-item:last-child { padding-bottom: 0; }
+
+  .cert-dot {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 700;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+  }
+
+  .cert-done { background: var(--green-dim); border: 1px solid rgba(61,214,140,0.3); color: var(--green); }
+  .cert-pri { background: var(--amber-glow); border: 1px solid rgba(245,166,35,0.3); color: var(--amber); }
+  .cert-sec { background: var(--blue-dim); border: 1px solid rgba(96,165,250,0.2); color: var(--blue); }
+  .cert-str { background: var(--purple-dim); border: 1px solid rgba(167,139,250,0.2); color: var(--purple); }
+
+  .cert-body { flex: 1; padding-top: 10px; }
+
+  .cert-name {
+    font-family: var(--display);
+    font-size: 14px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 3px;
+  }
+
+  .cert-meta {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+  }
+
+  .cert-desc {
+    font-size: 12.5px;
+    color: var(--text-dim);
+    line-height: 1.6;
+  }
+
+  /* PROJECT CARDS */
+  .project-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 24px;
+    margin-bottom: 16px;
+  }
+
+  .project-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    gap: 12px;
+  }
+
+  .project-number {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--text-muted);
+    letter-spacing: 2px;
+  }
+
+  .project-title {
+    font-family: var(--display);
+    font-size: 15px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 3px;
+  }
+
+  .project-desc {
+    font-size: 13px;
+    color: var(--text-dim);
+    margin-bottom: 16px;
+    line-height: 1.6;
+  }
+
+  .project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+
+  .project-col-label {
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .tech-tag {
+    font-family: var(--mono);
+    font-size: 10px;
+    background: var(--bg3);
+    border: 1px solid var(--border-bright);
+    color: var(--text-dim);
+    padding: 3px 8px;
+    border-radius: 2px;
+  }
+
+  /* SCHEDULE TABLE */
+  .schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+
+  .schedule-table thead th {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    padding: 10px 14px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-bright);
+    background: var(--bg3);
+  }
+
+  .schedule-table tbody tr {
+    border-bottom: 1px solid var(--border);
+    transition: background 0.1s;
+  }
+
+  .schedule-table tbody tr:hover { background: rgba(255,255,255,0.02); }
+
+  .schedule-table tbody td {
+    padding: 12px 14px;
+    color: var(--text-dim);
+    vertical-align: top;
+  }
+
+  .schedule-table tbody td:first-child {
+    color: var(--amber);
+    font-family: var(--mono);
+    font-size: 11px;
+    white-space: nowrap;
+  }
+
+  .schedule-table tbody td strong {
+    color: var(--text);
+    font-weight: 500;
+    display: block;
+    margin-bottom: 2px;
+  }
+
+  /* MILESTONES */
+  .milestone-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+
+  .milestone {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 18px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .milestone::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px; height: 100%;
+  }
+
+  .m1::after { background: var(--blue); }
+  .m2::after { background: var(--purple); }
+  .m3::after { background: var(--amber); }
+  .m4::after { background: var(--green); }
+  .m5::after { background: #f472b6; }
+  .m6::after { background: var(--red); }
+
+  .milestone-month {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--text-muted);
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+  }
+
+  .milestone-check {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .milestone-check li {
+    font-size: 12px;
+    color: var(--text-dim);
+    padding-left: 16px;
+    position: relative;
+  }
+
+  .milestone-check li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--green);
+    font-size: 10px;
+  }
+
+  /* MISTAKES */
+  .mistake-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .mistake {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--red);
+    border-radius: 0 4px 4px 0;
+    padding: 14px 16px;
+  }
+
+  .mistake-num {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--red);
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .mistake-text {
+    font-size: 13px;
+    color: var(--text-dim);
+    line-height: 1.5;
+  }
+
+  .mistake-text strong {
+    color: var(--text);
+    font-weight: 600;
+    display: block;
+    margin-bottom: 2px;
+  }
+
+  /* EUROPE SECTION */
+  .country-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
+
+  .country-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 18px;
+  }
+
+  .country-name {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 14px;
+    color: #fff;
+    margin-bottom: 4px;
+  }
+
+  .country-visa {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--amber);
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+  }
+
+  .country-facts {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .country-facts li {
+    font-size: 12px;
+    color: var(--text-dim);
+    padding-left: 14px;
+    position: relative;
+  }
+
+  .country-facts li::before {
+    content: '·';
+    position: absolute;
+    left: 4px;
+    color: var(--text-muted);
+  }
+
+  /* WEEK BLOCK */
+  .week-visual {
+    display: grid;
+    grid-template-columns: 90px repeat(7, 1fr);
+    gap: 4px;
+    font-family: var(--mono);
+    font-size: 10px;
+  }
+
+  .week-header {
+    text-align: center;
+    color: var(--text-muted);
+    padding: 6px 4px;
+    letter-spacing: 1px;
+  }
+
+  .week-label {
+    display: flex;
+    align-items: center;
+    color: var(--text-muted);
+    font-size: 10px;
+    letter-spacing: 1px;
+  }
+
+  .week-cell {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    padding: 6px 4px;
+    text-align: center;
+    font-size: 10px;
+    color: var(--text-dim);
+    line-height: 1.3;
+  }
+
+  .wc-learn { background: rgba(96,165,250,0.1); border-color: rgba(96,165,250,0.2); color: var(--blue); }
+  .wc-build { background: rgba(245,166,35,0.1); border-color: rgba(245,166,35,0.2); color: var(--amber); }
+  .wc-cert { background: rgba(167,139,250,0.1); border-color: rgba(167,139,250,0.2); color: var(--purple); }
+  .wc-rest { background: var(--bg3); border-color: var(--border); color: var(--text-muted); }
+  .wc-apply { background: rgba(61,214,140,0.1); border-color: rgba(61,214,140,0.2); color: var(--green); }
+
+  /* LIFESTYLE */
+  .lifestyle-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+
+  .life-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 18px 20px;
+  }
+
+  .life-icon {
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+
+  .life-title {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 13px;
+    color: #fff;
+    margin-bottom: 8px;
+  }
+
+  .life-desc {
+    font-size: 12.5px;
+    color: var(--text-dim);
+    line-height: 1.6;
+  }
+
+  /* FOOTER */
+  .doc-footer {
+    background: var(--bg2);
+    border-top: 1px solid var(--border);
+    padding: 28px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-text {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text-muted);
+  }
+
+  .footer-emphasis {
+    font-family: var(--display);
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--amber);
+  }
+
+  /* DIVIDERS */
+  .divider {
+    height: 1px;
+    background: var(--border);
+    margin: 28px 0;
+  }
+
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .three-col {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  .callout {
+    background: var(--amber-glow);
+    border: 1px solid rgba(245,166,35,0.25);
+    border-radius: 4px;
+    padding: 14px 18px;
+    margin: 16px 0;
+    font-size: 13px;
+    color: var(--amber);
+    font-family: var(--mono);
+    line-height: 1.6;
+  }
+
+  .callout-red {
+    background: var(--red-dim);
+    border: 1px solid rgba(255,95,87,0.25);
+    color: var(--red);
+  }
+
+  .callout-green {
+    background: var(--green-dim);
+    border: 1px solid rgba(61,214,140,0.25);
+    color: var(--green);
+  }
+
+  .skill-bar-row {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 8px;
+  }
+
+  .skill-bar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .skill-bar-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text-dim);
+    width: 140px;
+    flex-shrink: 0;
+  }
+
+  .skill-bar-track {
+    flex: 1;
+    height: 4px;
+    background: var(--border-bright);
+    border-radius: 2px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .skill-bar-fill {
+    height: 100%;
+    border-radius: 2px;
+    position: absolute;
+    left: 0; top: 0;
+  }
+
+  .skill-bar-pct {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--text-muted);
+    width: 40px;
+    text-align: right;
+  }
+
+  @media (max-width: 800px) {
+    section { padding: 36px 24px; }
+    .header { padding: 36px 24px 28px; }
+    .toc { padding: 12px 24px; }
+    .phase-grid { grid-template-columns: repeat(2, 1fr); }
+    .card-grid { grid-template-columns: 1fr; }
+    .milestone-grid { grid-template-columns: repeat(2, 1fr); }
+    .country-grid { grid-template-columns: 1fr; }
+    .two-col, .three-col, .lifestyle-grid { grid-template-columns: 1fr; }
+    .project-grid { grid-template-columns: 1fr; }
+    .doc-footer { flex-direction: column; gap: 12px; text-align: center; }
+    .week-visual { grid-template-columns: 70px repeat(7, 1fr); }
+  }
+</style>
 </head>
+<body>
 
-<body class="h-screen bg-black overflow-hidden">
-    <div id="interactive-background"></div>
+<!-- HEADER -->
+<div class="header">
+  <div class="header-tag">EXECUTION DOCUMENT · CONFIDENTIAL</div>
+  <h1>Your <span>Salesforce Europe</span><br>6-Month Roadmap</h1>
+  <p class="header-sub">A brutally realistic, step-by-step transition plan from Salesforce Admin + API Tester to Senior Developer / Architect — targeting high-paying roles in Europe.</p>
+  <div class="header-meta">
+    <span class="meta-chip">START: NOW</span>
+    <span class="meta-chip">TARGET: MONTH 6</span>
+    <span class="meta-chip">CERTS: ADM-201 ✓ → PD1 → APP BUILDER → PD2</span>
+    <span class="meta-chip">DAILY HOURS: 2–4 HRS WEEKDAY · 5–7 HRS WEEKEND</span>
+    <span class="meta-chip">STRATEGY: REMOTE + RELOCATION</span>
+  </div>
+</div>
 
-    <div class="container flex flex-col items-center justify-center min-h-screen">
-        <img src="images/my-profile-photo.jpg" alt="Your Photo" class="profile-photo">
-        <h1 class="your-name text-4x1 font-bold text-white mb-4">Bharathkumar Prabakar</h1>
-        <h3 class="designation text-2x1 text-white">Salesforce Consultant at Deloitte | AWS 2x Certified (Developer & Solutions Architect Associate)</h3>
+<!-- NAV -->
+<nav class="toc">
+  <a href="#timeline">01 TIMELINE</a>
+  <a href="#skills">02 SKILLS</a>
+  <a href="#certs">03 CERTIFICATIONS</a>
+  <a href="#projects">04 PROJECTS</a>
+  <a href="#jobs">05 JOB PREP</a>
+  <a href="#interviews">06 INTERVIEWS</a>
+  <a href="#europe">07 EUROPE</a>
+  <a href="#schedule">08 SCHEDULE</a>
+  <a href="#milestones">09 MILESTONES</a>
+  <a href="#lifestyle">10 LIFESTYLE</a>
+</nav>
 
-        <div class="icon-boxes flex justify-center space-x-4">
-            <a href="https://github.com/rpbk-4613" target="_blank"
-                class="icon-box flex items-center hover:bg-gray-100 rounded-lg py-2 px-4">
-                <img src="images/github-icon.png" alt="GitHub">
-                <!-- <p class="text-white ml-2">GitHub</p> -->
-            </a>
-            <a href="https://drive.google.com/file/d/11vAPGX4ovQmpeo3XBC0birEtGokK4O0A/view?usp=sharing" target="_blank"
-                class="icon-box flex items-center hover:bg-gray-100 rounded-lg py-2 px-4">
-                <img src="images/resume-icon.png" alt="Resume">
-                <!-- <p class="text-white ml-2">Resume</p> -->
-            </a>
-            <a href="https://www.linkedin.com/in/bharathkumarprabakar/" target="_blank"
-                class="icon-box flex items-center hover:bg-gray-100 rounded-lg py-2 px-4">
-                <img src="images/linkedin-icon.png" alt="LinkedIn">
-                <!-- <p class="text-white ml-2">LinkedIn</p> -->
-            </a>
-        </div>
+
+<!-- SECTION 1: TIMELINE -->
+<section id="timeline">
+  <div class="section-label">01 / TIMELINE</div>
+  <h2>The 6-Month Mission Map</h2>
+  <p class="section-intro">Four phases, clear outcomes. Every phase gates the next. Do not skip ahead — shallow learning compounds into poor interviews.</p>
+
+  <div class="phase-grid">
+    <div class="phase phase-1">
+      <div class="phase-num">PHASE 01</div>
+      <div class="phase-title">Foundation</div>
+      <div class="phase-weeks">Weeks 1–6 (Month 1–2)</div>
+      <div class="phase-tags">
+        <span class="ptag">Apex mastery (async, DML, SOQL)</span>
+        <span class="ptag">LWC fundamentals</span>
+        <span class="ptag">Git + SFDX setup</span>
+        <span class="ptag">PD1 preparation</span>
+        <span class="ptag">Project #1 started</span>
+      </div>
+    </div>
+    <div class="phase phase-2">
+      <div class="phase-num">PHASE 02</div>
+      <div class="phase-title">Intermediate</div>
+      <div class="phase-weeks">Weeks 7–12 (Month 2–3)</div>
+      <div class="phase-tags">
+        <span class="ptag">LWC advanced + JS</span>
+        <span class="ptag">REST/SOAP integrations</span>
+        <span class="ptag">Platform Events & CDC</span>
+        <span class="ptag">CI/CD (GitHub Actions)</span>
+        <span class="ptag">PD1 Exam ← Week 8–9</span>
+      </div>
+    </div>
+    <div class="phase phase-3">
+      <div class="phase-num">PHASE 03</div>
+      <div class="phase-title">Advanced</div>
+      <div class="phase-weeks">Weeks 13–18 (Month 3–4)</div>
+      <div class="phase-tags">
+        <span class="ptag">Enterprise design patterns</span>
+        <span class="ptag">Architecture principles</span>
+        <span class="ptag">AWS basics</span>
+        <span class="ptag">App Builder Exam ← Week 14</span>
+        <span class="ptag">PD2 preparation begins</span>
+      </div>
+    </div>
+    <div class="phase phase-4">
+      <div class="phase-num">PHASE 04</div>
+      <div class="phase-title">Job-Ready</div>
+      <div class="phase-weeks">Weeks 19–24 (Month 5–6)</div>
+      <div class="phase-tags">
+        <span class="ptag">PD2 Exam ← Week 20</span>
+        <span class="ptag">Portfolio live</span>
+        <span class="ptag">Resume + LinkedIn optimized</span>
+        <span class="ptag">Active applications</span>
+        <span class="ptag">Mock interviews weekly</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout">⚡ REALITY CHECK: Your existing Admin cert + 4 years of experience is a head start. You are not starting from zero. Your API testing background gives you a credibility edge in integration and QA-aware architecture — use it in interviews.</div>
+</section>
+
+
+<!-- SECTION 2: SKILLS -->
+<section id="skills">
+  <div class="section-label">02 / SKILL ROADMAP</div>
+  <h2>What to Learn & In What Order</h2>
+  <p class="section-intro">Organized by priority and dependency. Do not multitask across pillars — finish Apex before diving deep into LWC. Breadth comes after depth.</p>
+
+  <div class="card-grid">
+    <!-- APEX -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">☁️ Apex (Deep Mastery)</div>
+        <span class="badge badge-blue">MONTH 1–2</span>
+      </div>
+      <ul class="checklist">
+        <li><strong>Governor Limits:</strong> Understand every limit (DML, SOQL, heap). Build instincts, not memorization.</li>
+        <li><strong>Collections & SOQL:</strong> Bulkification, SOQL in loops (anti-pattern), aggregate queries, relationship queries.</li>
+        <li><strong>Triggers:</strong> One trigger per object pattern, handler class pattern, avoid business logic in trigger body.</li>
+        <li><strong>Async Apex:</strong> Batch (for data volumes), Queueable (for chaining), Scheduled (for time-based), Future (legacy).</li>
+        <li><strong>Error Handling:</strong> DmlException, try-catch-finally, Database.SaveResult, partial save.</li>
+        <li><strong>Test Classes:</strong> @testSetup, Test.startTest/stopTest, meaningful assertions, 90%+ coverage habit.</li>
+        <li><strong>Security:</strong> CRUD/FLS enforcement, WITH SECURITY_ENFORCED, stripInaccessible().</li>
+      </ul>
     </div>
 
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <!-- LWC -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">⚡ LWC (Component Development)</div>
+        <span class="badge badge-purple">MONTH 2–3</span>
+      </div>
+      <ul class="checklist">
+        <li><strong>Lifecycle Hooks:</strong> connectedCallback, disconnectedCallback, renderedCallback — know when each fires.</li>
+        <li><strong>Data Binding:</strong> @track (legacy), @api, reactive properties, template conditionals and loops.</li>
+        <li><strong>Wire Service:</strong> @wire with adapters (getRecord, getRelatedListRecords), wire vs imperative calls.</li>
+        <li><strong>Events:</strong> Custom events, bubbling/capturing, communication patterns (parent↔child, sibling).</li>
+        <li><strong>Navigation:</strong> NavigationMixin, page references, navigating to records/pages.</li>
+        <li><strong>Imperative Apex:</strong> Calling @AuraEnabled(cacheable=true) methods, promise chaining, async/await.</li>
+        <li><strong>SLDS:</strong> Lightning Design System tokens, base components, responsive grids.</li>
+      </ul>
+    </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-    <script src="script.js"></script>
+    <!-- INTEGRATIONS -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">🔗 Integrations</div>
+        <span class="badge badge-amber">MONTH 3</span>
+      </div>
+      <ul class="checklist">
+        <li><strong>REST Callouts:</strong> HttpRequest/HttpResponse, JSON parsing, mock callouts in tests.</li>
+        <li><strong>Named Credentials:</strong> Auth providers, per-user vs per-org — always use over hardcoded endpoints.</li>
+        <li><strong>Platform Events:</strong> Event-driven architecture, publish/subscribe, replay ID, use cases.</li>
+        <li><strong>Change Data Capture (CDC):</strong> Real-time change streaming, difference from Platform Events.</li>
+        <li><strong>External Services:</strong> OpenAPI schema import, auto-generated Apex.</li>
+        <li><strong>MuleSoft basics:</strong> Know the concepts even if not hands-on — architects are expected to assess it.</li>
+        <li><strong>Middleware patterns:</strong> Point-to-point vs hub-and-spoke vs ESB vs event-driven.</li>
+      </ul>
+    </div>
+
+    <!-- ARCHITECTURE -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">🏛️ Architecture</div>
+        <span class="badge badge-green">MONTH 4–5</span>
+      </div>
+      <ul class="checklist">
+        <li><strong>Enterprise Patterns:</strong> Selector, Domain, Service, Application layers (Apex Enterprise Patterns by Andy Fawcett — read it).</li>
+        <li><strong>Sharing Model:</strong> OWD, role hierarchy, sharing rules, manual sharing, Apex managed sharing.</li>
+        <li><strong>Data Architecture:</strong> Record volumes, skinny tables, indexes, external IDs, data skew.</li>
+        <li><strong>Multi-org Strategy:</strong> When to split orgs, sandbox strategy, environment planning.</li>
+        <li><strong>Salesforce Well-Architected:</strong> Trusted, Easy, Adaptable pillars — know this framework cold.</li>
+        <li><strong>Security Architecture:</strong> SSO, OAuth flows, Connected Apps, Identity providers.</li>
+        <li><strong>Deployment:</strong> SFDX, scratch orgs, unlocked packages, change sets (legacy).</li>
+      </ul>
+    </div>
+
+    <!-- SUPPORTING SKILLS -->
+    <div class="card full">
+      <div class="card-header">
+        <div class="card-title">🛠️ Supporting Technical Skills</div>
+        <span class="badge badge-amber">THROUGHOUT</span>
+      </div>
+      <div class="three-col">
+        <div>
+          <div class="project-col-label">GIT + CI/CD</div>
+          <ul class="checklist">
+            <li><strong>Git fundamentals:</strong> branching strategy (GitFlow), PRs, merge conflicts</li>
+            <li><strong>GitHub Actions:</strong> Build a Salesforce SFDX deployment pipeline</li>
+            <li><strong>Salesforce DX:</strong> Scratch orgs, source format, project config</li>
+            <li><strong>Unlocked Packages:</strong> Modular deployment — critical for architect interviews</li>
+          </ul>
+        </div>
+        <div>
+          <div class="project-col-label">AWS (BASICS ONLY)</div>
+          <ul class="checklist">
+            <li><strong>S3:</strong> Storage, bucket policies, use in integration scenarios</li>
+            <li><strong>Lambda:</strong> Serverless functions, triggers from S3/API Gateway</li>
+            <li><strong>API Gateway:</strong> REST endpoint creation, auth, throttling</li>
+            <li><strong>SQS/SNS:</strong> Message queuing relevant to Salesforce integration patterns</li>
+          </ul>
+        </div>
+        <div>
+          <div class="project-col-label">DSA (TARGETED)</div>
+          <ul class="checklist">
+            <li><strong>Collections:</strong> Map, Set, List — you use these daily in Apex</li>
+            <li><strong>Sorting & Search:</strong> Know Big-O basics for SOQL optimization conversations</li>
+            <li><strong>Recursion:</strong> Relevant for tree-structured Salesforce data (account hierarchy)</li>
+            <li><strong>Skip:</strong> LeetCode hard — not needed for Salesforce roles in Europe</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout-green callout">✅ YOUR EDGE: Your API testing background means you already understand HTTP, request/response cycles, status codes, and test assertions. This is a genuine advantage in integration-focused roles — frame it explicitly on your resume and in interviews.</div>
+</section>
+
+
+<!-- SECTION 3: CERTIFICATIONS -->
+<section id="certs">
+  <div class="section-label">03 / CERTIFICATION STRATEGY</div>
+  <h2>The Right Certs, in the Right Order</h2>
+  <p class="section-intro">Certifications in Europe are table stakes for Salesforce roles — they're how recruiters filter before they read your resume. Stack them strategically, not randomly.</p>
+
+  <div class="two-col" style="margin-bottom: 36px;">
+    <div class="cert-track">
+      <div class="cert-item">
+        <div class="cert-dot cert-done">✓</div>
+        <div class="cert-body">
+          <div class="cert-name">Salesforce Administrator (ADM-201)</div>
+          <div class="cert-meta">ALREADY COMPLETED · KEEP RENEWING</div>
+          <div class="cert-desc">Your current baseline. Solid foundation. Renew before expiry — missed renewals look bad to European recruiters who specifically check Trailhead profiles.</div>
+        </div>
+      </div>
+      <div class="cert-item">
+        <div class="cert-dot cert-pri">1</div>
+        <div class="cert-body">
+          <div class="cert-name">Platform Developer I (PD1)</div>
+          <div class="cert-meta">TARGET: END OF WEEK 8 (MONTH 2) · ~3 WEEKS FOCUSED PREP</div>
+          <div class="cert-desc">Your most critical next cert. Unlocks developer credibility and is a prerequisite for the entire Architect track. Do not delay. Study: Apex basics, SOQL, triggers, test classes, security. Use: Trailhead PD1 Prep module + Focus on Force practice exams.</div>
+        </div>
+      </div>
+      <div class="cert-item">
+        <div class="cert-dot cert-pri">2</div>
+        <div class="cert-body">
+          <div class="cert-name">App Builder</div>
+          <div class="cert-meta">TARGET: WEEK 13–14 (MONTH 3) · ~2 WEEKS PREP</div>
+          <div class="cert-desc">Quick win given your Admin background. 60–70% of content you already know. Focuses on Lightning App Builder, Flows, process automation, and declarative tools. Required for the Application Architect credential. Prep: Trailhead mix + 2 practice exams.</div>
+        </div>
+      </div>
+    </div>
+    <div class="cert-track">
+      <div class="cert-item">
+        <div class="cert-dot cert-sec">3</div>
+        <div class="cert-body">
+          <div class="cert-name">Platform Developer II (PD2)</div>
+          <div class="cert-meta">TARGET: WEEK 19–21 (MONTH 5) · 4–5 WEEKS PREP</div>
+          <div class="cert-desc">The real differentiator. Only ~12,000 active PD2s globally (vs 150k+ admins). Covers: Apex enterprise patterns, advanced LWC, complex integrations, deployment, performance optimization. Requires scenario-based thinking. This cert alone will move you to a different salary tier in Europe. Prep: Andy Fawcett's book + Salesforce Ben PD2 guide + scenario practice.</div>
+        </div>
+      </div>
+      <div class="cert-item">
+        <div class="cert-dot cert-str">S</div>
+        <div class="cert-body">
+          <div class="cert-name">Sharing & Visibility Designer (Stretch)</div>
+          <div class="cert-meta">OPTIONAL · IF TIME ALLOWS IN MONTH 5–6</div>
+          <div class="cert-desc">Part of the Application Architect credential. Highly valued in large-enterprise roles (banks, insurance, telcos in Europe). Cover this naturally while studying architecture patterns. Attempt only if PD2 is passed with time to spare.</div>
+        </div>
+      </div>
+      <div class="cert-item">
+        <div class="cert-dot cert-str">→</div>
+        <div class="cert-body">
+          <div class="cert-name">Integration Architecture Designer</div>
+          <div class="cert-meta">POST 6-MONTHS · CONTINUE AFTER LANDING ROLE</div>
+          <div class="cert-desc">Part of the System Architect credential. Very relevant to your background. Plan for Month 7–9 after landing the job, when you'll have real integration experience to anchor the concepts.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout">📌 STUDY RESOURCES: Focus on Force (best practice exams) · Salesforce Ben PD1/PD2 guides · Trailhead official prep trails · SF Certification Days (free Salesforce webinars — attend at least one per cert) · David Liu YouTube for Apex concepts</div>
+</section>
+
+
+<!-- SECTION 4: PROJECTS -->
+<section id="projects">
+  <div class="section-label">04 / HANDS-ON PROJECT PLAN</div>
+  <h2>Four Portfolio Projects</h2>
+  <p class="section-intro">Each project is designed to be interview-demonstrable in 60 seconds. Code on GitHub with a README that explains the architecture — not just what it does, but why you made the choices you did.</p>
+
+  <div class="project-card">
+    <div class="project-header">
+      <div>
+        <div class="project-number">PROJECT 01 · MONTH 1–2</div>
+        <div class="project-title">⚙️ Enterprise Case Management System</div>
+      </div>
+      <span class="badge badge-blue">APEX FOCUS</span>
+    </div>
+    <div class="project-desc">
+      Build a full Case management system on a free Developer org. This demonstrates core Apex depth — not toys, but patterns that enterprise teams actually use. This is deliberately chosen because Case is something every interviewer understands.
+    </div>
+    <div class="project-grid">
+      <div>
+        <div class="project-col-label">Build This</div>
+        <ul class="checklist">
+          <li>Trigger + handler class pattern (one trigger per object)</li>
+          <li>Batch job: auto-close stale cases after 30 days</li>
+          <li>Queueable: send notification chain on escalation</li>
+          <li>Scheduled: weekly SLA breach report via email</li>
+          <li>Custom metadata: config-driven SLA rules</li>
+          <li>Custom exception classes</li>
+          <li>90%+ test coverage with meaningful assertions</li>
+        </ul>
+      </div>
+      <div>
+        <div class="project-col-label">Tech Stack</div>
+        <div class="tech-tags">
+          <span class="tech-tag">Apex</span>
+          <span class="tech-tag">SOQL</span>
+          <span class="tech-tag">Batch Apex</span>
+          <span class="tech-tag">Queueable</span>
+          <span class="tech-tag">Scheduled Apex</span>
+          <span class="tech-tag">Custom Metadata</span>
+          <span class="tech-tag">Test Classes</span>
+          <span class="tech-tag">SFDX</span>
+          <span class="tech-tag">GitHub</span>
+        </div>
+      </div>
+      <div>
+        <div class="project-col-label">How to Showcase</div>
+        <ul class="checklist">
+          <li>GitHub repo with clean SFDX structure</li>
+          <li>README with architecture diagram (draw.io)</li>
+          <li>Document governor limit decisions</li>
+          <li>Record a 5-min Loom demo</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="project-card">
+    <div class="project-header">
+      <div>
+        <div class="project-number">PROJECT 02 · MONTH 2–3</div>
+        <div class="project-title">⚡ Custom LWC Component Library</div>
+      </div>
+      <span class="badge badge-purple">LWC FOCUS</span>
+    </div>
+    <div class="project-desc">
+      Build 3–4 reusable LWC components that solve real problems. Host a live demo using LWC OSS on GitHub Pages. Recruiters can't run your Salesforce org — this makes your LWC work visible externally.
+    </div>
+    <div class="project-grid">
+      <div>
+        <div class="project-col-label">Components to Build</div>
+        <ul class="checklist">
+          <li>Dynamic datatable with inline editing + pagination</li>
+          <li>Multi-step wizard with progress indicator</li>
+          <li>File upload component with preview + Apex backend</li>
+          <li>Real-time search with debounce + wire service</li>
+        </ul>
+      </div>
+      <div>
+        <div class="project-col-label">Tech Stack</div>
+        <div class="tech-tags">
+          <span class="tech-tag">LWC</span>
+          <span class="tech-tag">@wire</span>
+          <span class="tech-tag">Custom Events</span>
+          <span class="tech-tag">NavigationMixin</span>
+          <span class="tech-tag">Apex @AuraEnabled</span>
+          <span class="tech-tag">SLDS</span>
+          <span class="tech-tag">LWC OSS</span>
+          <span class="tech-tag">GitHub Pages</span>
+        </div>
+      </div>
+      <div>
+        <div class="project-col-label">How to Showcase</div>
+        <ul class="checklist">
+          <li>Live GitHub Pages demo (interviewers can click)</li>
+          <li>GitHub repo with JSDoc comments</li>
+          <li>Pin this repo on your GitHub profile</li>
+          <li>Write a LinkedIn post about one component</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="project-card">
+    <div class="project-header">
+      <div>
+        <div class="project-number">PROJECT 03 · MONTH 3</div>
+        <div class="project-title">🔗 Salesforce Integration Hub</div>
+      </div>
+      <span class="badge badge-amber">INTEGRATION FOCUS</span>
+    </div>
+    <div class="project-desc">
+      Build a bidirectional integration between Salesforce and a real external API (use GitHub API, OpenWeatherMap API, or a mock payment gateway). This directly leverages your API testing background — you know this domain better than most developers.
+    </div>
+    <div class="project-grid">
+      <div>
+        <div class="project-col-label">Build This</div>
+        <ul class="checklist">
+          <li>Outbound REST callout with Named Credentials</li>
+          <li>Inbound: expose a Salesforce REST API endpoint</li>
+          <li>Platform Event: trigger downstream processing</li>
+          <li>Error handling: retry logic with exponential backoff</li>
+          <li>Mock callouts in test classes</li>
+          <li>Logging framework for integration audit trail</li>
+        </ul>
+      </div>
+      <div>
+        <div class="project-col-label">Tech Stack</div>
+        <div class="tech-tags">
+          <span class="tech-tag">REST Callouts</span>
+          <span class="tech-tag">Named Credentials</span>
+          <span class="tech-tag">Platform Events</span>
+          <span class="tech-tag">Custom REST API</span>
+          <span class="tech-tag">JSON Parsing</span>
+          <span class="tech-tag">HttpMock</span>
+          <span class="tech-tag">CDC</span>
+        </div>
+      </div>
+      <div>
+        <div class="project-col-label">How to Showcase</div>
+        <ul class="checklist">
+          <li>Architecture diagram showing data flow</li>
+          <li>Document error scenarios + how handled</li>
+          <li>Case study write-up (1 page PDF)</li>
+          <li>Link in LinkedIn featured section</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="project-card" style="border-color: rgba(245,166,35,0.3);">
+    <div class="project-header">
+      <div>
+        <div class="project-number">PROJECT 04 · MONTH 4–5 · ⭐ PORTFOLIO CENTREPIECE</div>
+        <div class="project-title">🏛️ Full-Stack Order Management Platform</div>
+      </div>
+      <span class="badge badge-green">ARCHITECTURE FOCUS</span>
+    </div>
+    <div class="project-desc">
+      This is the one you'll talk about in every interview. An end-to-end order management system built with enterprise patterns. LWC frontend, Apex service layer, REST integration to a mock ERP, CI/CD pipeline, and full architecture documentation. This single project demonstrates developer + architect capability.
+    </div>
+    <div class="project-grid">
+      <div>
+        <div class="project-col-label">Build This</div>
+        <ul class="checklist">
+          <li>Apex Enterprise Patterns: Selector / Domain / Service / Application layers</li>
+          <li>LWC: Order creation wizard, status dashboard, real-time updates via streaming</li>
+          <li>Integration: Salesforce ↔ mock ERP (Node.js mock) via REST</li>
+          <li>Platform Events for async order status updates</li>
+          <li>Unlocked Package structure</li>
+          <li>GitHub Actions CI/CD pipeline for deployment</li>
+          <li>Full architecture decision record (ADR) document</li>
+        </ul>
+      </div>
+      <div>
+        <div class="project-col-label">Tech Stack</div>
+        <div class="tech-tags">
+          <span class="tech-tag">Apex Enterprise Patterns</span>
+          <span class="tech-tag">LWC</span>
+          <span class="tech-tag">REST Integration</span>
+          <span class="tech-tag">Platform Events</span>
+          <span class="tech-tag">Unlocked Packages</span>
+          <span class="tech-tag">GitHub Actions</span>
+          <span class="tech-tag">SFDX</span>
+          <span class="tech-tag">Node.js (mock ERP)</span>
+          <span class="tech-tag">draw.io Diagrams</span>
+        </div>
+      </div>
+      <div>
+        <div class="project-col-label">How to Showcase</div>
+        <ul class="checklist">
+          <li>GitHub: SFDX project + pipeline config + README</li>
+          <li>Architecture diagrams: component, sequence, data flow</li>
+          <li>10-min Loom walkthrough video</li>
+          <li>1-page case study PDF (problem → decisions → outcome)</li>
+          <li>Personal portfolio website with this as hero project</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout">📁 PORTFOLIO SETUP: Create a personal website (GitHub Pages + Jekyll or Notion public page). Link: your GitHub, Trailhead profile, LinkedIn, and all project case studies. The URL goes at the top of your CV — European recruiters do click these.</div>
+</section>
+
+
+<!-- SECTION 5: JOB PREP -->
+<section id="jobs">
+  <div class="section-label">05 / JOB PREPARATION</div>
+  <h2>Resume, LinkedIn & Networking</h2>
+  <p class="section-intro">European hiring is relationship-first, ATS-second. You need both a machine-readable resume and a human-readable reputation. Neither alone is enough.</p>
+
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">📄 European CV Standards</div>
+        <span class="badge badge-amber">MONTH 5</span>
+      </div>
+      <ul class="checklist">
+        <li><strong>Length:</strong> 2 pages max. 1 page if under 5 years experience. Europeans discard 3-page CVs.</li>
+        <li><strong>No photo</strong> for UK/Netherlands. Photo optional for Germany/DACH region.</li>
+        <li><strong>No date of birth, marital status</strong> — these are legally inappropriate in most EU countries.</li>
+        <li><strong>ATS header:</strong> Name, location (you can say "Open to relocation / Remote"), LinkedIn URL, GitHub URL, email.</li>
+        <li><strong>Certifications section:</strong> List with credential IDs and expiry dates — European ATS parses these.</li>
+        <li><strong>Metrics everywhere:</strong> "Reduced case processing time by 40% using Batch Apex" beats "worked on Apex projects."</li>
+        <li><strong>Skills block:</strong> Include Apex, LWC, REST/SOAP, SFDX, GitHub Actions, AWS basics, Salesforce version (Winter/Spring releases).</li>
+        <li><strong>Tailor per role:</strong> Match your bullet points to the job description keywords — ATS scores this. Spend 15 mins per application.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">💼 LinkedIn Optimization</div>
+        <span class="badge badge-amber">MONTH 4–5</span>
+      </div>
+      <ul class="checklist">
+        <li><strong>Headline formula:</strong> "Salesforce Developer | Apex · LWC · Integrations | PD1 Certified | Open to Europe"</li>
+        <li><strong>About section:</strong> 3 paragraphs: who you are → what you've built → what you're targeting. Mention Europe explicitly.</li>
+        <li><strong>Featured section:</strong> Pin your portfolio website, best GitHub project, Trailhead public profile.</li>
+        <li><strong>Experience:</strong> Use STAR format bullets. Each role: 3–4 impact bullets with metrics.</li>
+        <li><strong>#OpenToWork:</strong> Set to recruiters-only visibility. Select "Remote" + specific European countries.</li>
+        <li><strong>Activity:</strong> Post 1× per week from Month 4. Topics: what you built, what you learned, architectural decisions. Consistency compounds.</li>
+        <li><strong>500+ connections target:</strong> Add every Salesforce person you engage with in forums, Ohana Slack, etc.</li>
+        <li><strong>Endorsements:</strong> Ask current/former colleagues to endorse Apex, LWC, Salesforce. Reciprocate.</li>
+      </ul>
+    </div>
+
+    <div class="card full">
+      <div class="card-header">
+        <div class="card-title">🌐 Where to Apply in Europe</div>
+        <span class="badge badge-green">MONTH 5–6</span>
+      </div>
+      <div class="three-col">
+        <div>
+          <div class="project-col-label">Primary Platforms</div>
+          <ul class="checklist">
+            <li><strong>LinkedIn Jobs:</strong> Primary channel. Set alerts for "Salesforce Developer" in target countries. Apply within 24 hours of posting — EU jobs fill fast.</li>
+            <li><strong>Salesforce Careers:</strong> careers.salesforce.com — direct roles + SI partner roles.</li>
+            <li><strong>Indeed.co.uk / Indeed.de:</strong> Good for UK and Germany specifically.</li>
+            <li><strong>XING:</strong> Germany/DACH region equivalent of LinkedIn — create a profile.</li>
+          </ul>
+        </div>
+        <div>
+          <div class="project-col-label">Target Company Types</div>
+          <ul class="checklist">
+            <li><strong>Big 4 consulting:</strong> Deloitte, Accenture, PwC, KPMG — all have Salesforce CoEs. Sponsor visas. UK/Germany/Netherlands offices.</li>
+            <li><strong>Salesforce SIs:</strong> Wipro, Cognizant, Capgemini, IBM (EU offices — different from India entity).</li>
+            <li><strong>ISVs:</strong> Veeva Systems (life sciences + SF), Conga, OwnBackup, Copado — often remote-friendly.</li>
+            <li><strong>End-user companies:</strong> Any company with large Salesforce implementation (banks, telcos, pharma).</li>
+          </ul>
+        </div>
+        <div>
+          <div class="project-col-label">Networking Strategy</div>
+          <ul class="checklist">
+            <li><strong>Ohana Slack:</strong> salesforce-ux.slack.com + developer communities — introduce yourself.</li>
+            <li><strong>Salesforce User Groups:</strong> Attend virtual EU-based user groups (London, Amsterdam, Berlin all have active ones).</li>
+            <li><strong>Dreamin' events:</strong> Virtual conferences (London's Calling, Forcelandia) — attend + engage with speakers on LinkedIn after.</li>
+            <li><strong>Recruiters:</strong> Connect with Salesforce-specialist recruiters: Mason Frank, Talent Hub, Hays Technology (EU-based). Message them with your specific ask, not a generic "open to work."</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- SECTION 6: INTERVIEWS -->
+<section id="interviews">
+  <div class="section-label">06 / INTERVIEW PREPARATION</div>
+  <h2>Technical Interview Playbook</h2>
+  <p class="section-intro">European Salesforce interviews typically have 3–4 rounds: HR screening → Technical screening (Apex/LWC) → Architecture discussion → Cultural/Team fit. Prepare for all four.</p>
+
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">Apex Interview Questions</div>
+        <span class="badge badge-blue">ROUND 2</span>
+      </div>
+      <ul class="checklist">
+        <li><strong>"How do you bulkify a trigger?"</strong> — Explain collections, avoid SOQL/DML in loops, use Maps keyed by record Id.</li>
+        <li><strong>"When do you use Batch vs Queueable vs Future?"</strong> — Batch: 50M+ records. Queueable: chaining, complex types. Future: simple async, legacy. Know the limits of each.</li>
+        <li><strong>"What are governor limits and how do you design around them?"</strong> — Name 5 critical ones. Explain how architecture decisions (like using aggregate queries) flow from limits.</li>
+        <li><strong>"How do you handle partial save scenarios?"</strong> — Database.insert with allOrNone=false, iterate SaveResult, rollback strategies.</li>
+        <li><strong>"How do you test an Apex class that makes HTTP callouts?"</strong> — HttpCalloutMock interface, Test.setMock(), StaticResourceCalloutMock.</li>
+        <li><strong>"What is WITH SECURITY_ENFORCED and when do you use it?"</strong> — FLS enforcement in SOQL. Mention stripInaccessible() as the DML equivalent.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">LWC Interview Questions</div>
+        <span class="badge badge-purple">ROUND 2</span>
+      </div>
+      <ul class="checklist">
+        <li><strong>"What's the LWC component lifecycle?"</strong> — constructor → connectedCallback → render → renderedCallback. Know what you can/cannot do in each.</li>
+        <li><strong>"@wire vs imperative Apex call — when to use which?"</strong> — Wire: cacheable, reactive. Imperative: when you need to pass parameters, handle errors explicitly, or call non-cacheable methods.</li>
+        <li><strong>"How do sibling components communicate?"</strong> — Through a common parent via custom events, or a message channel (Lightning Message Service).</li>
+        <li><strong>"What is Locker Service?"</strong> — Security feature. Components cannot access DOM of other namespaces. Explain implications for third-party libraries.</li>
+        <li><strong>"How do you optimize an LWC that's slow?"</strong> — Reduce reactive property updates, lazy load data, cache wire results, use pagination instead of loading all records.</li>
+        <li><strong>"How do you handle errors from Apex in LWC?"</strong> — reduceErrors() utility, error.body.message, error.statusCode, toast notification pattern.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">Integration Questions</div>
+        <span class="badge badge-amber">ROUND 2–3</span>
+      </div>
+      <ul class="checklist">
+        <li><strong>"Platform Events vs Change Data Capture — difference?"</strong> — PE: custom business events (you define payload). CDC: system-generated record change events. PE for custom workflows, CDC for data sync.</li>
+        <li><strong>"How do you handle integration failures?"</strong> — Retry with exponential backoff, dead letter queue pattern using Platform Events, custom logging object, alerting via custom notification.</li>
+        <li><strong>"REST vs SOAP — when to use each?"</strong> — REST: modern, lightweight, JSON. SOAP: legacy systems, banking/enterprise ERPs. Know WSDL, XML envelope structure at a conceptual level.</li>
+        <li><strong>"How do you test a callout class?"</strong> — HttpCalloutMock, mock the response, verify the parsing logic. Emphasize you test both success and error paths.</li>
+        <li><strong>"Named Credentials vs hardcoded endpoints?"</strong> — Always Named Credentials. Explain per-user auth vs per-org, OAuth 2.0 flow, why it's a security requirement not just a best practice.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">Architecture Scenarios</div>
+        <span class="badge badge-green">ROUND 3</span>
+      </div>
+      <ul class="checklist">
+        <li><strong>"Design a system for 50M records migration into Salesforce."</strong> — Batch Apex + External IDs + upsert, data skew considerations, rollback strategy, sandbox testing first, Bulk API 2.0.</li>
+        <li><strong>"Client wants real-time sync between Salesforce and their ERP."</strong> — Assess: truly real-time or near-real-time? Platform Events vs CDC vs middleware (MuleSoft/AWS). Ask about volume, latency SLA.</li>
+        <li><strong>"How would you design the sharing model for a financial services company?"</strong> — OWD private, role hierarchy, sharing rules, territory management. Ask about compliance requirements (GDPR in EU!).</li>
+        <li><strong>"When would you recommend multiple orgs vs one org?"</strong> — Multiple: regulatory isolation (EU data residency!), separate business units, performance concerns. One: simpler, cheaper, easier reporting. Always a trade-off conversation.</li>
+        <li><strong>"How do you approach a Salesforce org with 10 years of technical debt?"</strong> — Assessment → prioritization → unlocked packages for modularization → deprecation strategy. No big bang rewrites.</li>
+      </ul>
+    </div>
+
+    <div class="card full">
+      <div class="card-header">
+        <div class="card-title">Mock Interview Strategy</div>
+        <span class="badge badge-amber">MONTH 5–6</span>
+      </div>
+      <div class="two-col">
+        <ul class="checklist">
+          <li><strong>Week 19–20:</strong> Solo practice — answer questions out loud, record yourself. Watch back for filler words and clarity.</li>
+          <li><strong>Week 21:</strong> Peer mock — find 1–2 people from Salesforce communities (Ohana Slack has mock interview channels) to do a full 45-min technical screen.</li>
+          <li><strong>Week 22+:</strong> Real interviews are your best practice. Apply early, target less-preferred companies first to calibrate.</li>
+          <li><strong>STAR format:</strong> Every behavioural answer: Situation → Task → Action → Result. European interviewers specifically look for structured thinking.</li>
+        </ul>
+        <ul class="checklist">
+          <li><strong>Prepare 3 stories:</strong> A complex technical challenge you solved. A time you disagreed with a design decision. A delivery under tight constraints. These cover 90% of behavioural questions.</li>
+          <li><strong>Architecture whiteboard:</strong> Practice drawing diagrams on paper. In remote interviews, use Excalidraw or draw.io to share screen. Europeans appreciate visual thinkers.</li>
+          <li><strong>Salary negotiation:</strong> Research Glassdoor + LinkedIn Salary for the specific country. UK: £65–90k for Senior Dev. Netherlands: €70–95k. Germany: €70–90k. Always negotiate — first offer is rarely best.</li>
+          <li><strong>Ask good questions:</strong> "How does the team handle technical debt?" "What does the deployment process look like?" These signal seniority.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- SECTION 7: EUROPE -->
+<section id="europe">
+  <div class="section-label">07 / EUROPE-SPECIFIC STRATEGY</div>
+  <h2>Targeting the European Market</h2>
+  <p class="section-intro">Europe is not one market — it's 30+ different hiring contexts. Focus your energy on 2–3 countries max. Spreading thin across all of Europe is a common and costly mistake.</p>
+
+  <div class="country-grid" style="margin-bottom: 28px;">
+    <div class="country-card">
+      <div class="country-name">🇬🇧 United Kingdom</div>
+      <div class="country-visa">SKILLED WORKER VISA</div>
+      <ul class="country-facts">
+        <li>Largest English-language Salesforce market in Europe</li>
+        <li>Sponsoring salary threshold: ~£26,200 (Salesforce roles: £60–90k)</li>
+        <li>Many Big 4 + SIs actively sponsor Indian developers</li>
+        <li>Remote from India to UK company possible (IR35 rules apply for contractors)</li>
+        <li>London-centric but Manchester, Edinburgh also active</li>
+        <li>Recommended: LinkedIn + specialist recruiters (Mason Frank)</li>
+      </ul>
+    </div>
+    <div class="country-card">
+      <div class="country-name">🇳🇱 Netherlands</div>
+      <div class="country-visa">HIGHLY SKILLED MIGRANT VISA (HSM)</div>
+      <ul class="country-facts">
+        <li>Very tech-friendly, high English proficiency, expat-welcoming</li>
+        <li>HSM salary threshold: ~€5,008/month gross (2025)</li>
+        <li>Employer must be IND-recognized (most large companies are)</li>
+        <li>Amsterdam/Rotterdam have active Salesforce hubs</li>
+        <li>Strong for remote-first companies registered in NL</li>
+        <li>Process: 2–4 weeks once job offer secured</li>
+      </ul>
+    </div>
+    <div class="country-card">
+      <div class="country-name">🇩🇪 Germany</div>
+      <div class="country-visa">EU BLUE CARD</div>
+      <ul class="country-facts">
+        <li>Largest EU economy, strong demand for Salesforce in manufacturing/automotive</li>
+        <li>Blue Card: degree + job offer + €45,552 min salary (Salesforce roles far exceed this)</li>
+        <li>German language helpful but not required for tech roles</li>
+        <li>Munich, Berlin, Frankfurt all have Salesforce ecosystems</li>
+        <li>Process can take 6–12 weeks — factor into timeline</li>
+        <li>XING is the German LinkedIn — create a profile</li>
+      </ul>
+    </div>
+    <div class="country-card">
+      <div class="country-name">🇸🇪 Sweden / Nordics</div>
+      <div class="country-visa">WORK PERMIT</div>
+      <ul class="country-facts">
+        <li>High salaries, excellent work-life balance</li>
+        <li>Strong English usage in tech companies</li>
+        <li>Sweden work permit: job offer + union agreement</li>
+        <li>Stockholm has growing Salesforce scene (Spotify, Klarna use SF)</li>
+        <li>Denmark's "Fast-track" scheme for high-demand tech roles</li>
+        <li>Lower volume of Salesforce roles vs UK/DE but higher quality</li>
+      </ul>
+    </div>
+    <div class="country-card">
+      <div class="country-name">🌐 Remote (EU Companies)</div>
+      <div class="country-visa">NO VISA REQUIRED (CONTRACTOR)</div>
+      <ul class="country-facts">
+        <li>Many EU companies hire Indian contractors/freelancers via B2B</li>
+        <li>You invoice them as a sole proprietor or through an agency</li>
+        <li>Rates: €50–80/hour for Senior Salesforce Developer</li>
+        <li>Platforms: Toptal, Andela, Deel (handles compliance)</li>
+        <li>Risk: no job security, requires self-marketing, handle taxes carefully</li>
+        <li>Good bridge strategy while waiting for visa-sponsored role</li>
+      </ul>
+    </div>
+    <div class="country-card">
+      <div class="country-name">💡 Visa Strategy Summary</div>
+      <div class="country-visa">ACTION PLAN</div>
+      <ul class="country-facts">
+        <li>Target UK first — fastest, English, most roles</li>
+        <li>Apply to NL simultaneously — fastest visa processing</li>
+        <li>In your cover letter: explicitly state "I require visa sponsorship"</li>
+        <li>Filter LinkedIn Jobs: check "Sponsor visa" in preferences</li>
+        <li>Mason Frank International specializes in placing Indian SF developers in EU</li>
+        <li>Do NOT hide visa requirement — it wastes everyone's time</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="callout">🛂 GDPR BONUS: Your knowledge of working in a regulated environment is valuable in Europe. Every Salesforce architecture discussion in EU involves GDPR. Study the basics of data residency, right to erasure, data processing agreements — mention this in interviews for an instant credibility boost.</div>
+</section>
+
+
+<!-- SECTION 8: WEEKLY SCHEDULE -->
+<section id="schedule">
+  <div class="section-label">08 / WEEKLY SCHEDULE</div>
+  <h2>How to Fit This Around a 9–5</h2>
+  <p class="section-intro">You have 2–4 hours on weekdays and 5–7 on weekends. That's roughly 25–35 hours per week of learning/building time — equivalent to a part-time university program. Treat it that way.</p>
+
+  <table class="schedule-table" style="margin-bottom: 28px;">
+    <thead>
+      <tr>
+        <th>TIME</th>
+        <th>MON</th>
+        <th>TUE</th>
+        <th>WED</th>
+        <th>THU</th>
+        <th>FRI</th>
+        <th>SAT</th>
+        <th>SUN</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>6:00–7:30 AM</td>
+        <td><strong>Optional:</strong><br>Trailhead / light reading</td>
+        <td><strong>Optional:</strong><br>Trailhead / light reading</td>
+        <td><strong>Optional:</strong><br>Trailhead / light reading</td>
+        <td><strong>Optional:</strong><br>Trailhead / light reading</td>
+        <td><strong>Optional:</strong><br>Trailhead / light reading</td>
+        <td><strong>Deep Work:</strong><br>Project building</td>
+        <td><strong>Cert Study:</strong><br>Practice exams</td>
+      </tr>
+      <tr>
+        <td>9:00–6:00 PM</td>
+        <td colspan="5" style="text-align:center; color: var(--text-muted);">— DAY JOB — (look for opportunities to apply SF skills at work)</td>
+        <td><strong>Deep Work:</strong><br>Project building continued</td>
+        <td><strong>Review:</strong><br>Week recap + planning</td>
+      </tr>
+      <tr>
+        <td>7:00–8:00 PM</td>
+        <td><strong>Skill Study</strong><br>Video / docs / reading</td>
+        <td><strong>Skill Study</strong><br>Video / docs / reading</td>
+        <td><strong>Skill Study</strong><br>Video / docs / reading</td>
+        <td><strong>Cert Prep</strong><br>Practice questions (30)</td>
+        <td><strong>Light:</strong><br>Review week's notes</td>
+        <td><strong>Networking</strong><br>LinkedIn / communities</td>
+        <td><strong>Plan Monday</strong><br>Define exact tasks</td>
+      </tr>
+      <tr>
+        <td>8:00–9:30 PM</td>
+        <td><strong>Hands-on Coding</strong><br>Build / implement</td>
+        <td><strong>Hands-on Coding</strong><br>Build / implement</td>
+        <td><strong>Hands-on Coding</strong><br>Build / implement</td>
+        <td><strong>Hands-on Coding</strong><br>Build / implement</td>
+        <td><strong>Rest</strong><br>Protect this</td>
+        <td><strong>Deep Work</strong><br>Architecture / docs</td>
+        <td><strong>Rest</strong><br>Protect Sundays</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout">⚡ THE NON-NEGOTIABLE RULE: Every weekday session must produce a git commit or a Trailhead badge or completed practice questions. Output, not just consumption. Passive watching of tutorials is the #1 time sink that produces zero skill growth.</div>
+
+  <div class="two-col" style="margin-top: 24px;">
+    <div>
+      <h3 style="margin-bottom: 14px;">Phase-Specific Weekly Focus</h3>
+      <ul class="checklist">
+        <li><strong>Month 1–2 (Foundation):</strong> Mon/Tue/Wed = Apex coding. Thu = Trailhead/cert questions. Sat = Project build. Sun = Review + plan.</li>
+        <li><strong>Month 2–3 (Intermediate):</strong> Mon/Tue = LWC. Wed/Thu = Integrations. Fri = LinkedIn post. Sat/Sun = Projects.</li>
+        <li><strong>Month 3–4 (Advanced):</strong> Mon/Tue = Architecture reading + design patterns. Wed/Thu = AWS free tier experiments. Sat = Project 4 start. Sun = PD2 prep begins.</li>
+        <li><strong>Month 5–6 (Job-Ready):</strong> Mon = Interview prep. Tue/Wed = Apply + follow up. Thu = Mock interview. Sat = Portfolio polish. Sun = Networking.</li>
+      </ul>
+    </div>
+    <div>
+      <h3 style="margin-bottom: 14px;">Energy Management Rules</h3>
+      <ul class="checklist">
+        <li><strong>Single focus:</strong> One cert at a time. One major project at a time. Split attention = mediocre everything.</li>
+        <li><strong>Hard stop at 10:00 PM:</strong> Sleep debt destroys learning efficiency. 7 hours sleep is non-negotiable.</li>
+        <li><strong>Friday evenings off:</strong> Full rest prevents burnout in Month 3, which is when most people quit.</li>
+        <li><strong>Track everything:</strong> Use a simple Notion board. "In Progress," "Done," "This Week." Weekly review every Sunday, 15 minutes.</li>
+        <li><strong>Day job as an asset:</strong> If you touch Salesforce at work, apply that week's learning there. Real-world application 10× accelerates retention.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+<!-- SECTION 9: MILESTONES -->
+<section id="milestones">
+  <div class="section-label">09 / MILESTONES & COMMON MISTAKES</div>
+  <h2>Track Progress. Catch Drift Early.</h2>
+  <p class="section-intro">Use these checkpoints at the end of each month. If you're missing 2+ items, you need to adjust pace, not skip the checkpoint.</p>
+
+  <div class="milestone-grid" style="margin-bottom: 36px;">
+    <div class="milestone m1">
+      <div class="milestone-month">END OF MONTH 1</div>
+      <ul class="milestone-check">
+        <li>Apex trigger + handler pattern implemented in dev org</li>
+        <li>Batch + Queueable + Scheduled jobs built and tested</li>
+        <li>SFDX project on GitHub with clean structure</li>
+        <li>PD1 mock exam score ≥ 68%</li>
+        <li>Trailhead PD1 Prep Superbadge complete</li>
+        <li>LWC: built first data-binding component</li>
+      </ul>
+    </div>
+    <div class="milestone m2">
+      <div class="milestone-month">END OF MONTH 2</div>
+      <ul class="milestone-check">
+        <li>✅ PD1 Certification PASSED</li>
+        <li>Project 1 (Case Management) on GitHub with README</li>
+        <li>GitHub Actions: basic SFDX deployment pipeline working</li>
+        <li>LWC: wire service, custom events, parent-child pattern</li>
+        <li>LinkedIn updated with PD1 cert + new skills</li>
+        <li>Connected with 5+ Salesforce professionals on LinkedIn</li>
+      </ul>
+    </div>
+    <div class="milestone m3">
+      <div class="milestone-month">END OF MONTH 3</div>
+      <ul class="milestone-check">
+        <li>✅ App Builder Certification PASSED</li>
+        <li>Project 2 (LWC Library) live on GitHub Pages</li>
+        <li>Project 3 (Integration Hub) built and documented</li>
+        <li>First LinkedIn post published (at least 1)</li>
+        <li>AWS free tier account: built at least one Lambda function</li>
+        <li>PD2 study plan finalized, first module started</li>
+      </ul>
+    </div>
+    <div class="milestone m4">
+      <div class="milestone-month">END OF MONTH 4</div>
+      <ul class="milestone-check">
+        <li>Project 4 (Order Management) 70% complete</li>
+        <li>PD2 mock exam score ≥ 60%</li>
+        <li>Enterprise Patterns book: 50% read</li>
+        <li>Architecture diagrams: can whiteboard any project in 5 mins</li>
+        <li>Resume v1 drafted in European format</li>
+        <li>Personal portfolio website live</li>
+      </ul>
+    </div>
+    <div class="milestone m5">
+      <div class="milestone-month">END OF MONTH 5</div>
+      <ul class="milestone-check">
+        <li>✅ PD2 Certification PASSED</li>
+        <li>Project 4 complete with full documentation + Loom video</li>
+        <li>Resume finalized, reviewed by a peer</li>
+        <li>LinkedIn fully optimized, #OpenToWork set</li>
+        <li>15+ job applications submitted</li>
+        <li>Connected with 3+ EU-based Salesforce recruiters</li>
+        <li>First recruiter screening call completed</li>
+      </ul>
+    </div>
+    <div class="milestone m6">
+      <div class="milestone-month">END OF MONTH 6</div>
+      <ul class="milestone-check">
+        <li>30+ applications submitted</li>
+        <li>3+ technical interviews completed</li>
+        <li>At least 1 offer received OR final stage pipeline</li>
+        <li>Weekly mock interviews ongoing</li>
+        <li>Salary research done per target country</li>
+        <li>Visa process understood for target country</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+  <h3 style="margin-bottom: 18px; font-size: 16px;">⚠️ Common Mistakes — Avoid These</h3>
+  <div class="mistake-list">
+    <div class="mistake">
+      <div class="mistake-num">#01</div>
+      <div class="mistake-text">
+        <strong>Tutorial Hell: Learning without building</strong>
+        Watching 40 hours of Apex tutorials without writing code produces zero marketable skill. For every 1 hour of tutorial, spend 2 hours building something. Your fingers need to remember this, not just your brain.
+      </div>
+    </div>
+    <div class="mistake">
+      <div class="mistake-num">#02</div>
+      <div class="mistake-text">
+        <strong>Cert Hoarding: Collecting certs instead of skills</strong>
+        3 certs with shallow depth loses to 1 cert with deep project experience. The PD2 you pass after actually building enterprise-pattern projects is a fundamentally different interview than a PD2 you cramble through.
+      </div>
+    </div>
+    <div class="mistake">
+      <div class="mistake-num">#03</div>
+      <div class="mistake-text">
+        <strong>Applying too early with an empty GitHub</strong>
+        A European recruiter who clicks your GitHub and finds 0 repos will discard your application. Apply only after Project 1 is live. Wait for Project 4 before targeting senior roles.
+      </div>
+    </div>
+    <div class="mistake">
+      <div class="mistake-num">#04</div>
+      <div class="mistake-text">
+        <strong>Generic resume sent to 100 companies</strong>
+        European ATS systems score keyword match. A resume not tailored to the job description fails ATS before a human sees it. Send 10 highly tailored applications instead of 100 generic ones.
+      </div>
+    </div>
+    <div class="mistake">
+      <div class="mistake-num">#05</div>
+      <div class="mistake-text">
+        <strong>Hiding visa requirement</strong>
+        Applying as if you're local and springing visa sponsorship mid-process wastes weeks of your time and destroys recruiter relationships. Be upfront in your cover letter and LinkedIn profile.
+      </div>
+    </div>
+    <div class="mistake">
+      <div class="mistake-num">#06</div>
+      <div class="mistake-text">
+        <strong>No networking until Month 6</strong>
+        60–70% of tech jobs in Europe fill through referrals. Start engaging in Salesforce communities from Month 1. A warm introduction in Month 5 is worth 20 cold applications.
+      </div>
+    </div>
+    <div class="mistake">
+      <div class="mistake-num">#07</div>
+      <div class="mistake-text">
+        <strong>Month 3 burnout</strong>
+        Nearly everyone hits a wall at Month 3. The novelty has worn off but the results haven't arrived yet. This is the most common dropout point. Protect your Friday evenings. Take one full weekend off per month. This is not optional — it's structural maintenance for a 6-month sprint.
+      </div>
+    </div>
+    <div class="mistake">
+      <div class="mistake-num">#08</div>
+      <div class="mistake-text">
+        <strong>Underpricing yourself in salary negotiations</strong>
+        Indian developers in Europe consistently undervalue their skills relative to market rates. Research Glassdoor + LinkedIn Salary for the specific country. A Salesforce Senior Developer in UK commands £65–85k. Don't accept £45k to "get a foot in the door."
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- SECTION 10: LIFESTYLE -->
+<section id="lifestyle">
+  <div class="section-label">10 / LIFESTYLE STRATEGY</div>
+  <h2>Optimising Time, Energy & Consistency</h2>
+  <p class="section-intro">This is a 6-month marathon, not a sprint. The person who burns bright for 8 weeks then fades will lose to the person who does 2 hours of focused work every single day for 6 months.</p>
+
+  <div class="lifestyle-grid">
+    <div class="life-card">
+      <div class="life-icon">🧠</div>
+      <div class="life-title">Protect Deep Work</div>
+      <div class="life-desc">Your 8:00–9:30 PM coding block is sacred. Phone on Do Not Disturb. Laptop notifications off. No WhatsApp groups during this time. Use a physical "do not disturb" signal if you live with family. This is non-negotiable — it's only 90 minutes but it compounds enormously over 6 months.</div>
+    </div>
+    <div class="life-card">
+      <div class="life-icon">😴</div>
+      <div class="life-title">Sleep is Learning Infrastructure</div>
+      <div class="life-desc">Sleep deprivation reduces memory consolidation by ~40%. If you sacrifice sleep for learning time, you're studying at 60% efficiency. 7 hours minimum. Study sessions after midnight are almost entirely wasted. The night before a certification exam, stop studying at 9 PM and sleep early — this is proven to improve recall.</div>
+    </div>
+    <div class="life-card">
+      <div class="life-icon">📋</div>
+      <div class="life-title">Weekly Review Ritual (Sundays, 20 min)</div>
+      <div class="life-desc">Every Sunday: what did I build/learn? What's behind schedule? What does this week look like? Update your Notion/Trello board. This prevents silent drift — the pattern where you feel busy but aren't making progress. Most people skip this step and regret it at Month 3.</div>
+    </div>
+    <div class="life-card">
+      <div class="life-icon">🎯</div>
+      <div class="life-title">One Thing Per Session Rule</div>
+      <div class="life-desc">Each coding session has one specific goal: "Implement the trigger handler for Case with bulkification" — not "work on Apex." Specificity prevents the trap of feeling productive while actually context-switching between half-finished things. Write the goal before you open VS Code.</div>
+    </div>
+    <div class="life-card">
+      <div class="life-icon">🔄</div>
+      <div class="life-title">Public Accountability</div>
+      <div class="life-desc">Post your Trailhead milestone on LinkedIn. Tweet when you pass a cert. Share your GitHub commit streak. This is not vanity — it creates a social commitment mechanism. The days you don't feel like coding, your public streak will pull you through. The Salesforce community also actively engages with progress posts, giving you visibility with future employers.</div>
+    </div>
+    <div class="life-card">
+      <div class="life-icon">🏃</div>
+      <div class="life-title">Physical Reset (3× per week, minimum)</div>
+      <div class="life-desc">30-minute walk or any exercise. Non-negotiable. Sedentary deep work for 6 months leads to cognitive decline and mood issues that undermine everything else. Exercise is not a luxury you'll add when things calm down — it's load-bearing infrastructure for the plan. Morning walks before work are ideal; they prime the brain for the day.</div>
+    </div>
+    <div class="life-card">
+      <div class="life-icon">📵</div>
+      <div class="life-title">Social Media Strategy</div>
+      <div class="life-desc">LinkedIn: 30 min/day MAX (use for networking, not scrolling). All other social media off during your learning hours. Install a browser extension like Freedom to block distracting sites during 7–10 PM. This single change recovers 1–2 hours per day for most people.</div>
+    </div>
+    <div class="life-card">
+      <div class="life-icon">🧩</div>
+      <div class="life-title">Manage Expectations at Home</div>
+      <div class="life-desc">If you live with family, have an explicit conversation: "For the next 6 months, 7–10 PM is my work time. This is how I'm changing our financial trajectory." Getting buy-in from people around you removes the invisible friction that derails plans. Family support compounds your available energy.</div>
+    </div>
+  </div>
+
+  <div class="callout-green callout" style="margin-top: 28px;">
+    🏁 FINAL THOUGHT: You have all the raw material — 4 years of experience, an Admin cert, API testing depth, and a clear target. What separates people who make this transition from those who don't is not intelligence or talent. It is consistency over 180 days. Build the system. Trust the system. Execute.
+  </div>
+</section>
+
+
+<!-- FOOTER -->
+<div class="doc-footer">
+  <div>
+    <div class="footer-text">Salesforce Europe Roadmap · Personalised for your profile</div>
+    <div class="footer-text" style="margin-top: 4px;">ADM-201 holder · Apex + Flows + Admin exposure · 4 years experience · Remote + Relocation open</div>
+  </div>
+  <div class="footer-emphasis">Month 6 target: Active offer stage in Europe</div>
+</div>
+
 </body>
-
 </html>
