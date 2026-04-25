@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Salesforce Europe Roadmap — 6-Month Execution Plan</title>
+<title>Salesforce + AI Europe Roadmap — 6-Month Execution Plan</title>
 <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -15,15 +15,18 @@
     --border-bright: #2a2a40;
     --amber: #f5a623;
     --amber-dim: #b87a1a;
-    --amber-glow: rgba(245, 166, 35, 0.12);
+    --amber-glow: rgba(245,166,35,0.12);
+    --cyan: #22d3ee;
+    --cyan-dim: rgba(34,211,238,0.12);
+    --cyan-border: rgba(34,211,238,0.25);
     --green: #3dd68c;
-    --green-dim: rgba(61, 214, 140, 0.15);
+    --green-dim: rgba(61,214,140,0.15);
     --red: #ff5f57;
-    --red-dim: rgba(255, 95, 87, 0.12);
+    --red-dim: rgba(255,95,87,0.12);
     --blue: #60a5fa;
-    --blue-dim: rgba(96, 165, 250, 0.12);
+    --blue-dim: rgba(96,165,250,0.12);
     --purple: #a78bfa;
-    --purple-dim: rgba(167, 139, 250, 0.12);
+    --purple-dim: rgba(167,139,250,0.12);
     --text: #e8e8f0;
     --text-dim: #8888a8;
     --text-muted: #55556a;
@@ -31,846 +34,222 @@
     --display: 'Syne', sans-serif;
     --body: 'Inter', sans-serif;
   }
-
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-
-  body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: var(--body);
-    font-size: 14px;
-    line-height: 1.7;
-    overflow-x: hidden;
-  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:var(--bg); color:var(--text); font-family:var(--body); font-size:14px; line-height:1.7; overflow-x:hidden; }
 
   /* HEADER */
-  .header {
-    background: var(--bg2);
-    border-bottom: 1px solid var(--border);
-    padding: 48px 60px 40px;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .header::before {
-    content: '';
-    position: absolute;
-    top: -60px; right: -60px;
-    width: 400px; height: 400px;
-    background: radial-gradient(circle, rgba(245,166,35,0.08) 0%, transparent 70%);
-    pointer-events: none;
-  }
-
-  .header-tag {
-    font-family: var(--mono);
-    font-size: 11px;
-    color: var(--amber);
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    margin-bottom: 16px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-
-  .header-tag::before {
-    content: '';
-    display: inline-block;
-    width: 20px; height: 1px;
-    background: var(--amber);
-  }
-
-  h1 {
-    font-family: var(--display);
-    font-size: clamp(28px, 4vw, 48px);
-    font-weight: 800;
-    line-height: 1.1;
-    letter-spacing: -1px;
-    color: #fff;
-    margin-bottom: 12px;
-  }
-
-  h1 span { color: var(--amber); }
-
-  .header-sub {
-    font-size: 15px;
-    color: var(--text-dim);
-    max-width: 600px;
-    margin-bottom: 28px;
-  }
-
-  .header-meta {
-    display: flex;
-    gap: 24px;
-    flex-wrap: wrap;
-  }
-
-  .meta-chip {
-    font-family: var(--mono);
-    font-size: 11px;
-    background: var(--amber-glow);
-    border: 1px solid rgba(245,166,35,0.25);
-    color: var(--amber);
-    padding: 5px 12px;
-    border-radius: 2px;
-  }
+  .header { background:var(--bg2); border-bottom:1px solid var(--border); padding:48px 60px 40px; position:relative; overflow:hidden; }
+  .header::before { content:''; position:absolute; top:-60px; right:-60px; width:400px; height:400px; background:radial-gradient(circle,rgba(34,211,238,0.07) 0%,transparent 70%); pointer-events:none; }
+  .header::after { content:''; position:absolute; bottom:-80px; left:200px; width:300px; height:300px; background:radial-gradient(circle,rgba(245,166,35,0.06) 0%,transparent 70%); pointer-events:none; }
+  .header-tag { font-family:var(--mono); font-size:11px; color:var(--cyan); letter-spacing:3px; text-transform:uppercase; margin-bottom:16px; display:flex; align-items:center; gap:10px; }
+  .header-tag::before { content:''; display:inline-block; width:20px; height:1px; background:var(--cyan); }
+  h1 { font-family:var(--display); font-size:clamp(28px,4vw,48px); font-weight:800; line-height:1.1; letter-spacing:-1px; color:#fff; margin-bottom:12px; }
+  h1 .sf { color:var(--amber); }
+  h1 .ai { color:var(--cyan); }
+  .header-sub { font-size:15px; color:var(--text-dim); max-width:640px; margin-bottom:28px; }
+  .header-meta { display:flex; gap:12px; flex-wrap:wrap; }
+  .meta-chip { font-family:var(--mono); font-size:10px; padding:5px 12px; border-radius:2px; }
+  .meta-amber { background:var(--amber-glow); border:1px solid rgba(245,166,35,0.25); color:var(--amber); }
+  .meta-cyan { background:var(--cyan-dim); border:1px solid var(--cyan-border); color:var(--cyan); }
+  .meta-green { background:var(--green-dim); border:1px solid rgba(61,214,140,0.25); color:var(--green); }
 
   /* NAV */
-  .toc {
-    background: var(--bg3);
-    border-bottom: 1px solid var(--border);
-    padding: 14px 60px;
-    display: flex;
-    gap: 4px;
-    flex-wrap: wrap;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-  }
+  .toc { background:var(--bg3); border-bottom:1px solid var(--border); padding:14px 60px; display:flex; gap:4px; flex-wrap:wrap; position:sticky; top:0; z-index:100; }
+  .toc a { font-family:var(--mono); font-size:10px; color:var(--text-muted); text-decoration:none; padding:4px 10px; border-radius:2px; letter-spacing:0.5px; transition:all 0.15s; }
+  .toc a:hover { color:var(--cyan); background:var(--cyan-dim); }
+  .toc a.sf-link:hover { color:var(--amber); background:var(--amber-glow); }
 
-  .toc a {
-    font-family: var(--mono);
-    font-size: 10px;
-    color: var(--text-muted);
-    text-decoration: none;
-    padding: 4px 10px;
-    border-radius: 2px;
-    letter-spacing: 0.5px;
-    transition: all 0.15s;
-  }
+  /* SECTIONS */
+  section { padding:52px 60px; border-bottom:1px solid var(--border); }
+  section:last-child { border-bottom:none; }
+  .section-label { font-family:var(--mono); font-size:10px; letter-spacing:3px; text-transform:uppercase; margin-bottom:8px; }
+  .sl-sf { color:var(--amber); }
+  .sl-ai { color:var(--cyan); }
+  .sl-mixed { background:linear-gradient(90deg,var(--amber),var(--cyan)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+  h2 { font-family:var(--display); font-size:24px; font-weight:800; color:#fff; margin-bottom:6px; letter-spacing:-0.5px; }
+  h3 { font-family:var(--display); font-size:15px; font-weight:700; color:var(--text); margin-bottom:10px; }
+  .section-intro { font-size:14px; color:var(--text-dim); max-width:720px; margin-bottom:32px; border-left:2px solid var(--cyan); padding-left:16px; }
+  .section-intro.sf { border-left-color:var(--amber); }
 
-  .toc a:hover {
-    color: var(--amber);
-    background: var(--amber-glow);
-  }
-
-  /* LAYOUT */
-  .container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 40px;
-  }
-
-  section {
-    padding: 56px 60px;
-    border-bottom: 1px solid var(--border);
-  }
-
-  section:last-child { border-bottom: none; }
-
-  .section-label {
-    font-family: var(--mono);
-    font-size: 10px;
-    color: var(--amber);
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    margin-bottom: 8px;
-  }
-
-  h2 {
-    font-family: var(--display);
-    font-size: 24px;
-    font-weight: 800;
-    color: #fff;
-    margin-bottom: 6px;
-    letter-spacing: -0.5px;
-  }
-
-  h3 {
-    font-family: var(--display);
-    font-size: 16px;
-    font-weight: 700;
-    color: var(--text);
-    margin-bottom: 10px;
-  }
-
-  .section-intro {
-    font-size: 14px;
-    color: var(--text-dim);
-    max-width: 700px;
-    margin-bottom: 36px;
-    border-left: 2px solid var(--amber);
-    padding-left: 16px;
-  }
+  /* ROLE CARDS */
+  .role-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:0; border:1px solid var(--border-bright); border-radius:4px; overflow:hidden; margin-bottom:28px; }
+  .role-card { padding:28px 24px; border-right:1px solid var(--border-bright); position:relative; }
+  .role-card:last-child { border-right:none; }
+  .role-card.target { border:2px solid var(--cyan) !important; border-radius:4px; margin:-1px; }
+  .role-badge { font-family:var(--mono); font-size:9px; letter-spacing:2px; text-transform:uppercase; margin-bottom:10px; }
+  .role-title { font-family:var(--display); font-weight:800; font-size:15px; color:#fff; margin-bottom:6px; }
+  .role-salary { font-family:var(--mono); font-size:11px; color:var(--text-muted); margin-bottom:14px; }
+  .role-desc { font-size:12.5px; color:var(--text-dim); line-height:1.6; margin-bottom:14px; }
+  .target-flag { position:absolute; top:12px; right:12px; font-family:var(--mono); font-size:9px; background:var(--cyan-dim); border:1px solid var(--cyan-border); color:var(--cyan); padding:3px 8px; border-radius:2px; }
 
   /* PHASE TIMELINE */
-  .phase-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 0;
-    border: 1px solid var(--border-bright);
-    border-radius: 4px;
-    overflow: hidden;
-    margin-bottom: 40px;
-  }
-
-  .phase {
-    padding: 24px 20px;
-    border-right: 1px solid var(--border-bright);
-    position: relative;
-  }
-
-  .phase:last-child { border-right: none; }
-
-  .phase-1 { background: rgba(96,165,250,0.05); }
-  .phase-2 { background: rgba(167,139,250,0.05); }
-  .phase-3 { background: rgba(245,166,35,0.05); }
-  .phase-4 { background: rgba(61,214,140,0.05); }
-
-  .phase-num {
-    font-family: var(--mono);
-    font-size: 10px;
-    letter-spacing: 2px;
-    margin-bottom: 6px;
-  }
-
-  .phase-1 .phase-num { color: var(--blue); }
-  .phase-2 .phase-num { color: var(--purple); }
-  .phase-3 .phase-num { color: var(--amber); }
-  .phase-4 .phase-num { color: var(--green); }
-
-  .phase-title {
-    font-family: var(--display);
-    font-weight: 700;
-    font-size: 14px;
-    color: #fff;
-    margin-bottom: 4px;
-  }
-
-  .phase-weeks {
-    font-family: var(--mono);
-    font-size: 11px;
-    color: var(--text-muted);
-    margin-bottom: 12px;
-  }
-
-  .phase-tags {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-  }
-
-  .ptag {
-    font-size: 11px;
-    color: var(--text-dim);
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
-
-  .ptag::before {
-    content: '▸';
-    font-size: 9px;
-  }
+  .phase-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:0; border:1px solid var(--border-bright); border-radius:4px; overflow:hidden; margin-bottom:28px; }
+  .phase { padding:22px 18px; border-right:1px solid var(--border-bright); }
+  .phase:last-child { border-right:none; }
+  .phase-1 { background:rgba(96,165,250,0.05); }
+  .phase-2 { background:rgba(34,211,238,0.05); }
+  .phase-3 { background:rgba(245,166,35,0.05); }
+  .phase-4 { background:rgba(61,214,140,0.05); }
+  .phase-num { font-family:var(--mono); font-size:10px; letter-spacing:2px; margin-bottom:6px; }
+  .phase-1 .phase-num { color:var(--blue); }
+  .phase-2 .phase-num { color:var(--cyan); }
+  .phase-3 .phase-num { color:var(--amber); }
+  .phase-4 .phase-num { color:var(--green); }
+  .phase-title { font-family:var(--display); font-weight:700; font-size:13px; color:#fff; margin-bottom:4px; }
+  .phase-weeks { font-family:var(--mono); font-size:10px; color:var(--text-muted); margin-bottom:10px; }
+  .ptag { font-size:11px; color:var(--text-dim); padding-left:14px; position:relative; margin-bottom:4px; line-height:1.4; }
+  .ptag::before { content:'▸'; position:absolute; left:0; font-size:9px; color:var(--amber); }
+  .ptag.ai-tag::before { color:var(--cyan); }
 
   /* CARDS */
-  .card-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
-    margin-bottom: 24px;
-  }
-
-  .card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    padding: 20px 22px;
-  }
-
-  .card.full { grid-column: 1 / -1; }
-
-  .card-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 14px;
-  }
-
-  .card-title {
-    font-family: var(--display);
-    font-size: 13px;
-    font-weight: 700;
-    color: #fff;
-  }
-
-  .badge {
-    font-family: var(--mono);
-    font-size: 10px;
-    padding: 3px 8px;
-    border-radius: 2px;
-    letter-spacing: 0.5px;
-  }
-
-  .badge-blue { background: var(--blue-dim); color: var(--blue); border: 1px solid rgba(96,165,250,0.2); }
-  .badge-purple { background: var(--purple-dim); color: var(--purple); border: 1px solid rgba(167,139,250,0.2); }
-  .badge-amber { background: var(--amber-glow); color: var(--amber); border: 1px solid rgba(245,166,35,0.2); }
-  .badge-green { background: var(--green-dim); color: var(--green); border: 1px solid rgba(61,214,140,0.2); }
-  .badge-red { background: var(--red-dim); color: var(--red); border: 1px solid rgba(255,95,87,0.2); }
+  .card-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:16px; margin-bottom:24px; }
+  .card { background:var(--card); border:1px solid var(--border); border-radius:4px; padding:20px 22px; }
+  .card.full { grid-column:1/-1; }
+  .card.ai-card { border-color:rgba(34,211,238,0.2); }
+  .card.sf-card { border-color:rgba(245,166,35,0.15); }
+  .card-header { display:flex; align-items:center; justify-content:space-between; margin-bottom:14px; gap:12px; }
+  .card-title { font-family:var(--display); font-size:13px; font-weight:700; color:#fff; }
+  .badge { font-family:var(--mono); font-size:10px; padding:3px 8px; border-radius:2px; letter-spacing:0.5px; white-space:nowrap; }
+  .badge-blue { background:var(--blue-dim); color:var(--blue); border:1px solid rgba(96,165,250,0.2); }
+  .badge-purple { background:var(--purple-dim); color:var(--purple); border:1px solid rgba(167,139,250,0.2); }
+  .badge-amber { background:var(--amber-glow); color:var(--amber); border:1px solid rgba(245,166,35,0.2); }
+  .badge-green { background:var(--green-dim); color:var(--green); border:1px solid rgba(61,214,140,0.2); }
+  .badge-cyan { background:var(--cyan-dim); color:var(--cyan); border:1px solid var(--cyan-border); }
+  .badge-red { background:var(--red-dim); color:var(--red); border:1px solid rgba(255,95,87,0.2); }
 
   /* CHECKLIST */
-  .checklist {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 7px;
-  }
+  .checklist { list-style:none; display:flex; flex-direction:column; gap:7px; }
+  .checklist li { font-size:12.5px; color:var(--text-dim); padding-left:18px; position:relative; line-height:1.5; }
+  .checklist li::before { content:'→'; position:absolute; left:0; color:var(--amber); font-size:10px; top:2px; }
+  .checklist li.ai-item::before { color:var(--cyan); }
+  .checklist li strong { color:var(--text); font-weight:600; }
 
-  .checklist li {
-    font-size: 13px;
-    color: var(--text-dim);
-    padding-left: 18px;
-    position: relative;
-    line-height: 1.5;
-  }
+  /* AI INTEGRATION STRATEGY */
+  .ai-layer { background:rgba(34,211,238,0.04); border:1px solid rgba(34,211,238,0.15); border-radius:4px; padding:20px 22px; margin-bottom:16px; }
+  .ai-layer-title { font-family:var(--display); font-weight:700; font-size:14px; color:var(--cyan); margin-bottom:10px; display:flex; align-items:center; gap:10px; }
+  .ai-layer-title::after { content:''; flex:1; height:1px; background:rgba(34,211,238,0.15); }
+  .ai-arch-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-top:12px; }
+  .ai-arch-step { background:var(--bg3); border:1px solid var(--border); border-radius:4px; padding:14px; }
+  .ai-arch-step-num { font-family:var(--mono); font-size:10px; color:var(--cyan); margin-bottom:6px; letter-spacing:1px; }
+  .ai-arch-step-title { font-family:var(--display); font-weight:700; font-size:12px; color:#fff; margin-bottom:6px; }
+  .ai-arch-step-desc { font-size:11.5px; color:var(--text-dim); line-height:1.5; }
 
-  .checklist li::before {
-    content: '→';
-    position: absolute;
-    left: 0;
-    color: var(--amber);
-    font-size: 11px;
-    top: 1px;
-  }
-
-  .checklist li strong {
-    color: var(--text);
-    font-weight: 600;
-  }
-
-  /* CERT TIMELINE */
-  .cert-track {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-    position: relative;
-  }
-
-  .cert-track::before {
-    content: '';
-    position: absolute;
-    left: 24px;
-    top: 0; bottom: 0;
-    width: 1px;
-    background: var(--border-bright);
-  }
-
-  .cert-item {
-    display: flex;
-    gap: 20px;
-    padding: 0 0 28px 0;
-    position: relative;
-  }
-
-  .cert-item:last-child { padding-bottom: 0; }
-
-  .cert-dot {
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: var(--mono);
-    font-size: 12px;
-    font-weight: 700;
-    flex-shrink: 0;
-    position: relative;
-    z-index: 1;
-  }
-
-  .cert-done { background: var(--green-dim); border: 1px solid rgba(61,214,140,0.3); color: var(--green); }
-  .cert-pri { background: var(--amber-glow); border: 1px solid rgba(245,166,35,0.3); color: var(--amber); }
-  .cert-sec { background: var(--blue-dim); border: 1px solid rgba(96,165,250,0.2); color: var(--blue); }
-  .cert-str { background: var(--purple-dim); border: 1px solid rgba(167,139,250,0.2); color: var(--purple); }
-
-  .cert-body { flex: 1; padding-top: 10px; }
-
-  .cert-name {
-    font-family: var(--display);
-    font-size: 14px;
-    font-weight: 700;
-    color: #fff;
-    margin-bottom: 3px;
-  }
-
-  .cert-meta {
-    font-family: var(--mono);
-    font-size: 10px;
-    color: var(--text-muted);
-    margin-bottom: 8px;
-    letter-spacing: 0.5px;
-  }
-
-  .cert-desc {
-    font-size: 12.5px;
-    color: var(--text-dim);
-    line-height: 1.6;
-  }
+  /* CERT TRACK */
+  .cert-track { display:flex; flex-direction:column; gap:0; position:relative; }
+  .cert-track::before { content:''; position:absolute; left:24px; top:0; bottom:0; width:1px; background:var(--border-bright); }
+  .cert-item { display:flex; gap:20px; padding:0 0 26px 0; position:relative; }
+  .cert-item:last-child { padding-bottom:0; }
+  .cert-dot { width:48px; height:48px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-family:var(--mono); font-size:11px; font-weight:700; flex-shrink:0; position:relative; z-index:1; }
+  .cert-done { background:var(--green-dim); border:1px solid rgba(61,214,140,0.3); color:var(--green); }
+  .cert-ai { background:var(--cyan-dim); border:1px solid var(--cyan-border); color:var(--cyan); }
+  .cert-pri { background:var(--amber-glow); border:1px solid rgba(245,166,35,0.3); color:var(--amber); }
+  .cert-sec { background:var(--blue-dim); border:1px solid rgba(96,165,250,0.2); color:var(--blue); }
+  .cert-str { background:var(--purple-dim); border:1px solid rgba(167,139,250,0.2); color:var(--purple); }
+  .cert-body { flex:1; padding-top:10px; }
+  .cert-name { font-family:var(--display); font-size:14px; font-weight:700; color:#fff; margin-bottom:3px; }
+  .cert-meta { font-family:var(--mono); font-size:10px; color:var(--text-muted); margin-bottom:8px; letter-spacing:0.5px; }
+  .cert-desc { font-size:12.5px; color:var(--text-dim); line-height:1.6; }
 
   /* PROJECT CARDS */
-  .project-card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    padding: 24px;
-    margin-bottom: 16px;
-  }
+  .project-card { background:var(--card); border:1px solid var(--border); border-radius:4px; padding:24px; margin-bottom:16px; }
+  .project-card.ai-project { border-color:rgba(34,211,238,0.2); }
+  .project-card.flagship { border-color:rgba(34,211,238,0.4); background:rgba(34,211,238,0.03); }
+  .project-header { display:flex; align-items:flex-start; justify-content:space-between; margin-bottom:12px; gap:12px; }
+  .project-number { font-family:var(--mono); font-size:10px; color:var(--text-muted); letter-spacing:2px; }
+  .project-title { font-family:var(--display); font-size:15px; font-weight:700; color:#fff; margin-bottom:3px; }
+  .project-desc { font-size:13px; color:var(--text-dim); margin-bottom:16px; line-height:1.6; }
+  .project-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
+  .project-col-label { font-family:var(--mono); font-size:9px; letter-spacing:2px; color:var(--text-muted); text-transform:uppercase; margin-bottom:8px; }
+  .tech-tags { display:flex; flex-wrap:wrap; gap:6px; }
+  .tech-tag { font-family:var(--mono); font-size:10px; background:var(--bg3); border:1px solid var(--border-bright); color:var(--text-dim); padding:3px 8px; border-radius:2px; }
+  .tech-tag.ai { background:var(--cyan-dim); border-color:var(--cyan-border); color:var(--cyan); }
+  .tech-tag.sf { background:var(--amber-glow); border-color:rgba(245,166,35,0.2); color:var(--amber); }
 
-  .project-header {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    margin-bottom: 12px;
-    gap: 12px;
-  }
+  /* ARCH FLOW */
+  .arch-flow { display:flex; align-items:center; gap:0; margin:16px 0; flex-wrap:wrap; }
+  .arch-node { background:var(--bg3); border:1px solid var(--border-bright); border-radius:4px; padding:10px 14px; font-size:11px; font-family:var(--mono); color:var(--text-dim); text-align:center; min-width:100px; }
+  .arch-node.ai-node { background:var(--cyan-dim); border-color:var(--cyan-border); color:var(--cyan); }
+  .arch-node.sf-node { background:var(--amber-glow); border-color:rgba(245,166,35,0.2); color:var(--amber); }
+  .arch-arrow { color:var(--text-muted); font-size:16px; padding:0 6px; flex-shrink:0; }
 
-  .project-number {
-    font-family: var(--mono);
-    font-size: 10px;
-    color: var(--text-muted);
-    letter-spacing: 2px;
-  }
-
-  .project-title {
-    font-family: var(--display);
-    font-size: 15px;
-    font-weight: 700;
-    color: #fff;
-    margin-bottom: 3px;
-  }
-
-  .project-desc {
-    font-size: 13px;
-    color: var(--text-dim);
-    margin-bottom: 16px;
-    line-height: 1.6;
-  }
-
-  .project-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
-  }
-
-  .project-col-label {
-    font-family: var(--mono);
-    font-size: 9px;
-    letter-spacing: 2px;
-    color: var(--text-muted);
-    text-transform: uppercase;
-    margin-bottom: 8px;
-  }
-
-  .tech-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-  }
-
-  .tech-tag {
-    font-family: var(--mono);
-    font-size: 10px;
-    background: var(--bg3);
-    border: 1px solid var(--border-bright);
-    color: var(--text-dim);
-    padding: 3px 8px;
-    border-radius: 2px;
-  }
-
-  /* SCHEDULE TABLE */
-  .schedule-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 13px;
-  }
-
-  .schedule-table thead th {
-    font-family: var(--mono);
-    font-size: 10px;
-    letter-spacing: 2px;
-    color: var(--text-muted);
-    text-transform: uppercase;
-    padding: 10px 14px;
-    text-align: left;
-    border-bottom: 1px solid var(--border-bright);
-    background: var(--bg3);
-  }
-
-  .schedule-table tbody tr {
-    border-bottom: 1px solid var(--border);
-    transition: background 0.1s;
-  }
-
-  .schedule-table tbody tr:hover { background: rgba(255,255,255,0.02); }
-
-  .schedule-table tbody td {
-    padding: 12px 14px;
-    color: var(--text-dim);
-    vertical-align: top;
-  }
-
-  .schedule-table tbody td:first-child {
-    color: var(--amber);
-    font-family: var(--mono);
-    font-size: 11px;
-    white-space: nowrap;
-  }
-
-  .schedule-table tbody td strong {
-    color: var(--text);
-    font-weight: 500;
-    display: block;
-    margin-bottom: 2px;
-  }
+  /* SCHEDULE */
+  .schedule-table { width:100%; border-collapse:collapse; font-size:13px; }
+  .schedule-table thead th { font-family:var(--mono); font-size:10px; letter-spacing:2px; color:var(--text-muted); text-transform:uppercase; padding:10px 14px; text-align:left; border-bottom:1px solid var(--border-bright); background:var(--bg3); }
+  .schedule-table tbody tr { border-bottom:1px solid var(--border); transition:background 0.1s; }
+  .schedule-table tbody tr:hover { background:rgba(255,255,255,0.02); }
+  .schedule-table tbody td { padding:12px 14px; color:var(--text-dim); vertical-align:top; }
+  .schedule-table tbody td:first-child { color:var(--amber); font-family:var(--mono); font-size:11px; white-space:nowrap; }
+  .schedule-table tbody td strong { color:var(--text); font-weight:500; display:block; margin-bottom:2px; }
 
   /* MILESTONES */
-  .milestone-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
-  }
-
-  .milestone {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    padding: 18px;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .milestone::after {
-    content: '';
-    position: absolute;
-    top: 0; left: 0;
-    width: 3px; height: 100%;
-  }
-
-  .m1::after { background: var(--blue); }
-  .m2::after { background: var(--purple); }
-  .m3::after { background: var(--amber); }
-  .m4::after { background: var(--green); }
-  .m5::after { background: #f472b6; }
-  .m6::after { background: var(--red); }
-
-  .milestone-month {
-    font-family: var(--mono);
-    font-size: 10px;
-    color: var(--text-muted);
-    letter-spacing: 2px;
-    margin-bottom: 10px;
-  }
-
-  .milestone-check {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-  }
-
-  .milestone-check li {
-    font-size: 12px;
-    color: var(--text-dim);
-    padding-left: 16px;
-    position: relative;
-  }
-
-  .milestone-check li::before {
-    content: '✓';
-    position: absolute;
-    left: 0;
-    color: var(--green);
-    font-size: 10px;
-  }
+  .milestone-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:12px; }
+  .milestone { background:var(--card); border:1px solid var(--border); border-radius:4px; padding:18px; position:relative; overflow:hidden; }
+  .milestone::after { content:''; position:absolute; top:0; left:0; width:3px; height:100%; }
+  .m1::after { background:var(--blue); }
+  .m2::after { background:var(--cyan); }
+  .m3::after { background:var(--amber); }
+  .m4::after { background:var(--green); }
+  .m5::after { background:#f472b6; }
+  .m6::after { background:var(--purple); }
+  .milestone-month { font-family:var(--mono); font-size:10px; color:var(--text-muted); letter-spacing:2px; margin-bottom:10px; }
+  .milestone-check { list-style:none; display:flex; flex-direction:column; gap:6px; }
+  .milestone-check li { font-size:12px; color:var(--text-dim); padding-left:16px; position:relative; }
+  .milestone-check li::before { content:'✓'; position:absolute; left:0; color:var(--green); font-size:10px; }
+  .milestone-check li.ai-check::before { color:var(--cyan); content:'✦'; }
 
   /* MISTAKES */
-  .mistake-list {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
+  .mistake-list { display:flex; flex-direction:column; gap:12px; }
+  .mistake { display:flex; gap:16px; align-items:flex-start; background:var(--card); border:1px solid var(--border); border-left:3px solid var(--red); border-radius:0 4px 4px 0; padding:14px 16px; }
+  .mistake-num { font-family:var(--mono); font-size:11px; color:var(--red); flex-shrink:0; margin-top:1px; }
+  .mistake-text { font-size:13px; color:var(--text-dim); line-height:1.5; }
+  .mistake-text strong { color:var(--text); font-weight:600; display:block; margin-bottom:2px; }
 
-  .mistake {
-    display: flex;
-    gap: 16px;
-    align-items: flex-start;
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-left: 3px solid var(--red);
-    border-radius: 0 4px 4px 0;
-    padding: 14px 16px;
-  }
-
-  .mistake-num {
-    font-family: var(--mono);
-    font-size: 11px;
-    color: var(--red);
-    flex-shrink: 0;
-    margin-top: 1px;
-  }
-
-  .mistake-text {
-    font-size: 13px;
-    color: var(--text-dim);
-    line-height: 1.5;
-  }
-
-  .mistake-text strong {
-    color: var(--text);
-    font-weight: 600;
-    display: block;
-    margin-bottom: 2px;
-  }
-
-  /* EUROPE SECTION */
-  .country-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 14px;
-  }
-
-  .country-card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    padding: 18px;
-  }
-
-  .country-name {
-    font-family: var(--display);
-    font-weight: 700;
-    font-size: 14px;
-    color: #fff;
-    margin-bottom: 4px;
-  }
-
-  .country-visa {
-    font-family: var(--mono);
-    font-size: 10px;
-    color: var(--amber);
-    letter-spacing: 1px;
-    margin-bottom: 10px;
-  }
-
-  .country-facts {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-  }
-
-  .country-facts li {
-    font-size: 12px;
-    color: var(--text-dim);
-    padding-left: 14px;
-    position: relative;
-  }
-
-  .country-facts li::before {
-    content: '·';
-    position: absolute;
-    left: 4px;
-    color: var(--text-muted);
-  }
-
-  /* WEEK BLOCK */
-  .week-visual {
-    display: grid;
-    grid-template-columns: 90px repeat(7, 1fr);
-    gap: 4px;
-    font-family: var(--mono);
-    font-size: 10px;
-  }
-
-  .week-header {
-    text-align: center;
-    color: var(--text-muted);
-    padding: 6px 4px;
-    letter-spacing: 1px;
-  }
-
-  .week-label {
-    display: flex;
-    align-items: center;
-    color: var(--text-muted);
-    font-size: 10px;
-    letter-spacing: 1px;
-  }
-
-  .week-cell {
-    background: var(--bg3);
-    border: 1px solid var(--border);
-    border-radius: 2px;
-    padding: 6px 4px;
-    text-align: center;
-    font-size: 10px;
-    color: var(--text-dim);
-    line-height: 1.3;
-  }
-
-  .wc-learn { background: rgba(96,165,250,0.1); border-color: rgba(96,165,250,0.2); color: var(--blue); }
-  .wc-build { background: rgba(245,166,35,0.1); border-color: rgba(245,166,35,0.2); color: var(--amber); }
-  .wc-cert { background: rgba(167,139,250,0.1); border-color: rgba(167,139,250,0.2); color: var(--purple); }
-  .wc-rest { background: var(--bg3); border-color: var(--border); color: var(--text-muted); }
-  .wc-apply { background: rgba(61,214,140,0.1); border-color: rgba(61,214,140,0.2); color: var(--green); }
+  /* EUROPE */
+  .country-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+  .country-card { background:var(--card); border:1px solid var(--border); border-radius:4px; padding:18px; }
+  .country-name { font-family:var(--display); font-weight:700; font-size:14px; color:#fff; margin-bottom:4px; }
+  .country-visa { font-family:var(--mono); font-size:10px; color:var(--amber); letter-spacing:1px; margin-bottom:10px; }
+  .country-facts { list-style:none; display:flex; flex-direction:column; gap:5px; }
+  .country-facts li { font-size:12px; color:var(--text-dim); padding-left:14px; position:relative; }
+  .country-facts li::before { content:'·'; position:absolute; left:4px; color:var(--text-muted); }
+  .country-facts li.ai-fact { color:var(--cyan); opacity:.85; }
+  .country-facts li.ai-fact::before { color:var(--cyan); content:'✦'; font-size:8px; top:3px; }
 
   /* LIFESTYLE */
-  .lifestyle-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 14px;
-  }
+  .lifestyle-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:14px; }
+  .life-card { background:var(--card); border:1px solid var(--border); border-radius:4px; padding:18px 20px; }
+  .life-icon { font-size:20px; margin-bottom:8px; }
+  .life-title { font-family:var(--display); font-weight:700; font-size:13px; color:#fff; margin-bottom:8px; }
+  .life-desc { font-size:12.5px; color:var(--text-dim); line-height:1.6; }
 
-  .life-card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    padding: 18px 20px;
-  }
+  /* CALLOUTS */
+  .callout { border-radius:4px; padding:14px 18px; margin:16px 0; font-size:13px; font-family:var(--mono); line-height:1.6; }
+  .callout-amber { background:var(--amber-glow); border:1px solid rgba(245,166,35,0.25); color:var(--amber); }
+  .callout-cyan { background:var(--cyan-dim); border:1px solid var(--cyan-border); color:var(--cyan); }
+  .callout-red { background:var(--red-dim); border:1px solid rgba(255,95,87,0.25); color:var(--red); }
+  .callout-green { background:var(--green-dim); border:1px solid rgba(61,214,140,0.25); color:var(--green); }
 
-  .life-icon {
-    font-size: 20px;
-    margin-bottom: 8px;
-  }
-
-  .life-title {
-    font-family: var(--display);
-    font-weight: 700;
-    font-size: 13px;
-    color: #fff;
-    margin-bottom: 8px;
-  }
-
-  .life-desc {
-    font-size: 12.5px;
-    color: var(--text-dim);
-    line-height: 1.6;
-  }
+  /* UTILS */
+  .two-col { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+  .three-col { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+  .divider { height:1px; background:var(--border); margin:28px 0; }
+  .ai-accent { color:var(--cyan); }
+  .sf-accent { color:var(--amber); }
 
   /* FOOTER */
-  .doc-footer {
-    background: var(--bg2);
-    border-top: 1px solid var(--border);
-    padding: 28px 60px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+  .doc-footer { background:var(--bg2); border-top:1px solid var(--border); padding:28px 60px; display:flex; justify-content:space-between; align-items:center; }
+  .footer-text { font-family:var(--mono); font-size:11px; color:var(--text-muted); }
+  .footer-emphasis { font-family:var(--display); font-size:13px; font-weight:700; color:var(--cyan); }
 
-  .footer-text {
-    font-family: var(--mono);
-    font-size: 11px;
-    color: var(--text-muted);
-  }
-
-  .footer-emphasis {
-    font-family: var(--display);
-    font-size: 13px;
-    font-weight: 700;
-    color: var(--amber);
-  }
-
-  /* DIVIDERS */
-  .divider {
-    height: 1px;
-    background: var(--border);
-    margin: 28px 0;
-  }
-
-  .two-col {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-  }
-
-  .three-col {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
-  }
-
-  .callout {
-    background: var(--amber-glow);
-    border: 1px solid rgba(245,166,35,0.25);
-    border-radius: 4px;
-    padding: 14px 18px;
-    margin: 16px 0;
-    font-size: 13px;
-    color: var(--amber);
-    font-family: var(--mono);
-    line-height: 1.6;
-  }
-
-  .callout-red {
-    background: var(--red-dim);
-    border: 1px solid rgba(255,95,87,0.25);
-    color: var(--red);
-  }
-
-  .callout-green {
-    background: var(--green-dim);
-    border: 1px solid rgba(61,214,140,0.25);
-    color: var(--green);
-  }
-
-  .skill-bar-row {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 8px;
-  }
-
-  .skill-bar {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-
-  .skill-bar-label {
-    font-family: var(--mono);
-    font-size: 11px;
-    color: var(--text-dim);
-    width: 140px;
-    flex-shrink: 0;
-  }
-
-  .skill-bar-track {
-    flex: 1;
-    height: 4px;
-    background: var(--border-bright);
-    border-radius: 2px;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .skill-bar-fill {
-    height: 100%;
-    border-radius: 2px;
-    position: absolute;
-    left: 0; top: 0;
-  }
-
-  .skill-bar-pct {
-    font-family: var(--mono);
-    font-size: 10px;
-    color: var(--text-muted);
-    width: 40px;
-    text-align: right;
-  }
-
-  @media (max-width: 800px) {
-    section { padding: 36px 24px; }
-    .header { padding: 36px 24px 28px; }
-    .toc { padding: 12px 24px; }
-    .phase-grid { grid-template-columns: repeat(2, 1fr); }
-    .card-grid { grid-template-columns: 1fr; }
-    .milestone-grid { grid-template-columns: repeat(2, 1fr); }
-    .country-grid { grid-template-columns: 1fr; }
-    .two-col, .three-col, .lifestyle-grid { grid-template-columns: 1fr; }
-    .project-grid { grid-template-columns: 1fr; }
-    .doc-footer { flex-direction: column; gap: 12px; text-align: center; }
-    .week-visual { grid-template-columns: 70px repeat(7, 1fr); }
+  @media (max-width:800px) {
+    section { padding:36px 24px; }
+    .header { padding:36px 24px 28px; }
+    .toc { padding:12px 24px; }
+    .phase-grid, .role-grid { grid-template-columns:1fr 1fr; }
+    .card-grid, .two-col, .three-col, .lifestyle-grid, .country-grid, .milestone-grid, .ai-arch-grid { grid-template-columns:1fr; }
+    .project-grid { grid-template-columns:1fr; }
+    .arch-flow { flex-direction:column; }
+    .doc-footer { flex-direction:column; gap:12px; text-align:center; }
   }
 </style>
 </head>
@@ -878,642 +257,628 @@
 
 <!-- HEADER -->
 <div class="header">
-  <div class="header-tag">EXECUTION DOCUMENT · CONFIDENTIAL</div>
-  <h1>Your <span>Salesforce Europe</span><br>6-Month Roadmap</h1>
-  <p class="header-sub">A brutally realistic, step-by-step transition plan from Salesforce Admin + API Tester to Senior Developer / Architect — targeting high-paying roles in Europe.</p>
+  <div class="header-tag">V2 · AI-AUGMENTED EDITION · EXECUTION DOCUMENT</div>
+  <h1>Your <span class="sf">Salesforce</span> + <span class="ai">AI</span><br>Europe Roadmap</h1>
+  <p class="header-sub">A fully updated transition plan that positions you at the intersection of Salesforce Development and Applied AI — targeting the highest-demand, lowest-competition profile in the European market.</p>
   <div class="header-meta">
-    <span class="meta-chip">START: NOW</span>
-    <span class="meta-chip">TARGET: MONTH 6</span>
-    <span class="meta-chip">CERTS: ADM-201 ✓ → PD1 → APP BUILDER → PD2</span>
-    <span class="meta-chip">DAILY HOURS: 2–4 HRS WEEKDAY · 5–7 HRS WEEKEND</span>
-    <span class="meta-chip">STRATEGY: REMOTE + RELOCATION</span>
+    <span class="meta-amber">START: NOW</span>
+    <span class="meta-cyan">AI INTEGRATED THROUGHOUT</span>
+    <span class="meta-amber">CERTS: ADM-201 ✓ → AI ASSOCIATE → PD1 → APP BUILDER → AI SPECIALIST → PD2</span>
+    <span class="meta-green">TARGET ROLE: AI-ENABLED SALESFORCE ENGINEER/ARCHITECT</span>
+    <span class="meta-cyan">EUROPE STRATEGY: REMOTE + RELOCATION</span>
   </div>
 </div>
 
 <!-- NAV -->
 <nav class="toc">
-  <a href="#timeline">01 TIMELINE</a>
-  <a href="#skills">02 SKILLS</a>
-  <a href="#certs">03 CERTIFICATIONS</a>
+  <a href="#positioning">00 POSITIONING</a>
+  <a href="#timeline" class="sf-link">01 TIMELINE</a>
+  <a href="#skills" class="sf-link">02 SKILLS</a>
+  <a href="#sf-ai">03 SF+AI STRATEGY</a>
   <a href="#projects">04 PROJECTS</a>
-  <a href="#jobs">05 JOB PREP</a>
-  <a href="#interviews">06 INTERVIEWS</a>
-  <a href="#europe">07 EUROPE</a>
-  <a href="#schedule">08 SCHEDULE</a>
-  <a href="#milestones">09 MILESTONES</a>
-  <a href="#lifestyle">10 LIFESTYLE</a>
+  <a href="#certs" class="sf-link">05 CERTS</a>
+  <a href="#europe" class="sf-link">06 EUROPE</a>
+  <a href="#interviews" class="sf-link">07 INTERVIEWS</a>
+  <a href="#schedule" class="sf-link">08 SCHEDULE</a>
+  <a href="#milestones" class="sf-link">09 MILESTONES</a>
+  <a href="#lifestyle" class="sf-link">10 LIFESTYLE</a>
 </nav>
+
+
+<!-- SECTION 0: CAREER POSITIONING -->
+<section id="positioning">
+  <div class="section-label sl-ai">00 / CAREER POSITIONING</div>
+  <h2>What Role Should You Actually Target?</h2>
+  <p class="section-intro">The European Salesforce market has a supply/demand problem. Traditional SF developers are plentiful — and undifferentiated. The AI-Enabled Salesforce Engineer profile is emerging fast, and almost nobody has it yet. This is your window.</p>
+
+  <div class="role-grid">
+    <div class="role-card" style="background:rgba(96,165,250,0.04);">
+      <div class="role-badge" style="color:var(--blue);">OPTION A</div>
+      <div class="role-title">Salesforce Developer</div>
+      <div class="role-salary">UK: £55–75k · NL: €55–75k · DE: €55–70k</div>
+      <div class="role-desc">Core Apex, LWC, integrations. Competes with thousands of developers globally. Strong demand but commoditized — easy to replace with offshore teams or AI-assisted junior devs in 2–3 years.</div>
+      <ul class="checklist">
+        <li>Plenty of roles available now</li>
+        <li>Visa sponsorship common</li>
+        <li>Risk: ceiling hits quickly</li>
+        <li>Differentiation getting harder</li>
+      </ul>
+    </div>
+    <div class="role-card" style="background:rgba(245,166,35,0.04);">
+      <div class="role-badge" style="color:var(--amber);">OPTION B</div>
+      <div class="role-title">Salesforce Architect</div>
+      <div class="role-salary">UK: £85–130k · NL: €85–120k · DE: €80–115k</div>
+      <div class="role-desc">System design, multi-org, enterprise patterns. High salary but demands 7–10 years of real enterprise experience. Attempting this positioning prematurely comes across as overreach to European hiring managers.</div>
+      <ul class="checklist">
+        <li>Fewer roles but higher pay</li>
+        <li>Experience requirement is real</li>
+        <li>Build toward this over 2–3 years</li>
+        <li>Realistic target: Year 2–3 in Europe</li>
+      </ul>
+    </div>
+    <div class="role-card target" style="background:rgba(34,211,238,0.04);">
+      <div class="target-flag">★ TARGET THIS</div>
+      <div class="role-badge" style="color:var(--cyan);">OPTION C · YOUR SWEET SPOT</div>
+      <div class="role-title">AI-Enabled Salesforce Engineer</div>
+      <div class="role-salary">UK: £70–95k · NL: €70–90k · DE: €68–88k</div>
+      <div class="role-desc">Salesforce development skills + ability to build AI-powered features on Salesforce. This profile is in extremely short supply in Europe. Companies know they need it but struggle to find it. Your 4-year background is sufficient — AI skills are the differentiator.</div>
+      <ul class="checklist ai-item">
+        <li class="ai-item">Very few candidates have this profile</li>
+        <li class="ai-item">Demand growing exponentially in 2025–26</li>
+        <li class="ai-item">Agentforce, Einstein, Data Cloud are driving this</li>
+        <li class="ai-item">Bridges to Architect track naturally</li>
+        <li class="ai-item">Your API background is a perfect foundation</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="callout callout-cyan">✦ THE POSITIONING INSIGHT: The Venn diagram of "people who understand Salesforce deeply" + "people who can build with LLMs and AI APIs" has almost no one in it right now — especially in Europe. Every consulting firm, ISV, and enterprise that uses Salesforce is scrambling to add AI capabilities. You don't need to be an ML engineer. You need to be the person who knows how to connect Salesforce to AI tools and make them useful in a CRM context. That's a learnable skill, and you're going to learn it.</div>
+
+  <div class="card-grid" style="margin-top:24px;">
+    <div class="card">
+      <div class="card-title" style="margin-bottom:12px;">📌 Job Titles to Target on LinkedIn</div>
+      <ul class="checklist">
+        <li class="ai-item"><strong>Salesforce AI Engineer</strong> — emerging title, very few applicants</li>
+        <li class="ai-item"><strong>Agentforce Developer</strong> — Salesforce's new AI agent platform</li>
+        <li class="ai-item"><strong>Einstein Developer / Einstein Specialist</strong></li>
+        <li><strong>Senior Salesforce Developer</strong> (with AI in the JD) — filter these specifically</li>
+        <li><strong>Salesforce Technical Lead</strong> — often want AI awareness now</li>
+        <li class="ai-item"><strong>AI-Enabled CRM Developer</strong> — consultancy-specific term</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title" style="margin-bottom:12px;">🚫 What to Avoid Claiming Too Early</div>
+      <ul class="checklist">
+        <li><strong>ML Engineer / Data Scientist</strong> — not your target, requires different depth</li>
+        <li><strong>Salesforce Architect</strong> — claim it only after you get there; premature claiming backfires in EU interviews</li>
+        <li><strong>LLM Trainer / Fine-tuner</strong> — too deep into ML territory</li>
+        <li><strong>AI Product Manager</strong> — different track</li>
+        <li><strong>"AI Expert"</strong> — too vague and invites deep ML questions you can't answer</li>
+        <li><strong>Data Cloud Architect</strong> — save for Month 9+</li>
+      </ul>
+    </div>
+  </div>
+</section>
 
 
 <!-- SECTION 1: TIMELINE -->
 <section id="timeline">
-  <div class="section-label">01 / TIMELINE</div>
-  <h2>The 6-Month Mission Map</h2>
-  <p class="section-intro">Four phases, clear outcomes. Every phase gates the next. Do not skip ahead — shallow learning compounds into poor interviews.</p>
+  <div class="section-label sl-sf">01 / TIMELINE</div>
+  <h2>The 6-Month Core + Extended View</h2>
+  <p class="section-intro sf">AI skills run as a parallel track alongside Salesforce development — not as a separate phase. From Month 1, you are building both simultaneously. The extended view (Months 7–12) covers consolidation and senior positioning.</p>
 
   <div class="phase-grid">
     <div class="phase phase-1">
       <div class="phase-num">PHASE 01</div>
       <div class="phase-title">Foundation</div>
-      <div class="phase-weeks">Weeks 1–6 (Month 1–2)</div>
-      <div class="phase-tags">
-        <span class="ptag">Apex mastery (async, DML, SOQL)</span>
-        <span class="ptag">LWC fundamentals</span>
-        <span class="ptag">Git + SFDX setup</span>
-        <span class="ptag">PD1 preparation</span>
-        <span class="ptag">Project #1 started</span>
-      </div>
+      <div class="phase-weeks">Weeks 1–6 · Month 1–2</div>
+      <div class="ptag">Apex mastery (async, DML, SOQL)</div>
+      <div class="ptag">LWC fundamentals</div>
+      <div class="ptag">Git, SFDX setup</div>
+      <div class="ptag ai-tag">LLM concepts + prompt engineering</div>
+      <div class="ptag ai-tag">OpenAI API: first callout</div>
+      <div class="ptag ai-tag">AI Associate cert (Week 2–3)</div>
+      <div class="ptag">PD1 preparation begins</div>
     </div>
     <div class="phase phase-2">
       <div class="phase-num">PHASE 02</div>
       <div class="phase-title">Intermediate</div>
-      <div class="phase-weeks">Weeks 7–12 (Month 2–3)</div>
-      <div class="phase-tags">
-        <span class="ptag">LWC advanced + JS</span>
-        <span class="ptag">REST/SOAP integrations</span>
-        <span class="ptag">Platform Events & CDC</span>
-        <span class="ptag">CI/CD (GitHub Actions)</span>
-        <span class="ptag">PD1 Exam ← Week 8–9</span>
-      </div>
+      <div class="phase-weeks">Weeks 7–12 · Month 2–3</div>
+      <div class="ptag">LWC advanced + JS async</div>
+      <div class="ptag">REST/SOAP integrations</div>
+      <div class="ptag">Platform Events, CDC</div>
+      <div class="ptag">CI/CD with GitHub Actions</div>
+      <div class="ptag">PD1 Exam ← Week 8–9</div>
+      <div class="ptag ai-tag">Apex → LLM callout (Project 1)</div>
+      <div class="ptag ai-tag">RAG concepts + vector DBs</div>
+      <div class="ptag ai-tag">Einstein ecosystem overview</div>
     </div>
     <div class="phase phase-3">
       <div class="phase-num">PHASE 03</div>
       <div class="phase-title">Advanced</div>
-      <div class="phase-weeks">Weeks 13–18 (Month 3–4)</div>
-      <div class="phase-tags">
-        <span class="ptag">Enterprise design patterns</span>
-        <span class="ptag">Architecture principles</span>
-        <span class="ptag">AWS basics</span>
-        <span class="ptag">App Builder Exam ← Week 14</span>
-        <span class="ptag">PD2 preparation begins</span>
-      </div>
+      <div class="phase-weeks">Weeks 13–18 · Month 3–4</div>
+      <div class="ptag">Enterprise design patterns</div>
+      <div class="ptag">Architecture principles</div>
+      <div class="ptag">AWS basics (Lambda, API GW)</div>
+      <div class="ptag">App Builder Exam ← Week 14</div>
+      <div class="ptag ai-tag">Agentforce (custom agents + actions)</div>
+      <div class="ptag ai-tag">Data Cloud overview</div>
+      <div class="ptag ai-tag">Prompt Builder (SF-native)</div>
+      <div class="ptag ai-tag">AI Specialist prep begins</div>
     </div>
     <div class="phase phase-4">
       <div class="phase-num">PHASE 04</div>
       <div class="phase-title">Job-Ready</div>
-      <div class="phase-weeks">Weeks 19–24 (Month 5–6)</div>
-      <div class="phase-tags">
-        <span class="ptag">PD2 Exam ← Week 20</span>
-        <span class="ptag">Portfolio live</span>
-        <span class="ptag">Resume + LinkedIn optimized</span>
-        <span class="ptag">Active applications</span>
-        <span class="ptag">Mock interviews weekly</span>
-      </div>
+      <div class="phase-weeks">Weeks 19–24 · Month 5–6</div>
+      <div class="ptag ai-tag">AI Specialist Exam ← Week 19</div>
+      <div class="ptag">PD2 Exam ← Week 22</div>
+      <div class="ptag ai-tag">AI portfolio projects complete</div>
+      <div class="ptag">Resume + LinkedIn optimized</div>
+      <div class="ptag">Active applications (EU)</div>
+      <div class="ptag">Mock interviews weekly</div>
     </div>
   </div>
 
-  <div class="callout">⚡ REALITY CHECK: Your existing Admin cert + 4 years of experience is a head start. You are not starting from zero. Your API testing background gives you a credibility edge in integration and QA-aware architecture — use it in interviews.</div>
+  <div class="callout callout-cyan">✦ AI PARALLEL TRACK RULE: AI learning never replaces Salesforce time — it runs in parallel. Weekday evenings: 60% core Salesforce, 40% AI application. Weekends: projects that combine both. Never a separate "AI week." The goal is always to build AI that runs inside Salesforce, which means the two disciplines are inseparable.</div>
+
+  <h3 style="margin-top:28px; margin-bottom:16px;">Extended View: Month 7–12</h3>
+  <div class="two-col">
+    <div class="card">
+      <div class="card-header"><div class="card-title">Month 7–9: Senior Consolidation</div><span class="badge badge-purple">PHASE 5</span></div>
+      <ul class="checklist">
+        <li><strong>Active EU job market:</strong> 15–30 targeted applications/month</li>
+        <li><strong>Architect track:</strong> Sharing & Visibility Designer or Integration Architecture Designer</li>
+        <li class="ai-item"><strong>AI depth:</strong> Data Cloud hands-on, Agentforce complex agents</li>
+        <li class="ai-item"><strong>Content creation:</strong> LinkedIn posts, small blog. Builds EU recruiter visibility.</li>
+        <li><strong>Target outcome:</strong> First EU offer on the table or active final-stage interviews</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-header"><div class="card-title">Month 10–12: Transition & Settle</div><span class="badge badge-green">PHASE 6</span></div>
+      <ul class="checklist">
+        <li><strong>Offer negotiation, visa process, relocation planning</strong></li>
+        <li><strong>Notice period in current role</strong> — typical 1–2 months in India</li>
+        <li class="ai-item"><strong>Pre-boarding:</strong> Study the company's Salesforce stack and AI roadmap</li>
+        <li><strong>First 90 days in Europe:</strong> Prove value fast, establish relationships</li>
+        <li><strong>Target outcome:</strong> Employed in EU role, visa active, in-role building AI-SF solutions</li>
+      </ul>
+    </div>
+  </div>
 </section>
 
 
 <!-- SECTION 2: SKILLS -->
 <section id="skills">
-  <div class="section-label">02 / SKILL ROADMAP</div>
+  <div class="section-label sl-sf">02 / SKILL ROADMAP</div>
   <h2>What to Learn & In What Order</h2>
-  <p class="section-intro">Organized by priority and dependency. Do not multitask across pillars — finish Apex before diving deep into LWC. Breadth comes after depth.</p>
+  <p class="section-intro sf">Two parallel tracks — Salesforce and AI — that converge in your projects. Learn enough AI to build with it, not enough to explain gradient descent at a whiteboard. Applied AI, not theoretical ML.</p>
 
   <div class="card-grid">
     <!-- APEX -->
-    <div class="card">
-      <div class="card-header">
-        <div class="card-title">☁️ Apex (Deep Mastery)</div>
-        <span class="badge badge-blue">MONTH 1–2</span>
-      </div>
+    <div class="card sf-card">
+      <div class="card-header"><div class="card-title">☁️ Apex (Deep Mastery)</div><span class="badge badge-amber">MONTH 1–2</span></div>
       <ul class="checklist">
-        <li><strong>Governor Limits:</strong> Understand every limit (DML, SOQL, heap). Build instincts, not memorization.</li>
-        <li><strong>Collections & SOQL:</strong> Bulkification, SOQL in loops (anti-pattern), aggregate queries, relationship queries.</li>
-        <li><strong>Triggers:</strong> One trigger per object pattern, handler class pattern, avoid business logic in trigger body.</li>
-        <li><strong>Async Apex:</strong> Batch (for data volumes), Queueable (for chaining), Scheduled (for time-based), Future (legacy).</li>
-        <li><strong>Error Handling:</strong> DmlException, try-catch-finally, Database.SaveResult, partial save.</li>
-        <li><strong>Test Classes:</strong> @testSetup, Test.startTest/stopTest, meaningful assertions, 90%+ coverage habit.</li>
-        <li><strong>Security:</strong> CRUD/FLS enforcement, WITH SECURITY_ENFORCED, stripInaccessible().</li>
+        <li><strong>Governor Limits:</strong> Build instincts for DML, SOQL, heap. Know every limit cold.</li>
+        <li><strong>Collections & SOQL:</strong> Bulkification, aggregate queries, relationship queries.</li>
+        <li><strong>Triggers:</strong> One trigger per object, handler class pattern — never business logic in trigger body.</li>
+        <li><strong>Async Apex:</strong> Batch (data volumes), Queueable (chaining — CRITICAL for AI calls), Scheduled, Future (legacy).</li>
+        <li><strong>HTTP Callouts:</strong> You already understand this from API testing. Now apply it — HttpRequest, HttpResponse, JSON parsing, mock callouts.</li>
+        <li><strong>Test Classes:</strong> 90%+ habit. @testSetup, meaningful assertions. Mock callouts with HttpCalloutMock.</li>
+        <li class="ai-item"><strong>AI Relevance:</strong> Every AI integration goes through Apex callouts. Queueable is essential because LLM API calls are too slow for synchronous Apex limits.</li>
       </ul>
     </div>
 
     <!-- LWC -->
-    <div class="card">
-      <div class="card-header">
-        <div class="card-title">⚡ LWC (Component Development)</div>
-        <span class="badge badge-purple">MONTH 2–3</span>
-      </div>
+    <div class="card sf-card">
+      <div class="card-header"><div class="card-title">⚡ LWC (Component Development)</div><span class="badge badge-amber">MONTH 2–3</span></div>
       <ul class="checklist">
-        <li><strong>Lifecycle Hooks:</strong> connectedCallback, disconnectedCallback, renderedCallback — know when each fires.</li>
-        <li><strong>Data Binding:</strong> @track (legacy), @api, reactive properties, template conditionals and loops.</li>
-        <li><strong>Wire Service:</strong> @wire with adapters (getRecord, getRelatedListRecords), wire vs imperative calls.</li>
-        <li><strong>Events:</strong> Custom events, bubbling/capturing, communication patterns (parent↔child, sibling).</li>
-        <li><strong>Navigation:</strong> NavigationMixin, page references, navigating to records/pages.</li>
-        <li><strong>Imperative Apex:</strong> Calling @AuraEnabled(cacheable=true) methods, promise chaining, async/await.</li>
-        <li><strong>SLDS:</strong> Lightning Design System tokens, base components, responsive grids.</li>
+        <li><strong>Lifecycle Hooks:</strong> connectedCallback, renderedCallback — know when each fires.</li>
+        <li><strong>Wire + Imperative:</strong> Wire for reactive data; imperative for AI API calls (loading states matter).</li>
+        <li><strong>Custom Events:</strong> Component communication patterns.</li>
+        <li><strong>Async/Await in JS:</strong> Critical — AI callouts are async. Handle promises correctly in LWC.</li>
+        <li><strong>SLDS:</strong> Build clean UIs without fighting the design system.</li>
+        <li class="ai-item"><strong>AI Relevance:</strong> Your LWC is the chat UI, the AI response display, the "Generate Summary" button. It's the face of every AI feature you build. Loading spinners, streaming text display, error states — all LWC.</li>
       </ul>
     </div>
 
     <!-- INTEGRATIONS -->
-    <div class="card">
-      <div class="card-header">
-        <div class="card-title">🔗 Integrations</div>
-        <span class="badge badge-amber">MONTH 3</span>
-      </div>
+    <div class="card sf-card">
+      <div class="card-header"><div class="card-title">🔗 Integrations</div><span class="badge badge-amber">MONTH 3</span></div>
       <ul class="checklist">
-        <li><strong>REST Callouts:</strong> HttpRequest/HttpResponse, JSON parsing, mock callouts in tests.</li>
-        <li><strong>Named Credentials:</strong> Auth providers, per-user vs per-org — always use over hardcoded endpoints.</li>
-        <li><strong>Platform Events:</strong> Event-driven architecture, publish/subscribe, replay ID, use cases.</li>
-        <li><strong>Change Data Capture (CDC):</strong> Real-time change streaming, difference from Platform Events.</li>
-        <li><strong>External Services:</strong> OpenAPI schema import, auto-generated Apex.</li>
-        <li><strong>MuleSoft basics:</strong> Know the concepts even if not hands-on — architects are expected to assess it.</li>
-        <li><strong>Middleware patterns:</strong> Point-to-point vs hub-and-spoke vs ESB vs event-driven.</li>
+        <li><strong>Named Credentials:</strong> ALWAYS use for LLM API endpoints. Never hardcode OpenAI keys.</li>
+        <li><strong>REST Callouts:</strong> HttpRequest/HttpResponse — you will use this for every LLM API call.</li>
+        <li><strong>Platform Events:</strong> Key for async AI processing — trigger the AI job, respond via event.</li>
+        <li><strong>External Services:</strong> OpenAPI schema import — can import OpenAI spec.</li>
+        <li class="ai-item"><strong>AI integration pattern:</strong> User triggers LWC → Apex Queueable → Named Credential → OpenAI/Anthropic API → Platform Event → LWC re-renders with result. Know this pattern cold.</li>
       </ul>
     </div>
 
     <!-- ARCHITECTURE -->
-    <div class="card">
-      <div class="card-header">
-        <div class="card-title">🏛️ Architecture</div>
-        <span class="badge badge-green">MONTH 4–5</span>
-      </div>
+    <div class="card sf-card">
+      <div class="card-header"><div class="card-title">🏛️ Architecture</div><span class="badge badge-amber">MONTH 4–5</span></div>
       <ul class="checklist">
-        <li><strong>Enterprise Patterns:</strong> Selector, Domain, Service, Application layers (Apex Enterprise Patterns by Andy Fawcett — read it).</li>
-        <li><strong>Sharing Model:</strong> OWD, role hierarchy, sharing rules, manual sharing, Apex managed sharing.</li>
-        <li><strong>Data Architecture:</strong> Record volumes, skinny tables, indexes, external IDs, data skew.</li>
-        <li><strong>Multi-org Strategy:</strong> When to split orgs, sandbox strategy, environment planning.</li>
-        <li><strong>Salesforce Well-Architected:</strong> Trusted, Easy, Adaptable pillars — know this framework cold.</li>
-        <li><strong>Security Architecture:</strong> SSO, OAuth flows, Connected Apps, Identity providers.</li>
-        <li><strong>Deployment:</strong> SFDX, scratch orgs, unlocked packages, change sets (legacy).</li>
+        <li><strong>Enterprise Patterns:</strong> Selector, Domain, Service, Application (Andy Fawcett book — non-negotiable).</li>
+        <li><strong>Sharing Model:</strong> OWD, role hierarchy, Apex managed sharing.</li>
+        <li><strong>Data Architecture:</strong> Record volumes, indexes, data skew — becomes very relevant when designing AI training datasets.</li>
+        <li><strong>Salesforce Well-Architected:</strong> Trusted, Easy, Adaptable pillars.</li>
+        <li class="ai-item"><strong>AI architecture:</strong> How to design systems that send data to LLMs, handle latency, manage cost, and fail gracefully. This is new and almost no one has written the playbook yet — you will.</li>
       </ul>
+    </div>
+
+    <!-- AI FUNDAMENTALS - FULL WIDTH -->
+    <div class="card full ai-card">
+      <div class="card-header"><div class="card-title">🤖 AI / LLM Stack — Applied (Not Theoretical)</div><span class="badge badge-cyan">MONTH 1 → ONGOING</span></div>
+      <div class="three-col">
+        <div>
+          <div class="project-col-label" style="color:var(--cyan);">LLM Foundations (Month 1)</div>
+          <ul class="checklist">
+            <li class="ai-item"><strong>How LLMs work conceptually:</strong> Tokens, context window, temperature. You don't need transformers math — you need to know why "context window" matters when building features.</li>
+            <li class="ai-item"><strong>Prompt engineering:</strong> System prompts, few-shot examples, chain-of-thought. This is your superpower. Practice: write prompts for case summarization, lead scoring, email drafting.</li>
+            <li class="ai-item"><strong>OpenAI API basics:</strong> Chat completions endpoint, models (GPT-4o, GPT-4o-mini), pricing, rate limits. Call it from Apex.</li>
+            <li class="ai-item"><strong>Anthropic Claude API:</strong> Alternative to OpenAI. Good to know both — enterprise clients use both.</li>
+          </ul>
+        </div>
+        <div>
+          <div class="project-col-label" style="color:var(--cyan);">RAG + Vector DBs (Month 2–3)</div>
+          <ul class="checklist">
+            <li class="ai-item"><strong>RAG (Retrieval-Augmented Generation):</strong> Instead of asking the LLM to remember facts, you retrieve relevant docs and inject them into the prompt context. This is how you build AI that knows about your Salesforce data.</li>
+            <li class="ai-item"><strong>Vector databases:</strong> Pinecone (simplest to start), Weaviate, or pgvector. Store embeddings. Search by semantic similarity. Understand: embedding → vector store → similarity search → context injection.</li>
+            <li class="ai-item"><strong>Embeddings:</strong> text-embedding-ada-002 (OpenAI) or similar. Convert text to numerical vectors. Use for semantic search over SF data.</li>
+            <li class="ai-item"><strong>Practical exercise:</strong> Build a simple RAG demo outside Salesforce first (Python + Pinecone + OpenAI). Then port the pattern into Apex.</li>
+          </ul>
+        </div>
+        <div>
+          <div class="project-col-label" style="color:var(--cyan);">Salesforce AI Ecosystem (Month 3–4)</div>
+          <ul class="checklist">
+            <li class="ai-item"><strong>Agentforce:</strong> Salesforce's AI agent platform. Build autonomous agents with custom Topics and Actions. Actions are Apex invocable methods. This is the hottest SF skill in 2025–26.</li>
+            <li class="ai-item"><strong>Einstein Copilot / Prompt Builder:</strong> Native SF tools to create and manage prompts across the org. Grounded prompts using SOQL merge fields.</li>
+            <li class="ai-item"><strong>Data Cloud:</strong> Salesforce's CDP. Unifies data from all sources. Powers AI personalisation. Know the basics: data streams, data model objects, calculated insights, segments.</li>
+            <li class="ai-item"><strong>Einstein Platform:</strong> Einstein Prediction Builder (no-code ML), Einstein Discovery (automated insights), Einstein for Service (case classification, recommended articles). Know what each does.</li>
+          </ul>
+        </div>
+      </div>
     </div>
 
     <!-- SUPPORTING SKILLS -->
     <div class="card full">
-      <div class="card-header">
-        <div class="card-title">🛠️ Supporting Technical Skills</div>
-        <span class="badge badge-amber">THROUGHOUT</span>
-      </div>
+      <div class="card-header"><div class="card-title">🛠️ Supporting Skills</div><span class="badge badge-amber">THROUGHOUT</span></div>
       <div class="three-col">
         <div>
-          <div class="project-col-label">GIT + CI/CD</div>
+          <div class="project-col-label">Git + CI/CD</div>
           <ul class="checklist">
-            <li><strong>Git fundamentals:</strong> branching strategy (GitFlow), PRs, merge conflicts</li>
-            <li><strong>GitHub Actions:</strong> Build a Salesforce SFDX deployment pipeline</li>
-            <li><strong>Salesforce DX:</strong> Scratch orgs, source format, project config</li>
-            <li><strong>Unlocked Packages:</strong> Modular deployment — critical for architect interviews</li>
+            <li><strong>Git:</strong> branching, PRs, merge conflicts</li>
+            <li><strong>GitHub Actions:</strong> SFDX deployment pipeline</li>
+            <li><strong>Salesforce DX:</strong> scratch orgs, source format</li>
+            <li class="ai-item"><strong>AI relevance:</strong> Version-control your prompt templates like code. Prompt versioning is a real practice now.</li>
           </ul>
         </div>
         <div>
-          <div class="project-col-label">AWS (BASICS ONLY)</div>
+          <div class="project-col-label">AWS (Basics Only)</div>
           <ul class="checklist">
-            <li><strong>S3:</strong> Storage, bucket policies, use in integration scenarios</li>
-            <li><strong>Lambda:</strong> Serverless functions, triggers from S3/API Gateway</li>
-            <li><strong>API Gateway:</strong> REST endpoint creation, auth, throttling</li>
-            <li><strong>SQS/SNS:</strong> Message queuing relevant to Salesforce integration patterns</li>
+            <li><strong>Lambda:</strong> Serverless — understand when to use vs Apex</li>
+            <li><strong>API Gateway:</strong> Expose endpoints for SF to call</li>
+            <li class="ai-item"><strong>Amazon Bedrock basics:</strong> AWS's LLM service. Enterprise EU companies (banks) often use Bedrock over OpenAI for data privacy reasons.</li>
+            <li class="ai-item"><strong>Azure OpenAI:</strong> OpenAI models on Azure — EU data residency. Know this exists and why it matters for GDPR.</li>
           </ul>
         </div>
         <div>
-          <div class="project-col-label">DSA (TARGETED)</div>
+          <div class="project-col-label">REST APIs + OAuth</div>
           <ul class="checklist">
-            <li><strong>Collections:</strong> Map, Set, List — you use these daily in Apex</li>
-            <li><strong>Sorting & Search:</strong> Know Big-O basics for SOQL optimization conversations</li>
-            <li><strong>Recursion:</strong> Relevant for tree-structured Salesforce data (account hierarchy)</li>
-            <li><strong>Skip:</strong> LeetCode hard — not needed for Salesforce roles in Europe</li>
+            <li><strong>OAuth 2.0 flows:</strong> Client credentials, auth code, JWT — for Salesforce integrations</li>
+            <li><strong>REST API design:</strong> Your API testing background — leverage it</li>
+            <li class="ai-item"><strong>AI API auth:</strong> OpenAI API keys, Anthropic auth. Always via Named Credentials in SF.</li>
+            <li><strong>Connected Apps:</strong> SF-native OAuth client. Understand scopes, tokens.</li>
           </ul>
         </div>
       </div>
     </div>
   </div>
-
-  <div class="callout-green callout">✅ YOUR EDGE: Your API testing background means you already understand HTTP, request/response cycles, status codes, and test assertions. This is a genuine advantage in integration-focused roles — frame it explicitly on your resume and in interviews.</div>
 </section>
 
 
-<!-- SECTION 3: CERTIFICATIONS -->
-<section id="certs">
-  <div class="section-label">03 / CERTIFICATION STRATEGY</div>
-  <h2>The Right Certs, in the Right Order</h2>
-  <p class="section-intro">Certifications in Europe are table stakes for Salesforce roles — they're how recruiters filter before they read your resume. Stack them strategically, not randomly.</p>
+<!-- SECTION 3: SF + AI INTEGRATION STRATEGY -->
+<section id="sf-ai">
+  <div class="section-label sl-ai">03 / SALESFORCE + AI INTEGRATION STRATEGY</div>
+  <h2>How to Bring AI Into Salesforce</h2>
+  <p class="section-intro">There are four distinct ways to integrate AI into Salesforce. You need to understand all of them, build with at least three, and be able to choose between them in a system design conversation.</p>
 
-  <div class="two-col" style="margin-bottom: 36px;">
-    <div class="cert-track">
-      <div class="cert-item">
-        <div class="cert-dot cert-done">✓</div>
-        <div class="cert-body">
-          <div class="cert-name">Salesforce Administrator (ADM-201)</div>
-          <div class="cert-meta">ALREADY COMPLETED · KEEP RENEWING</div>
-          <div class="cert-desc">Your current baseline. Solid foundation. Renew before expiry — missed renewals look bad to European recruiters who specifically check Trailhead profiles.</div>
-        </div>
-      </div>
-      <div class="cert-item">
-        <div class="cert-dot cert-pri">1</div>
-        <div class="cert-body">
-          <div class="cert-name">Platform Developer I (PD1)</div>
-          <div class="cert-meta">TARGET: END OF WEEK 8 (MONTH 2) · ~3 WEEKS FOCUSED PREP</div>
-          <div class="cert-desc">Your most critical next cert. Unlocks developer credibility and is a prerequisite for the entire Architect track. Do not delay. Study: Apex basics, SOQL, triggers, test classes, security. Use: Trailhead PD1 Prep module + Focus on Force practice exams.</div>
-        </div>
-      </div>
-      <div class="cert-item">
-        <div class="cert-dot cert-pri">2</div>
-        <div class="cert-body">
-          <div class="cert-name">App Builder</div>
-          <div class="cert-meta">TARGET: WEEK 13–14 (MONTH 3) · ~2 WEEKS PREP</div>
-          <div class="cert-desc">Quick win given your Admin background. 60–70% of content you already know. Focuses on Lightning App Builder, Flows, process automation, and declarative tools. Required for the Application Architect credential. Prep: Trailhead mix + 2 practice exams.</div>
-        </div>
-      </div>
+  <!-- PATTERN 1: APEX CALLOUT -->
+  <div class="ai-layer">
+    <div class="ai-layer-title">Pattern 1 · Apex Callouts to LLM APIs</div>
+    <div class="project-desc">The most powerful and flexible pattern. Your Apex code calls an external LLM API (OpenAI, Anthropic, Google Gemini) via an HTTP callout. You control everything — the prompt, the parsing, the error handling. This is what makes you a developer rather than a user of AI tools.</div>
+    <div class="arch-flow">
+      <div class="arch-node sf-node">LWC (User triggers)</div>
+      <div class="arch-arrow">→</div>
+      <div class="arch-node sf-node">Apex Queueable</div>
+      <div class="arch-arrow">→</div>
+      <div class="arch-node">Named Credential</div>
+      <div class="arch-arrow">→</div>
+      <div class="arch-node ai-node">OpenAI / Claude API</div>
+      <div class="arch-arrow">→</div>
+      <div class="arch-node">JSON Response</div>
+      <div class="arch-arrow">→</div>
+      <div class="arch-node sf-node">Platform Event</div>
+      <div class="arch-arrow">→</div>
+      <div class="arch-node sf-node">LWC re-renders</div>
     </div>
-    <div class="cert-track">
-      <div class="cert-item">
-        <div class="cert-dot cert-sec">3</div>
-        <div class="cert-body">
-          <div class="cert-name">Platform Developer II (PD2)</div>
-          <div class="cert-meta">TARGET: WEEK 19–21 (MONTH 5) · 4–5 WEEKS PREP</div>
-          <div class="cert-desc">The real differentiator. Only ~12,000 active PD2s globally (vs 150k+ admins). Covers: Apex enterprise patterns, advanced LWC, complex integrations, deployment, performance optimization. Requires scenario-based thinking. This cert alone will move you to a different salary tier in Europe. Prep: Andy Fawcett's book + Salesforce Ben PD2 guide + scenario practice.</div>
-        </div>
+    <div class="ai-arch-grid">
+      <div class="ai-arch-step">
+        <div class="ai-arch-step-num">WHY QUEUEABLE</div>
+        <div class="ai-arch-step-title">Never call LLMs synchronously</div>
+        <div class="ai-arch-step-desc">LLM API calls take 1–8 seconds. Apex synchronous limit is 5s for callouts. Use Queueable for longer operations. Use Platform Events to return results asynchronously to the LWC.</div>
       </div>
-      <div class="cert-item">
-        <div class="cert-dot cert-str">S</div>
-        <div class="cert-body">
-          <div class="cert-name">Sharing & Visibility Designer (Stretch)</div>
-          <div class="cert-meta">OPTIONAL · IF TIME ALLOWS IN MONTH 5–6</div>
-          <div class="cert-desc">Part of the Application Architect credential. Highly valued in large-enterprise roles (banks, insurance, telcos in Europe). Cover this naturally while studying architecture patterns. Attempt only if PD2 is passed with time to spare.</div>
-        </div>
+      <div class="ai-arch-step">
+        <div class="ai-arch-step-num">PROMPT DESIGN</div>
+        <div class="ai-arch-step-title">System prompt + data injection</div>
+        <div class="ai-arch-step-desc">Build your prompt in Apex: system role defines the AI's job, user message contains the Salesforce data (SOQL results, JSON-serialized records). Never hardcode prompts — store in Custom Metadata for versioning.</div>
       </div>
-      <div class="cert-item">
-        <div class="cert-dot cert-str">→</div>
-        <div class="cert-body">
-          <div class="cert-name">Integration Architecture Designer</div>
-          <div class="cert-meta">POST 6-MONTHS · CONTINUE AFTER LANDING ROLE</div>
-          <div class="cert-desc">Part of the System Architect credential. Very relevant to your background. Plan for Month 7–9 after landing the job, when you'll have real integration experience to anchor the concepts.</div>
-        </div>
+      <div class="ai-arch-step">
+        <div class="ai-arch-step-num">ERROR HANDLING</div>
+        <div class="ai-arch-step-title">LLMs fail. Design for it.</div>
+        <div class="ai-arch-step-desc">Rate limits (429), timeouts, hallucinated JSON formats, empty responses. Always wrap in try-catch. Log to a custom AI_Log__c object. Have a graceful fallback — show the user something useful even if AI fails.</div>
       </div>
     </div>
   </div>
 
-  <div class="callout">📌 STUDY RESOURCES: Focus on Force (best practice exams) · Salesforce Ben PD1/PD2 guides · Trailhead official prep trails · SF Certification Days (free Salesforce webinars — attend at least one per cert) · David Liu YouTube for Apex concepts</div>
+  <!-- PATTERN 2: AI-POWERED FLOWS -->
+  <div class="ai-layer">
+    <div class="ai-layer-title">Pattern 2 · AI-Powered Flows & Automation</div>
+    <div class="project-desc">Use Salesforce Flow as the orchestrator. Call Apex AI actions from Flow. This makes AI accessible to admins (declarative + Apex action hybrid). Extremely valuable for enterprise clients who want admin-configurable AI features.</div>
+    <div class="ai-arch-grid">
+      <div class="ai-arch-step">
+        <div class="ai-arch-step-num">FLOW + APEX ACTION</div>
+        <div class="ai-arch-step-title">Invocable Apex for AI</div>
+        <div class="ai-arch-step-desc">Build an @InvocableMethod that calls an LLM. Flow calls this action as a step. Result is stored in a flow variable and written back to a Salesforce field. Admins configure the trigger and logic; your Apex does the AI.</div>
+      </div>
+      <div class="ai-arch-step">
+        <div class="ai-arch-step-num">PROMPT BUILDER</div>
+        <div class="ai-arch-step-title">Salesforce-native prompt management</div>
+        <div class="ai-arch-step-desc">Prompt Builder (GA in Winter '25) lets you create prompt templates with Salesforce merge fields and grounding data. Use it to create reusable prompts that admins can modify. Works with Einstein models and custom LLM connections.</div>
+      </div>
+      <div class="ai-arch-step">
+        <div class="ai-arch-step-num">USE CASES</div>
+        <div class="ai-arch-step-title">Auto-classify, auto-route, auto-draft</div>
+        <div class="ai-arch-step-desc">Auto-classify incoming cases on creation. Auto-generate response drafts when cases open. Auto-score leads on creation. Auto-summarize opportunity history before a meeting. All triggered by Flow, powered by your Apex AI action.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PATTERN 3: AGENTFORCE -->
+  <div class="ai-layer">
+    <div class="ai-layer-title">Pattern 3 · Agentforce (Custom AI Agents)</div>
+    <div class="project-desc">Agentforce is Salesforce's most important AI initiative in 2025. It lets you build autonomous AI agents that can take actions inside Salesforce on behalf of users. A custom Agentforce agent understands natural language requests, decides which actions to take, and executes them. This is where the market is heading — and where almost no developer has depth today.</div>
+    <div class="ai-arch-grid">
+      <div class="ai-arch-step">
+        <div class="ai-arch-step-num">CORE CONCEPTS</div>
+        <div class="ai-arch-step-title">Topics, Actions, Agents</div>
+        <div class="ai-arch-step-desc"><strong>Agent:</strong> The AI persona with instructions and a scope. <strong>Topics:</strong> Areas the agent can handle (e.g. "Case Management"). <strong>Actions:</strong> Specific tasks the agent can perform — either Apex @InvocableMethod, Flow, or pre-built actions. The LLM decides which action to invoke.</div>
+      </div>
+      <div class="ai-arch-step">
+        <div class="ai-arch-step-num">CUSTOM ACTIONS</div>
+        <div class="ai-arch-step-title">Your Apex as agent capabilities</div>
+        <div class="ai-arch-step-desc">Build @InvocableMethod Apex classes. Mark them as agent actions. The agent LLM can now call your code autonomously. Example: "Summarize the top 5 open cases for this account" → agent calls your SOQL + LLM summarization Apex.</div>
+      </div>
+      <div class="ai-arch-step">
+        <div class="ai-arch-step-num">BUILD ORDER</div>
+        <div class="ai-arch-step-title">Start simple, grow complex</div>
+        <div class="ai-arch-step-desc">Month 3: Build one custom Agentforce action. Month 4: Build a full custom agent with 3–4 actions. Month 5: Demo to interviewers. This specific demo — "here's a Salesforce agent I built" — is the single most impressive thing you can show right now.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PATTERN 4: EINSTEIN + DATA CLOUD -->
+  <div class="ai-layer">
+    <div class="ai-layer-title">Pattern 4 · Einstein Platform + Data Cloud (Know It, Don't Over-invest)</div>
+    <div class="project-desc">The native Salesforce AI platform. Important to understand conceptually and able to discuss architecturally. You don't need to be a Data Cloud specialist — you need to know when to use it vs building custom AI, and be able to have an intelligent conversation with a client about it.</div>
+    <div class="two-col">
+      <ul class="checklist">
+        <li class="ai-item"><strong>Einstein Prediction Builder:</strong> No-code ML on SF data. Know when to use it instead of calling OpenAI.</li>
+        <li class="ai-item"><strong>Einstein for Service:</strong> Case classification, recommended articles, case summarization. Native features — know they exist so you don't rebuild what's already there.</li>
+        <li class="ai-item"><strong>Einstein Copilot Studio:</strong> Where you build custom Agentforce agents. Use this.</li>
+        <li class="ai-item"><strong>Prompt Builder:</strong> Manage prompt templates across the org. Use this from Month 3.</li>
+      </ul>
+      <ul class="checklist">
+        <li class="ai-item"><strong>Data Cloud basics:</strong> Understand data streams, data model objects (DMO), unified profiles. Know it powers AI personalisation.</li>
+        <li class="ai-item"><strong>Model Builder:</strong> Bring your own LLM (BYOLLM). Connect custom LLMs to Salesforce. Available now. Use this to connect your OpenAI Named Credential properly.</li>
+        <li class="ai-item"><strong>When to use native vs custom:</strong> Native Einstein for standard CRM AI tasks. Custom Apex callouts when you need specific behavior, custom prompts, or external model control.</li>
+        <li class="ai-item"><strong>GDPR note:</strong> Data Cloud processes data within Salesforce's EU data centers if configured correctly. Critical point for European clients.</li>
+      </ul>
+    </div>
+  </div>
 </section>
 
 
 <!-- SECTION 4: PROJECTS -->
 <section id="projects">
-  <div class="section-label">04 / HANDS-ON PROJECT PLAN</div>
-  <h2>Four Portfolio Projects</h2>
-  <p class="section-intro">Each project is designed to be interview-demonstrable in 60 seconds. Code on GitHub with a README that explains the architecture — not just what it does, but why you made the choices you did.</p>
+  <div class="section-label sl-mixed">04 / HANDS-ON PROJECT ROADMAP</div>
+  <h2>5 Portfolio Projects (SF + AI Integrated)</h2>
+  <p class="section-intro">Every project is designed to demonstrate both Salesforce depth and AI capability. These are not toy demos — they are production-pattern implementations that any interviewer can relate to a real client problem.</p>
 
-  <div class="project-card">
+  <!-- PROJECT 1 -->
+  <div class="project-card sf-card" style="margin-bottom:16px;">
     <div class="project-header">
-      <div>
-        <div class="project-number">PROJECT 01 · MONTH 1–2</div>
-        <div class="project-title">⚙️ Enterprise Case Management System</div>
-      </div>
-      <span class="badge badge-blue">APEX FOCUS</span>
+      <div><div class="project-number">PROJECT 01 · MONTH 1–2 · WEEK 4–8</div><div class="project-title">⚙️ Enterprise Case Management System (SF Foundation)</div></div>
+      <span class="badge badge-amber">APEX DEPTH</span>
     </div>
-    <div class="project-desc">
-      Build a full Case management system on a free Developer org. This demonstrates core Apex depth — not toys, but patterns that enterprise teams actually use. This is deliberately chosen because Case is something every interviewer understands.
-    </div>
+    <div class="project-desc">Your Apex depth demonstration. Complex trigger patterns, async processing, enterprise-grade error handling. This project is your technical credibility foundation — every interviewer understands Case.</div>
     <div class="project-grid">
       <div>
         <div class="project-col-label">Build This</div>
         <ul class="checklist">
           <li>Trigger + handler class pattern (one trigger per object)</li>
           <li>Batch job: auto-close stale cases after 30 days</li>
-          <li>Queueable: send notification chain on escalation</li>
+          <li>Queueable chain: escalation → notification → log</li>
           <li>Scheduled: weekly SLA breach report via email</li>
-          <li>Custom metadata: config-driven SLA rules</li>
-          <li>Custom exception classes</li>
+          <li>Custom Metadata: config-driven SLA rules</li>
           <li>90%+ test coverage with meaningful assertions</li>
         </ul>
       </div>
       <div>
         <div class="project-col-label">Tech Stack</div>
         <div class="tech-tags">
-          <span class="tech-tag">Apex</span>
-          <span class="tech-tag">SOQL</span>
-          <span class="tech-tag">Batch Apex</span>
-          <span class="tech-tag">Queueable</span>
-          <span class="tech-tag">Scheduled Apex</span>
-          <span class="tech-tag">Custom Metadata</span>
-          <span class="tech-tag">Test Classes</span>
-          <span class="tech-tag">SFDX</span>
-          <span class="tech-tag">GitHub</span>
+          <span class="tech-tag sf">Apex</span><span class="tech-tag sf">Batch Apex</span><span class="tech-tag sf">Queueable</span><span class="tech-tag sf">Scheduled Apex</span><span class="tech-tag sf">Custom Metadata</span><span class="tech-tag">SFDX</span><span class="tech-tag">GitHub</span>
         </div>
       </div>
       <div>
-        <div class="project-col-label">How to Showcase</div>
+        <div class="project-col-label">Showcase</div>
         <ul class="checklist">
-          <li>GitHub repo with clean SFDX structure</li>
-          <li>README with architecture diagram (draw.io)</li>
-          <li>Document governor limit decisions</li>
-          <li>Record a 5-min Loom demo</li>
+          <li>GitHub: clean SFDX structure, architecture README</li>
+          <li>Draw.io diagram: component architecture</li>
+          <li>Document governor limit design decisions</li>
         </ul>
       </div>
     </div>
   </div>
 
-  <div class="project-card">
+  <!-- PROJECT 2 -->
+  <div class="project-card ai-project">
     <div class="project-header">
-      <div>
-        <div class="project-number">PROJECT 02 · MONTH 2–3</div>
-        <div class="project-title">⚡ Custom LWC Component Library</div>
-      </div>
-      <span class="badge badge-purple">LWC FOCUS</span>
+      <div><div class="project-number">PROJECT 02 · MONTH 2–3 · WEEK 8–12</div><div class="project-title">🤖 AI Case Summarization + Response Draft Tool</div></div>
+      <span class="badge badge-cyan">FIRST AI PROJECT</span>
     </div>
-    <div class="project-desc">
-      Build 3–4 reusable LWC components that solve real problems. Host a live demo using LWC OSS on GitHub Pages. Recruiters can't run your Salesforce org — this makes your LWC work visible externally.
-    </div>
-    <div class="project-grid">
-      <div>
-        <div class="project-col-label">Components to Build</div>
-        <ul class="checklist">
-          <li>Dynamic datatable with inline editing + pagination</li>
-          <li>Multi-step wizard with progress indicator</li>
-          <li>File upload component with preview + Apex backend</li>
-          <li>Real-time search with debounce + wire service</li>
-        </ul>
-      </div>
-      <div>
-        <div class="project-col-label">Tech Stack</div>
-        <div class="tech-tags">
-          <span class="tech-tag">LWC</span>
-          <span class="tech-tag">@wire</span>
-          <span class="tech-tag">Custom Events</span>
-          <span class="tech-tag">NavigationMixin</span>
-          <span class="tech-tag">Apex @AuraEnabled</span>
-          <span class="tech-tag">SLDS</span>
-          <span class="tech-tag">LWC OSS</span>
-          <span class="tech-tag">GitHub Pages</span>
-        </div>
-      </div>
-      <div>
-        <div class="project-col-label">How to Showcase</div>
-        <ul class="checklist">
-          <li>Live GitHub Pages demo (interviewers can click)</li>
-          <li>GitHub repo with JSDoc comments</li>
-          <li>Pin this repo on your GitHub profile</li>
-          <li>Write a LinkedIn post about one component</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <div class="project-card">
-    <div class="project-header">
-      <div>
-        <div class="project-number">PROJECT 03 · MONTH 3</div>
-        <div class="project-title">🔗 Salesforce Integration Hub</div>
-      </div>
-      <span class="badge badge-amber">INTEGRATION FOCUS</span>
-    </div>
-    <div class="project-desc">
-      Build a bidirectional integration between Salesforce and a real external API (use GitHub API, OpenWeatherMap API, or a mock payment gateway). This directly leverages your API testing background — you know this domain better than most developers.
-    </div>
+    <div class="project-desc">Your first real SF + AI integration. A "Generate AI Summary" button on the Case record page. Sends case history + description to an LLM and returns a clean summary + a suggested response draft. Simple concept, production-quality implementation.</div>
     <div class="project-grid">
       <div>
         <div class="project-col-label">Build This</div>
         <ul class="checklist">
-          <li>Outbound REST callout with Named Credentials</li>
-          <li>Inbound: expose a Salesforce REST API endpoint</li>
-          <li>Platform Event: trigger downstream processing</li>
-          <li>Error handling: retry logic with exponential backoff</li>
-          <li>Mock callouts in test classes</li>
-          <li>Logging framework for integration audit trail</li>
+          <li>LWC component on Case layout: "Summarize with AI" button</li>
+          <li class="ai-item">Apex Queueable: builds prompt from case SOQL data, calls OpenAI API via Named Credential</li>
+          <li class="ai-item">System prompt: "You are a Salesforce service agent. Summarize this case in 3 sentences and suggest a response."</li>
+          <li>Platform Event: returns result asynchronously to LWC</li>
+          <li>AI_Log__c object: logs every API call, tokens used, response time, cost estimate</li>
+          <li>Error handling: graceful fallback if OpenAI fails</li>
+          <li>Mock callout test: 90%+ coverage</li>
         </ul>
       </div>
       <div>
         <div class="project-col-label">Tech Stack</div>
         <div class="tech-tags">
-          <span class="tech-tag">REST Callouts</span>
-          <span class="tech-tag">Named Credentials</span>
-          <span class="tech-tag">Platform Events</span>
-          <span class="tech-tag">Custom REST API</span>
-          <span class="tech-tag">JSON Parsing</span>
-          <span class="tech-tag">HttpMock</span>
-          <span class="tech-tag">CDC</span>
+          <span class="tech-tag sf">LWC</span><span class="tech-tag sf">Apex Queueable</span><span class="tech-tag sf">Named Credentials</span><span class="tech-tag sf">Platform Events</span><span class="tech-tag ai">OpenAI API</span><span class="tech-tag ai">Prompt Engineering</span><span class="tech-tag">HttpCalloutMock</span>
         </div>
       </div>
       <div>
-        <div class="project-col-label">How to Showcase</div>
+        <div class="project-col-label">Showcase</div>
         <ul class="checklist">
-          <li>Architecture diagram showing data flow</li>
-          <li>Document error scenarios + how handled</li>
-          <li>Case study write-up (1 page PDF)</li>
-          <li>Link in LinkedIn featured section</li>
+          <li class="ai-item">GitHub: full SFDX + prompt template in Custom Metadata</li>
+          <li>Loom video: 3-min walkthrough of the feature</li>
+          <li class="ai-item">README: architecture diagram, API cost per call estimate</li>
+          <li>LinkedIn post: "Here's how I connected Salesforce to ChatGPT" — high engagement guaranteed</li>
         </ul>
       </div>
     </div>
+    <div class="callout callout-cyan" style="margin-top:12px;">✦ WHY THIS PROJECT WORKS: It's immediately relatable (every company with SF Service Cloud wants this), it demonstrates Apex + LWC + integrations + AI in one project, and the LinkedIn post about it will get recruiter attention. Low complexity, high signal.</div>
   </div>
 
-  <div class="project-card" style="border-color: rgba(245,166,35,0.3);">
+  <!-- PROJECT 3 -->
+  <div class="project-card ai-project">
     <div class="project-header">
-      <div>
-        <div class="project-number">PROJECT 04 · MONTH 4–5 · ⭐ PORTFOLIO CENTREPIECE</div>
-        <div class="project-title">🏛️ Full-Stack Order Management Platform</div>
-      </div>
-      <span class="badge badge-green">ARCHITECTURE FOCUS</span>
+      <div><div class="project-number">PROJECT 03 · MONTH 3–4 · WEEK 12–16</div><div class="project-title">📊 AI-Powered Lead Scoring Engine</div></div>
+      <span class="badge badge-cyan">SALES CLOUD AI</span>
     </div>
-    <div class="project-desc">
-      This is the one you'll talk about in every interview. An end-to-end order management system built with enterprise patterns. LWC frontend, Apex service layer, REST integration to a mock ERP, CI/CD pipeline, and full architecture documentation. This single project demonstrates developer + architect capability.
-    </div>
+    <div class="project-desc">An AI lead scoring system that evaluates incoming leads and assigns a score (1–100) with a reasoning explanation. Triggered automatically on lead creation. Demonstrates AI automation in a Sales Cloud context — directly relevant to most EU enterprise clients.</div>
     <div class="project-grid">
       <div>
         <div class="project-col-label">Build This</div>
         <ul class="checklist">
-          <li>Apex Enterprise Patterns: Selector / Domain / Service / Application layers</li>
-          <li>LWC: Order creation wizard, status dashboard, real-time updates via streaming</li>
-          <li>Integration: Salesforce ↔ mock ERP (Node.js mock) via REST</li>
-          <li>Platform Events for async order status updates</li>
-          <li>Unlocked Package structure</li>
-          <li>GitHub Actions CI/CD pipeline for deployment</li>
-          <li>Full architecture decision record (ADR) document</li>
+          <li>Record-triggered Flow on Lead creation → calls Apex AI action</li>
+          <li class="ai-item">Apex @InvocableMethod: builds structured prompt with lead fields (industry, company size, source, title)</li>
+          <li class="ai-item">LLM returns JSON: {"score": 78, "tier": "hot", "reasoning": "..."}</li>
+          <li>Custom fields on Lead: AI_Score__c, AI_Score_Tier__c, AI_Score_Reasoning__c</li>
+          <li>Flow writes AI results back to lead record</li>
+          <li class="ai-item">Optionally: compare AI score vs Einstein Prediction Builder score — document differences</li>
+          <li>Admin-configurable: scoring criteria stored in Custom Metadata</li>
         </ul>
       </div>
       <div>
         <div class="project-col-label">Tech Stack</div>
         <div class="tech-tags">
-          <span class="tech-tag">Apex Enterprise Patterns</span>
-          <span class="tech-tag">LWC</span>
-          <span class="tech-tag">REST Integration</span>
-          <span class="tech-tag">Platform Events</span>
-          <span class="tech-tag">Unlocked Packages</span>
-          <span class="tech-tag">GitHub Actions</span>
-          <span class="tech-tag">SFDX</span>
-          <span class="tech-tag">Node.js (mock ERP)</span>
-          <span class="tech-tag">draw.io Diagrams</span>
+          <span class="tech-tag sf">Record-triggered Flow</span><span class="tech-tag sf">@InvocableMethod</span><span class="tech-tag sf">Custom Fields</span><span class="tech-tag ai">OpenAI API</span><span class="tech-tag ai">JSON parsing</span><span class="tech-tag sf">Custom Metadata</span><span class="tech-tag">GitHub Actions</span>
         </div>
       </div>
       <div>
-        <div class="project-col-label">How to Showcase</div>
+        <div class="project-col-label">Showcase</div>
         <ul class="checklist">
-          <li>GitHub: SFDX project + pipeline config + README</li>
-          <li>Architecture diagrams: component, sequence, data flow</li>
-          <li>10-min Loom walkthrough video</li>
-          <li>1-page case study PDF (problem → decisions → outcome)</li>
-          <li>Personal portfolio website with this as hero project</li>
+          <li class="ai-item">Architecture decision: why LLM scoring vs traditional ML?</li>
+          <li>Show before/after lead record screenshots in README</li>
+          <li class="ai-item">Document prompt iterations — show 3 versions of the scoring prompt and why you changed them</li>
+          <li>Case study: business impact calculation (e.g. "reduces SDR time-to-contact by X%")</li>
         </ul>
       </div>
     </div>
   </div>
 
-  <div class="callout">📁 PORTFOLIO SETUP: Create a personal website (GitHub Pages + Jekyll or Notion public page). Link: your GitHub, Trailhead profile, LinkedIn, and all project case studies. The URL goes at the top of your CV — European recruiters do click these.</div>
-</section>
-
-
-<!-- SECTION 5: JOB PREP -->
-<section id="jobs">
-  <div class="section-label">05 / JOB PREPARATION</div>
-  <h2>Resume, LinkedIn & Networking</h2>
-  <p class="section-intro">European hiring is relationship-first, ATS-second. You need both a machine-readable resume and a human-readable reputation. Neither alone is enough.</p>
-
-  <div class="card-grid">
-    <div class="card">
-      <div class="card-header">
-        <div class="card-title">📄 European CV Standards</div>
-        <span class="badge badge-amber">MONTH 5</span>
-      </div>
-      <ul class="checklist">
-        <li><strong>Length:</strong> 2 pages max. 1 page if under 5 years experience. Europeans discard 3-page CVs.</li>
-        <li><strong>No photo</strong> for UK/Netherlands. Photo optional for Germany/DACH region.</li>
-        <li><strong>No date of birth, marital status</strong> — these are legally inappropriate in most EU countries.</li>
-        <li><strong>ATS header:</strong> Name, location (you can say "Open to relocation / Remote"), LinkedIn URL, GitHub URL, email.</li>
-        <li><strong>Certifications section:</strong> List with credential IDs and expiry dates — European ATS parses these.</li>
-        <li><strong>Metrics everywhere:</strong> "Reduced case processing time by 40% using Batch Apex" beats "worked on Apex projects."</li>
-        <li><strong>Skills block:</strong> Include Apex, LWC, REST/SOAP, SFDX, GitHub Actions, AWS basics, Salesforce version (Winter/Spring releases).</li>
-        <li><strong>Tailor per role:</strong> Match your bullet points to the job description keywords — ATS scores this. Spend 15 mins per application.</li>
-      </ul>
+  <!-- PROJECT 4 -->
+  <div class="project-card flagship">
+    <div class="project-header">
+      <div><div class="project-number">PROJECT 04 · MONTH 4–5 · ⭐ PORTFOLIO CENTREPIECE</div><div class="project-title">💬 Intelligent Salesforce Data Chatbot (RAG Architecture)</div></div>
+      <span class="badge badge-cyan">RAG + LWC + ARCHITECTURE</span>
     </div>
-
-    <div class="card">
-      <div class="card-header">
-        <div class="card-title">💼 LinkedIn Optimization</div>
-        <span class="badge badge-amber">MONTH 4–5</span>
-      </div>
-      <ul class="checklist">
-        <li><strong>Headline formula:</strong> "Salesforce Developer | Apex · LWC · Integrations | PD1 Certified | Open to Europe"</li>
-        <li><strong>About section:</strong> 3 paragraphs: who you are → what you've built → what you're targeting. Mention Europe explicitly.</li>
-        <li><strong>Featured section:</strong> Pin your portfolio website, best GitHub project, Trailhead public profile.</li>
-        <li><strong>Experience:</strong> Use STAR format bullets. Each role: 3–4 impact bullets with metrics.</li>
-        <li><strong>#OpenToWork:</strong> Set to recruiters-only visibility. Select "Remote" + specific European countries.</li>
-        <li><strong>Activity:</strong> Post 1× per week from Month 4. Topics: what you built, what you learned, architectural decisions. Consistency compounds.</li>
-        <li><strong>500+ connections target:</strong> Add every Salesforce person you engage with in forums, Ohana Slack, etc.</li>
-        <li><strong>Endorsements:</strong> Ask current/former colleagues to endorse Apex, LWC, Salesforce. Reciprocate.</li>
-      </ul>
-    </div>
-
-    <div class="card full">
-      <div class="card-header">
-        <div class="card-title">🌐 Where to Apply in Europe</div>
-        <span class="badge badge-green">MONTH 5–6</span>
-      </div>
-      <div class="three-col">
-        <div>
-          <div class="project-col-label">Primary Platforms</div>
-          <ul class="checklist">
-            <li><strong>LinkedIn Jobs:</strong> Primary channel. Set alerts for "Salesforce Developer" in target countries. Apply within 24 hours of posting — EU jobs fill fast.</li>
-            <li><strong>Salesforce Careers:</strong> careers.salesforce.com — direct roles + SI partner roles.</li>
-            <li><strong>Indeed.co.uk / Indeed.de:</strong> Good for UK and Germany specifically.</li>
-            <li><strong>XING:</strong> Germany/DACH region equivalent of LinkedIn — create a profile.</li>
-          </ul>
-        </div>
-        <div>
-          <div class="project-col-label">Target Company Types</div>
-          <ul class="checklist">
-            <li><strong>Big 4 consulting:</strong> Deloitte, Accenture, PwC, KPMG — all have Salesforce CoEs. Sponsor visas. UK/Germany/Netherlands offices.</li>
-            <li><strong>Salesforce SIs:</strong> Wipro, Cognizant, Capgemini, IBM (EU offices — different from India entity).</li>
-            <li><strong>ISVs:</strong> Veeva Systems (life sciences + SF), Conga, OwnBackup, Copado — often remote-friendly.</li>
-            <li><strong>End-user companies:</strong> Any company with large Salesforce implementation (banks, telcos, pharma).</li>
-          </ul>
-        </div>
-        <div>
-          <div class="project-col-label">Networking Strategy</div>
-          <ul class="checklist">
-            <li><strong>Ohana Slack:</strong> salesforce-ux.slack.com + developer communities — introduce yourself.</li>
-            <li><strong>Salesforce User Groups:</strong> Attend virtual EU-based user groups (London, Amsterdam, Berlin all have active ones).</li>
-            <li><strong>Dreamin' events:</strong> Virtual conferences (London's Calling, Forcelandia) — attend + engage with speakers on LinkedIn after.</li>
-            <li><strong>Recruiters:</strong> Connect with Salesforce-specialist recruiters: Mason Frank, Talent Hub, Hays Technology (EU-based). Message them with your specific ask, not a generic "open to work."</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- SECTION 6: INTERVIEWS -->
-<section id="interviews">
-  <div class="section-label">06 / INTERVIEW PREPARATION</div>
-  <h2>Technical Interview Playbook</h2>
-  <p class="section-intro">European Salesforce interviews typically have 3–4 rounds: HR screening → Technical screening (Apex/LWC) → Architecture discussion → Cultural/Team fit. Prepare for all four.</p>
-
-  <div class="card-grid">
-    <div class="card">
-      <div class="card-header">
-        <div class="card-title">Apex Interview Questions</div>
-        <span class="badge badge-blue">ROUND 2</span>
-      </div>
-      <ul class="checklist">
-        <li><strong>"How do you bulkify a trigger?"</strong> — Explain collections, avoid SOQL/DML in loops, use Maps keyed by record Id.</li>
-        <li><strong>"When do you use Batch vs Queueable vs Future?"</strong> — Batch: 50M+ records. Queueable: chaining, complex types. Future: simple async, legacy. Know the limits of each.</li>
-        <li><strong>"What are governor limits and how do you design around them?"</strong> — Name 5 critical ones. Explain how architecture decisions (like using aggregate queries) flow from limits.</li>
-        <li><strong>"How do you handle partial save scenarios?"</strong> — Database.insert with allOrNone=false, iterate SaveResult, rollback strategies.</li>
-        <li><strong>"How do you test an Apex class that makes HTTP callouts?"</strong> — HttpCalloutMock interface, Test.setMock(), StaticResourceCalloutMock.</li>
-        <li><strong>"What is WITH SECURITY_ENFORCED and when do you use it?"</strong> — FLS enforcement in SOQL. Mention stripInaccessible() as the DML equivalent.</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <div class="card-header">
-        <div class="card-title">LWC Interview Questions</div>
-        <span class="badge badge-purple">ROUND 2</span>
-      </div>
-      <ul class="checklist">
-        <li><strong>"What's the LWC component lifecycle?"</strong> — constructor → connectedCallback → render → renderedCallback. Know what you can/cannot do in each.</li>
-        <li><strong>"@wire vs imperative Apex call — when to use which?"</strong> — Wire: cacheable, reactive. Imperative: when you need to pass parameters, handle errors explicitly, or call non-cacheable methods.</li>
-        <li><strong>"How do sibling components communicate?"</strong> — Through a common parent via custom events, or a message channel (Lightning Message Service).</li>
-        <li><strong>"What is Locker Service?"</strong> — Security feature. Components cannot access DOM of other namespaces. Explain implications for third-party libraries.</li>
-        <li><strong>"How do you optimize an LWC that's slow?"</strong> — Reduce reactive property updates, lazy load data, cache wire results, use pagination instead of loading all records.</li>
-        <li><strong>"How do you handle errors from Apex in LWC?"</strong> — reduceErrors() utility, error.body.message, error.statusCode, toast notification pattern.</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <div class="card-header">
-        <div class="card-title">Integration Questions</div>
-        <span class="badge badge-amber">ROUND 2–3</span>
-      </div>
-      <ul class="checklist">
-        <li><strong>"Platform Events vs Change Data Capture — difference?"</strong> — PE: custom business events (you define payload). CDC: system-generated record change events. PE for custom workflows, CDC for data sync.</li>
-        <li><strong>"How do you handle integration failures?"</strong> — Retry with exponential backoff, dead letter queue pattern using Platform Events, custom logging object, alerting via custom notification.</li>
-        <li><strong>"REST vs SOAP — when to use each?"</strong> — REST: modern, lightweight, JSON. SOAP: legacy systems, banking/enterprise ERPs. Know WSDL, XML envelope structure at a conceptual level.</li>
-        <li><strong>"How do you test a callout class?"</strong> — HttpCalloutMock, mock the response, verify the parsing logic. Emphasize you test both success and error paths.</li>
-        <li><strong>"Named Credentials vs hardcoded endpoints?"</strong> — Always Named Credentials. Explain per-user auth vs per-org, OAuth 2.0 flow, why it's a security requirement not just a best practice.</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <div class="card-header">
-        <div class="card-title">Architecture Scenarios</div>
-        <span class="badge badge-green">ROUND 3</span>
-      </div>
-      <ul class="checklist">
-        <li><strong>"Design a system for 50M records migration into Salesforce."</strong> — Batch Apex + External IDs + upsert, data skew considerations, rollback strategy, sandbox testing first, Bulk API 2.0.</li>
-        <li><strong>"Client wants real-time sync between Salesforce and their ERP."</strong> — Assess: truly real-time or near-real-time? Platform Events vs CDC vs middleware (MuleSoft/AWS). Ask about volume, latency SLA.</li>
-        <li><strong>"How would you design the sharing model for a financial services company?"</strong> — OWD private, role hierarchy, sharing rules, territory management. Ask about compliance requirements (GDPR in EU!).</li>
-        <li><strong>"When would you recommend multiple orgs vs one org?"</strong> — Multiple: regulatory isolation (EU data residency!), separate business units, performance concerns. One: simpler, cheaper, easier reporting. Always a trade-off conversation.</li>
-        <li><strong>"How do you approach a Salesforce org with 10 years of technical debt?"</strong> — Assessment → prioritization → unlocked packages for modularization → deprecation strategy. No big bang rewrites.</li>
-      </ul>
-    </div>
-
-    <div class="card full">
-      <div class="card-header">
-        <div class="card-title">Mock Interview Strategy</div>
-        <span class="badge badge-amber">MONTH 5–6</span>
-      </div>
-      <div class="two-col">
+    <div class="project-desc">An LWC chat interface inside Salesforce where users can ask natural language questions about their data — "What are my top 5 opportunities this quarter?" or "Summarize the last 3 service interactions for this account." No RAG infrastructure needed for the basic version — you inject SOQL results as context. This demonstrates RAG thinking without requiring a vector database in Salesforce.</div>
+    <div class="project-grid">
+      <div>
+        <div class="project-col-label">Build This</div>
         <ul class="checklist">
-          <li><strong>Week 19–20:</strong> Solo practice — answer questions out loud, record yourself. Watch back for filler words and clarity.</li>
-          <li><strong>Week 21:</strong> Peer mock — find 1–2 people from Salesforce communities (Ohana Slack has mock interview channels) to do a full 45-min technical screen.</li>
-          <li><strong>Week 22+:</strong> Real interviews are your best practice. Apply early, target less-preferred companies first to calibrate.</li>
-          <li><strong>STAR format:</strong> Every behavioural answer: Situation → Task → Action → Result. European interviewers specifically look for structured thinking.</li>
+          <li>LWC: chat UI (message bubbles, loading state, error state)</li>
+          <li class="ai-item">Apex: receives user question → runs SOQL to retrieve relevant SF data → injects data into LLM prompt as context</li>
+          <li class="ai-item">Context injection pattern: "Here is the user's Salesforce data: {JSON}. Answer this question: {user_question}"</li>
+          <li class="ai-item">Response is grounded in actual SF data — not hallucinated</li>
+          <li>Conversation history: maintain multi-turn context in Apex</li>
+          <li>Security: SOQL respects user's sharing rules — don't expose data the user can't see</li>
+          <li class="ai-item">Bonus: add a Pinecone vector search step before SOQL for semantic retrieval of knowledge articles</li>
         </ul>
+      </div>
+      <div>
+        <div class="project-col-label">Tech Stack</div>
+        <div class="tech-tags">
+          <span class="tech-tag sf">LWC</span><span class="tech-tag sf">Apex</span><span class="tech-tag sf">SOQL</span><span class="tech-tag ai">OpenAI Chat Completions</span><span class="tech-tag ai">RAG Pattern</span><span class="tech-tag ai">Context Injection</span><span class="tech-tag sf">Named Credentials</span><span class="tech-tag ai">Pinecone (optional)</span><span class="tech-tag">GitHub Actions</span>
+        </div>
+      </div>
+      <div>
+        <div class="project-col-label">Showcase</div>
         <ul class="checklist">
-          <li><strong>Prepare 3 stories:</strong> A complex technical challenge you solved. A time you disagreed with a design decision. A delivery under tight constraints. These cover 90% of behavioural questions.</li>
-          <li><strong>Architecture whiteboard:</strong> Practice drawing diagrams on paper. In remote interviews, use Excalidraw or draw.io to share screen. Europeans appreciate visual thinkers.</li>
-          <li><strong>Salary negotiation:</strong> Research Glassdoor + LinkedIn Salary for the specific country. UK: £65–90k for Senior Dev. Netherlands: €70–95k. Germany: €70–90k. Always negotiate — first offer is rarely best.</li>
-          <li><strong>Ask good questions:</strong> "How does the team handle technical debt?" "What does the deployment process look like?" These signal seniority.</li>
+          <li class="ai-item">Architecture diagram: LWC → Apex → SOQL → LLM → response</li>
+          <li>10-min Loom: live demo asking questions in Salesforce</li>
+          <li class="ai-item">README: explain RAG pattern, why context injection is safer than fine-tuning</li>
+          <li class="ai-item">Blog post: "How I built a Salesforce chatbot without MuleSoft or Data Cloud"</li>
+          <li>1-page case study PDF for portfolio site</li>
+        </ul>
+      </div>
+    </div>
+    <div class="callout callout-cyan" style="margin-top:12px;">✦ THIS IS YOUR FLAGSHIP DEMO: Walking an interviewer through a live Salesforce chatbot that answers questions about real Salesforce data — using code you wrote — will be the most memorable thing they see in any interview process. Almost no other candidate will have this.</div>
+  </div>
+
+  <!-- PROJECT 5 -->
+  <div class="project-card ai-project">
+    <div class="project-header">
+      <div><div class="project-number">PROJECT 05 · MONTH 5 · WEEK 19–22</div><div class="project-title">🕵️ Custom Agentforce Agent</div></div>
+      <span class="badge badge-cyan">AGENTFORCE</span>
+    </div>
+    <div class="project-desc">Build a custom Agentforce agent — a "Service Intelligence Agent" — that can autonomously answer service manager questions, retrieve case data, and take actions like escalating or reassigning cases. This is bleeding-edge Salesforce AI and almost no one in the EU hiring market can demo this today.</div>
+    <div class="project-grid">
+      <div>
+        <div class="project-col-label">Build This</div>
+        <ul class="checklist">
+          <li class="ai-item">Custom Agentforce agent with a defined persona and instructions</li>
+          <li class="ai-item">Topic: "Case Management" with 3–4 custom actions</li>
+          <li>Custom Action 1: @InvocableMethod — get open cases by account</li>
+          <li>Custom Action 2: @InvocableMethod — get AI case summary (reuse Project 2)</li>
+          <li>Custom Action 3: @InvocableMethod — escalate case (update priority + assign)</li>
+          <li class="ai-item">Test: ask agent in natural language, watch it orchestrate multi-step actions</li>
+          <li>Document: agent reasoning trace — show how the LLM decides which action to call</li>
+        </ul>
+      </div>
+      <div>
+        <div class="project-col-label">Tech Stack</div>
+        <div class="tech-tags">
+          <span class="tech-tag ai">Agentforce</span><span class="tech-tag ai">Einstein Copilot Studio</span><span class="tech-tag sf">@InvocableMethod Apex</span><span class="tech-tag sf">Custom Objects</span><span class="tech-tag ai">Prompt Templates</span>
+        </div>
+      </div>
+      <div>
+        <div class="project-col-label">Showcase</div>
+        <ul class="checklist">
+          <li class="ai-item">Loom: show the agent completing a multi-step task</li>
+          <li class="ai-item">GitHub: Apex actions + metadata + README</li>
+          <li class="ai-item">Architecture diagram: Topics → Actions → Apex → SF data</li>
         </ul>
       </div>
     </div>
@@ -1521,170 +886,316 @@
 </section>
 
 
-<!-- SECTION 7: EUROPE -->
+<!-- SECTION 5: CERTIFICATIONS -->
+<section id="certs">
+  <div class="section-label sl-sf">05 / CERTIFICATION STRATEGY</div>
+  <h2>Updated Cert Order with AI Certs</h2>
+  <p class="section-intro sf">Two AI certifications added — both from Salesforce. The AI Associate is a quick win that signals commitment to the AI path. The AI Specialist is the differentiator that almost nobody in the EU job market has yet.</p>
+
+  <div class="two-col">
+    <div class="cert-track">
+      <div class="cert-item">
+        <div class="cert-dot cert-done">✓</div>
+        <div class="cert-body">
+          <div class="cert-name">Salesforce Administrator (ADM-201)</div>
+          <div class="cert-meta">COMPLETED · KEEP RENEWING ANNUALLY</div>
+          <div class="cert-desc">Your foundation. Ensure renewal date is tracked — expired certs are noticed by EU recruiters who check Trailhead profiles.</div>
+        </div>
+      </div>
+      <div class="cert-item">
+        <div class="cert-dot cert-ai">AI</div>
+        <div class="cert-body">
+          <div class="cert-name">Salesforce AI Associate</div>
+          <div class="cert-meta">TARGET: WEEK 2–3 (MONTH 1) · 3–5 DAYS PREP · FREE EXAM</div>
+          <div class="cert-desc">Quick win. 40 multiple-choice questions. Covers AI basics, Einstein features, ethical AI, data quality for AI. Prep: "Prepare for Your Salesforce AI Associate Certification" trail on Trailhead (10 hours). Take this first — it reframes how you see your entire Salesforce skillset through an AI lens and costs you almost no time.</div>
+        </div>
+      </div>
+      <div class="cert-item">
+        <div class="cert-dot cert-pri">1</div>
+        <div class="cert-body">
+          <div class="cert-name">Platform Developer I (PD1)</div>
+          <div class="cert-meta">TARGET: WEEK 8–9 (MONTH 2) · 3 WEEKS FOCUSED PREP</div>
+          <div class="cert-desc">Your most critical standard cert. Unlocks developer credibility and the architect track. Given your Apex exposure, 3 weeks of focused prep is realistic. Resources: Trailhead PD1 prep trail + Focus on Force practice exams (do 200+ questions). Your API testing background gives you an edge on integration questions.</div>
+        </div>
+      </div>
+      <div class="cert-item">
+        <div class="cert-dot cert-pri">2</div>
+        <div class="cert-body">
+          <div class="cert-name">App Builder</div>
+          <div class="cert-meta">TARGET: WEEK 13–14 (MONTH 3) · 10–14 DAYS PREP</div>
+          <div class="cert-desc">Quick win given your Admin background. You know 70% of the content already. Focuses on Lightning App Builder, Flows, declarative automation. Required for Application Architect credential. Two focused weekends of practice exams should get you there.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cert-track">
+      <div class="cert-item">
+        <div class="cert-dot cert-ai">AI</div>
+        <div class="cert-body">
+          <div class="cert-name">Salesforce AI Specialist</div>
+          <div class="cert-meta">TARGET: WEEK 18–20 (MONTH 4–5) · 3 WEEKS PREP</div>
+          <div class="cert-desc">The real differentiator. Covers: Einstein, Agentforce, Prompt Builder, Data Cloud AI, Model Builder (BYOLLM), ethical AI in practice. Very few candidates have this cert yet — supply is tiny vs demand. Prep: Trailhead AI Specialist trail + Agentforce hands-on. Build Projects 3–4 first, then the cert study will feel familiar. This cert in combination with PD1 is a stronger signal than PD2 alone for AI-focused roles.</div>
+        </div>
+      </div>
+      <div class="cert-item">
+        <div class="cert-dot cert-sec">3</div>
+        <div class="cert-body">
+          <div class="cert-name">Platform Developer II (PD2)</div>
+          <div class="cert-meta">TARGET: WEEK 21–22 (MONTH 5–6) · 4 WEEKS PREP</div>
+          <div class="cert-desc">Still the best differentiator for pure developer roles. Only ~12,000 active PD2s globally. Covers: enterprise patterns, advanced LWC, complex integrations, performance. Study: Andy Fawcett's Apex Enterprise Patterns book + Salesforce Ben PD2 guide. Do this AFTER AI Specialist — the AI cert opens more doors faster, then PD2 solidifies your developer depth.</div>
+        </div>
+      </div>
+      <div class="cert-item">
+        <div class="cert-dot cert-str">→</div>
+        <div class="cert-body">
+          <div class="cert-name">Data Cloud Consultant (Future)</div>
+          <div class="cert-meta">POST MONTH 6 · HIGH AI RELEVANCE</div>
+          <div class="cert-desc">Data Cloud is the engine behind Salesforce AI personalisation. This cert is becoming increasingly demanded in EU enterprise deals. Plan for Month 8–10 once you're in a role. Extremely high value in combination with AI Specialist.</div>
+        </div>
+      </div>
+      <div class="cert-item">
+        <div class="cert-dot cert-str">→</div>
+        <div class="cert-body">
+          <div class="cert-name">Architect Track (Long Game)</div>
+          <div class="cert-meta">YEAR 2 IN EUROPE · SHARING & VISIBILITY + INTEGRATION ARCH</div>
+          <div class="cert-desc">Sharing & Visibility Designer and Integration Architecture Designer are your next natural steps after settling in Europe. These + Data Cloud Consultant + PD2 form a very strong senior architect profile.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout callout-cyan" style="margin-top:20px;">✦ THE AI CERT ADVANTAGE: In EU job postings, "Salesforce AI Specialist" appears in only ~4% of requirements — because most companies don't know to ask for it yet. But every hiring manager who sees it on your CV will be intrigued. It's the cert equivalent of showing up to a party before everyone else.</div>
+</section>
+
+
+<!-- SECTION 6: EUROPE JOB STRATEGY -->
 <section id="europe">
-  <div class="section-label">07 / EUROPE-SPECIFIC STRATEGY</div>
-  <h2>Targeting the European Market</h2>
-  <p class="section-intro">Europe is not one market — it's 30+ different hiring contexts. Focus your energy on 2–3 countries max. Spreading thin across all of Europe is a common and costly mistake.</p>
+  <div class="section-label sl-sf">06 / EUROPE JOB STRATEGY</div>
+  <h2>Targeting the European Market with an AI Edge</h2>
+  <p class="section-intro sf">AI skills change your European job search strategy. You now have access to a smaller, faster-moving pool of specialized roles — and you can bypass the generic developer competition entirely. Here's how.</p>
 
-  <div class="country-grid" style="margin-bottom: 28px;">
+  <div class="country-grid" style="margin-bottom:28px;">
     <div class="country-card">
       <div class="country-name">🇬🇧 United Kingdom</div>
       <div class="country-visa">SKILLED WORKER VISA</div>
       <ul class="country-facts">
-        <li>Largest English-language Salesforce market in Europe</li>
-        <li>Sponsoring salary threshold: ~£26,200 (Salesforce roles: £60–90k)</li>
-        <li>Many Big 4 + SIs actively sponsor Indian developers</li>
-        <li>Remote from India to UK company possible (IR35 rules apply for contractors)</li>
-        <li>London-centric but Manchester, Edinburgh also active</li>
-        <li>Recommended: LinkedIn + specialist recruiters (Mason Frank)</li>
+        <li>Largest English-language SF market in Europe</li>
+        <li>London: major Salesforce consulting hub (Big 4, Accenture, Deloitte)</li>
+        <li>Visa threshold: ~£26,200 (SF AI roles far exceed this at £70–95k)</li>
+        <li>Many Big 4 sponsor Indian developers — established pipeline</li>
+        <li class="ai-fact">UK financial services (banks, insurers) heavily investing in SF + AI</li>
+        <li class="ai-fact">Search: "Salesforce AI" + "Agentforce" on LinkedIn UK — very few results, high opportunity</li>
       </ul>
     </div>
     <div class="country-card">
       <div class="country-name">🇳🇱 Netherlands</div>
-      <div class="country-visa">HIGHLY SKILLED MIGRANT VISA (HSM)</div>
+      <div class="country-visa">HIGHLY SKILLED MIGRANT (HSM)</div>
       <ul class="country-facts">
-        <li>Very tech-friendly, high English proficiency, expat-welcoming</li>
+        <li>Expat-friendly, high English proficiency, fast visa (2–4 weeks)</li>
         <li>HSM salary threshold: ~€5,008/month gross (2025)</li>
-        <li>Employer must be IND-recognized (most large companies are)</li>
-        <li>Amsterdam/Rotterdam have active Salesforce hubs</li>
-        <li>Strong for remote-first companies registered in NL</li>
-        <li>Process: 2–4 weeks once job offer secured</li>
+        <li>Amsterdam: European HQ for many US tech companies using SF</li>
+        <li class="ai-fact">ASML, Philips, ING, Booking.com — all large SF footprints with AI ambitions</li>
+        <li class="ai-fact">Remote-friendly companies registered in NL hire globally</li>
+        <li>Recommended: Mason Frank + LinkedIn NL + Dutch SF user group</li>
       </ul>
     </div>
     <div class="country-card">
       <div class="country-name">🇩🇪 Germany</div>
       <div class="country-visa">EU BLUE CARD</div>
       <ul class="country-facts">
-        <li>Largest EU economy, strong demand for Salesforce in manufacturing/automotive</li>
-        <li>Blue Card: degree + job offer + €45,552 min salary (Salesforce roles far exceed this)</li>
-        <li>German language helpful but not required for tech roles</li>
-        <li>Munich, Berlin, Frankfurt all have Salesforce ecosystems</li>
-        <li>Process can take 6–12 weeks — factor into timeline</li>
-        <li>XING is the German LinkedIn — create a profile</li>
+        <li>Blue Card: degree + offer + €45,552 min salary (SF roles far exceed)</li>
+        <li>Manufacturing + automotive: SAP shops converting to SF — huge SF + AI demand</li>
+        <li>Munich: BMW, Siemens, MAN — all run SF</li>
+        <li class="ai-fact">German companies are early-adopting Agentforce for service automation</li>
+        <li>German language not required for most tech roles</li>
+        <li>XING profile worth creating (German LinkedIn)</li>
       </ul>
     </div>
     <div class="country-card">
-      <div class="country-name">🇸🇪 Sweden / Nordics</div>
-      <div class="country-visa">WORK PERMIT</div>
+      <div class="country-name">🇮🇪 Ireland</div>
+      <div class="country-visa">CRITICAL SKILLS PERMIT</div>
       <ul class="country-facts">
-        <li>High salaries, excellent work-life balance</li>
-        <li>Strong English usage in tech companies</li>
-        <li>Sweden work permit: job offer + union agreement</li>
-        <li>Stockholm has growing Salesforce scene (Spotify, Klarna use SF)</li>
-        <li>Denmark's "Fast-track" scheme for high-demand tech roles</li>
-        <li>Lower volume of Salesforce roles vs UK/DE but higher quality</li>
+        <li>Tech-heavy: Google, Meta, HubSpot, Salesforce EU HQ all in Dublin</li>
+        <li>Common law system (similar to India) — easier legal adaptation</li>
+        <li>Salesforce EMEA HQ is in Dublin — direct pipeline</li>
+        <li class="ai-fact">Irish tech ecosystem early on AI features — strong demand</li>
+        <li>Salary range: €65–90k for SF AI profiles</li>
+        <li>Critical Skills Permit: employer-sponsored, processing 6–12 weeks</li>
       </ul>
     </div>
     <div class="country-card">
-      <div class="country-name">🌐 Remote (EU Companies)</div>
-      <div class="country-visa">NO VISA REQUIRED (CONTRACTOR)</div>
+      <div class="country-name">🌐 Remote-First (EU Companies)</div>
+      <div class="country-visa">NO VISA REQUIRED</div>
       <ul class="country-facts">
         <li>Many EU companies hire Indian contractors/freelancers via B2B</li>
-        <li>You invoice them as a sole proprietor or through an agency</li>
-        <li>Rates: €50–80/hour for Senior Salesforce Developer</li>
         <li>Platforms: Toptal, Andela, Deel (handles compliance)</li>
-        <li>Risk: no job security, requires self-marketing, handle taxes carefully</li>
-        <li>Good bridge strategy while waiting for visa-sponsored role</li>
+        <li>Rate: €55–80/hour for SF + AI Developer profile</li>
+        <li class="ai-fact">AI-specialized Salesforce freelancers command premium rates</li>
+        <li>Good bridge strategy: build EU work history while visa-sponsored role finds you</li>
+        <li>Risk: no job security, handle taxes carefully</li>
       </ul>
     </div>
-    <div class="country-card">
-      <div class="country-name">💡 Visa Strategy Summary</div>
-      <div class="country-visa">ACTION PLAN</div>
+    <div class="country-card" style="border-color:rgba(34,211,238,0.2);">
+      <div class="country-name" style="color:var(--cyan);">🎯 AI-Specific Strategy</div>
+      <div class="country-visa" style="color:var(--cyan);">HOW TO FIND SF+AI ROLES</div>
       <ul class="country-facts">
-        <li>Target UK first — fastest, English, most roles</li>
-        <li>Apply to NL simultaneously — fastest visa processing</li>
-        <li>In your cover letter: explicitly state "I require visa sponsorship"</li>
-        <li>Filter LinkedIn Jobs: check "Sponsor visa" in preferences</li>
-        <li>Mason Frank International specializes in placing Indian SF developers in EU</li>
-        <li>Do NOT hide visa requirement — it wastes everyone's time</li>
+        <li class="ai-fact">LinkedIn search: "Salesforce" + "Einstein" / "Agentforce" / "AI" in EU — set alerts</li>
+        <li class="ai-fact">Target: Big 4 AI practices (Accenture AI, Deloitte AI Studio)</li>
+        <li class="ai-fact">Salesforce Partner community: ISVs building AI on SF platform</li>
+        <li class="ai-fact">Salesforce's own hiring (Dublin/London): Solutions Engineer AI, Technical AI Advisor</li>
+        <li class="ai-fact">Write on LinkedIn about AI + SF — recruiters will come to you by Month 4–5</li>
+        <li class="ai-fact">Ohana Slack #agentforce channel: EU devs, EU companies, EU jobs mentioned</li>
       </ul>
     </div>
   </div>
 
-  <div class="callout">🛂 GDPR BONUS: Your knowledge of working in a regulated environment is valuable in Europe. Every Salesforce architecture discussion in EU involves GDPR. Study the basics of data residency, right to erasure, data processing agreements — mention this in interviews for an instant credibility boost.</div>
+  <div class="callout callout-cyan">✦ GDPR IS YOUR HIDDEN ADVANTAGE: Every EU company doing AI with customer data has GDPR concerns. If you understand GDPR basics (data residency, right to erasure, anonymization before LLM calls, Azure OpenAI for EU data sovereignty) and mention this in interviews — you will immediately stand out. European companies are terrified of GDPR violations. Being the candidate who thinks about this before they ask signals seniority.</div>
+</section>
+
+
+<!-- SECTION 7: INTERVIEWS -->
+<section id="interviews">
+  <div class="section-label sl-sf">07 / INTERVIEW PREPARATION</div>
+  <h2>Technical Interview Playbook: SF + AI</h2>
+  <p class="section-intro sf">European interviews now include an AI tier — from basic AI awareness questions in HR screens to system design scenarios for architect roles. You need answers for all levels. Here are the questions you will actually be asked.</p>
+
+  <div class="card-grid">
+    <div class="card sf-card">
+      <div class="card-header"><div class="card-title">Apex Deep Questions</div><span class="badge badge-amber">ROUND 2</span></div>
+      <ul class="checklist">
+        <li><strong>"How do you bulkify a trigger?"</strong> — Collections, Maps by Id, no SOQL/DML in loops.</li>
+        <li><strong>"Batch vs Queueable vs Future — when to use each?"</strong> — Batch: 50M+ records. Queueable: chaining, complex types, AI callouts. Future: legacy, simple async.</li>
+        <li><strong>"How do you call an external API from Apex?"</strong> — HttpRequest, Named Credentials, async pattern. If they say "like an LLM API" — demonstrate with your case summarization project.</li>
+        <li><strong>"Why can't you call OpenAI synchronously from Apex?"</strong> — Callout timeout, governor limits. Queueable + Platform Event pattern.</li>
+        <li><strong>"How do you test an Apex class that calls OpenAI?"</strong> — HttpCalloutMock interface, Test.setMock(), mock the JSON response, assert the parsing logic.</li>
+      </ul>
+    </div>
+
+    <div class="card sf-card">
+      <div class="card-header"><div class="card-title">LWC + Integration Questions</div><span class="badge badge-amber">ROUND 2</span></div>
+      <ul class="checklist">
+        <li><strong>"How would you display streaming AI responses in LWC?"</strong> — Platform Events for real-time updates; polling pattern as fallback; wire to Platform Event channel.</li>
+        <li><strong>"Wire vs imperative Apex — when to use which?"</strong> — Wire for cacheable reactive data; imperative for AI calls (need loading state, error handling, non-cacheable).</li>
+        <li><strong>"How do siblings communicate?"</strong> — Through parent via custom events, or Lightning Message Service for unrelated components.</li>
+        <li><strong>"How would you show an AI loading state in LWC?"</strong> — isLoading reactive property, conditional template rendering, spinner component, disable button while processing.</li>
+        <li><strong>"REST vs SOAP, Platform Events vs CDC?"</strong> — REST: modern, JSON. PE: custom business events you define. CDC: system-generated record change events for sync.</li>
+      </ul>
+    </div>
+
+    <div class="card ai-card">
+      <div class="card-header"><div class="card-title" style="color:var(--cyan);">AI Practical Questions</div><span class="badge badge-cyan">ROUND 2–3</span></div>
+      <ul class="checklist">
+        <li class="ai-item"><strong>"What is RAG and how would you implement it in Salesforce?"</strong> — Explain: retrieve relevant data (SOQL or vector search) → inject as context → LLM generates grounded answer. Reference your chatbot project.</li>
+        <li class="ai-item"><strong>"What is Agentforce?"</strong> — AI agent platform on Salesforce. Topics define scope, Actions are Apex invocable methods, the LLM orchestrates which action to call. You've built one.</li>
+        <li class="ai-item"><strong>"How do you handle LLM hallucinations in a production feature?"</strong> — Grounding (inject real SF data), structured output (JSON schema), validation of response before displaying, confidence thresholds, human-in-the-loop for critical decisions.</li>
+        <li class="ai-item"><strong>"How do you ensure GDPR compliance when sending Salesforce data to an LLM?"</strong> — Anonymize/pseudonymize PII before sending, use Azure OpenAI (EU data residency), data processing agreements, consent management, audit logging. This answer alone will impress EU interviewers.</li>
+        <li class="ai-item"><strong>"What are the main risks of AI features in production?"</strong> — Hallucinations, cost (tokens), latency, GDPR/privacy, prompt injection attacks, model deprecations, vendor lock-in.</li>
+      </ul>
+    </div>
+
+    <div class="card ai-card">
+      <div class="card-header"><div class="card-title" style="color:var(--cyan);">Architecture Scenarios (AI + SF)</div><span class="badge badge-cyan">ROUND 3</span></div>
+      <ul class="checklist">
+        <li class="ai-item"><strong>"Design an AI-powered service cloud for a 500-agent contact center."</strong> — Case classification on creation (Flow + Apex AI action). Live chat sentiment analysis. Response draft generation. Knowledge base search using RAG. Agent performance summarization. Each layer, explain the tech choice and fallback.</li>
+        <li class="ai-item"><strong>"Client wants AI features but is scared of GDPR. How do you approach it?"</strong> — Assess data sensitivity. Use Azure OpenAI (EU region). Anonymize PII in prompts. Implement audit logging. DPA with LLM vendor. Possibly on-premise model (Llama) for most sensitive data. Data Cloud for consented, unified profiles.</li>
+        <li class="ai-item"><strong>"When would you use Agentforce vs a custom Apex LLM callout?"</strong> — Agentforce: natural language interface, orchestrated multi-step workflows, declarative admin config. Custom Apex: specific prompt control, external LLM, performance-critical, complex business logic, unit testability.</li>
+        <li><strong>"Design a multi-org strategy for a global company that wants AI features."</strong> — One org per major region (EU data residency), shared integration layer, Data Cloud for unified AI insights across orgs, org-specific AI models vs shared prompts.</li>
+      </ul>
+    </div>
+
+    <div class="card full sf-card">
+      <div class="card-header"><div class="card-title">Mock Interview Strategy</div><span class="badge badge-amber">MONTH 5–6</span></div>
+      <div class="two-col">
+        <ul class="checklist">
+          <li><strong>Week 19–20:</strong> Solo practice. Answer questions out loud, record yourself. Watch for filler words and vague AI answers.</li>
+          <li><strong>Week 21:</strong> Peer mock (Ohana Slack has mock interview channels). Full 45-min technical screen.</li>
+          <li><strong>Week 22+:</strong> Real interviews as practice. Apply to less-preferred companies first to calibrate.</li>
+          <li class="ai-item"><strong>AI demo readiness:</strong> Be able to share your screen and walk through your chatbot project or Agentforce agent live. Have it set up on a free developer org, ready to go in 30 seconds.</li>
+        </ul>
+        <ul class="checklist">
+          <li><strong>Prepare 3 technical stories:</strong> "A complex AI feature I built" (Project 4). "A time I had to make an architecture decision" (custom callout vs Einstein). "A delivery under tight constraints" (your day job).</li>
+          <li class="ai-item"><strong>Know your projects cold:</strong> Every line of the prompt templates. Why you used Queueable. How you handle errors. What it costs per API call. European interviewers drill deep on projects you claim to have built.</li>
+          <li><strong>Salary research:</strong> Glassdoor + LinkedIn Salary by country. UK: £70–90k for SF AI. NL: €70–90k. DE: €68–88k. Always negotiate.</li>
+          <li><strong>Questions to ask:</strong> "What's your current Agentforce roadmap?" "How does your team handle LLM API governance?" — These questions signal seniority.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </section>
 
 
 <!-- SECTION 8: WEEKLY SCHEDULE -->
 <section id="schedule">
-  <div class="section-label">08 / WEEKLY SCHEDULE</div>
+  <div class="section-label sl-sf">08 / WEEKLY SCHEDULE</div>
   <h2>How to Fit This Around a 9–5</h2>
-  <p class="section-intro">You have 2–4 hours on weekdays and 5–7 on weekends. That's roughly 25–35 hours per week of learning/building time — equivalent to a part-time university program. Treat it that way.</p>
+  <p class="section-intro sf">The schedule structure from the original plan stands. AI learning integrates into your existing sessions — it does not add hours, it redirects them. The 60/40 SF/AI split ensures neither suffers.</p>
 
-  <table class="schedule-table" style="margin-bottom: 28px;">
+  <table class="schedule-table" style="margin-bottom:28px;">
     <thead>
-      <tr>
-        <th>TIME</th>
-        <th>MON</th>
-        <th>TUE</th>
-        <th>WED</th>
-        <th>THU</th>
-        <th>FRI</th>
-        <th>SAT</th>
-        <th>SUN</th>
-      </tr>
+      <tr><th>TIME</th><th>MON</th><th>TUE</th><th>WED</th><th>THU</th><th>FRI</th><th>SAT</th><th>SUN</th></tr>
     </thead>
     <tbody>
       <tr>
         <td>6:00–7:30 AM</td>
-        <td><strong>Optional:</strong><br>Trailhead / light reading</td>
-        <td><strong>Optional:</strong><br>Trailhead / light reading</td>
-        <td><strong>Optional:</strong><br>Trailhead / light reading</td>
-        <td><strong>Optional:</strong><br>Trailhead / light reading</td>
-        <td><strong>Optional:</strong><br>Trailhead / light reading</td>
+        <td><strong>Optional:</strong><br>Trailhead / AI reading</td>
+        <td><strong>Optional:</strong><br>Trailhead / AI reading</td>
+        <td><strong>Optional:</strong><br>Trailhead / AI reading</td>
+        <td><strong>Optional:</strong><br>Cert practice Qs</td>
+        <td><strong>Optional:</strong><br>Light review</td>
         <td><strong>Deep Work:</strong><br>Project building</td>
         <td><strong>Cert Study:</strong><br>Practice exams</td>
       </tr>
       <tr>
         <td>9:00–6:00 PM</td>
-        <td colspan="5" style="text-align:center; color: var(--text-muted);">— DAY JOB — (look for opportunities to apply SF skills at work)</td>
-        <td><strong>Deep Work:</strong><br>Project building continued</td>
-        <td><strong>Review:</strong><br>Week recap + planning</td>
+        <td colspan="5" style="text-align:center; color:var(--text-muted);">— DAY JOB — (apply SF + AI learnings at work where possible)</td>
+        <td><strong>Deep Work:</strong><br>Project continued</td>
+        <td><strong>Review + Plan:</strong><br>Week recap</td>
       </tr>
       <tr>
         <td>7:00–8:00 PM</td>
-        <td><strong>Skill Study</strong><br>Video / docs / reading</td>
-        <td><strong>Skill Study</strong><br>Video / docs / reading</td>
-        <td><strong>Skill Study</strong><br>Video / docs / reading</td>
-        <td><strong>Cert Prep</strong><br>Practice questions (30)</td>
-        <td><strong>Light:</strong><br>Review week's notes</td>
+        <td><strong>SF Skill Study</strong><br>Apex / LWC / Arch</td>
+        <td><strong>AI Skill Study</strong><br>Prompts / LLMs / RAG</td>
+        <td><strong>SF Skill Study</strong><br>Integrations / Patterns</td>
+        <td><strong>Cert Prep</strong><br>30 practice questions</td>
+        <td><strong>Light:</strong><br>Review + notes</td>
         <td><strong>Networking</strong><br>LinkedIn / communities</td>
         <td><strong>Plan Monday</strong><br>Define exact tasks</td>
       </tr>
       <tr>
         <td>8:00–9:30 PM</td>
-        <td><strong>Hands-on Coding</strong><br>Build / implement</td>
-        <td><strong>Hands-on Coding</strong><br>Build / implement</td>
-        <td><strong>Hands-on Coding</strong><br>Build / implement</td>
-        <td><strong>Hands-on Coding</strong><br>Build / implement</td>
+        <td><strong>SF Hands-on</strong><br>Build / code (SF)</td>
+        <td><strong>AI Hands-on</strong><br>Build AI feature</td>
+        <td><strong>Project Work</strong><br>Combined SF+AI</td>
+        <td><strong>Project Work</strong><br>Combined SF+AI</td>
         <td><strong>Rest</strong><br>Protect this</td>
-        <td><strong>Deep Work</strong><br>Architecture / docs</td>
+        <td><strong>Project Deep Work</strong><br>Docs / architecture</td>
         <td><strong>Rest</strong><br>Protect Sundays</td>
       </tr>
     </tbody>
   </table>
 
-  <div class="callout">⚡ THE NON-NEGOTIABLE RULE: Every weekday session must produce a git commit or a Trailhead badge or completed practice questions. Output, not just consumption. Passive watching of tutorials is the #1 time sink that produces zero skill growth.</div>
+  <div class="callout callout-amber">⚡ SESSION RULE: Every weekday session has one specific deliverable. Not "work on AI stuff" — but "write the Apex Queueable that calls OpenAI and parse the JSON response." Output, not consumption. Passive video-watching is the #1 time sink that produces zero skill growth. Tuesday's AI sessions are specifically for building AI features — not watching AI YouTube.</div>
 
-  <div class="two-col" style="margin-top: 24px;">
+  <div class="two-col" style="margin-top:24px;">
     <div>
-      <h3 style="margin-bottom: 14px;">Phase-Specific Weekly Focus</h3>
+      <h3 style="margin-bottom:12px;">Phase-Specific Weekly AI Focus</h3>
       <ul class="checklist">
-        <li><strong>Month 1–2 (Foundation):</strong> Mon/Tue/Wed = Apex coding. Thu = Trailhead/cert questions. Sat = Project build. Sun = Review + plan.</li>
-        <li><strong>Month 2–3 (Intermediate):</strong> Mon/Tue = LWC. Wed/Thu = Integrations. Fri = LinkedIn post. Sat/Sun = Projects.</li>
-        <li><strong>Month 3–4 (Advanced):</strong> Mon/Tue = Architecture reading + design patterns. Wed/Thu = AWS free tier experiments. Sat = Project 4 start. Sun = PD2 prep begins.</li>
-        <li><strong>Month 5–6 (Job-Ready):</strong> Mon = Interview prep. Tue/Wed = Apply + follow up. Thu = Mock interview. Sat = Portfolio polish. Sun = Networking.</li>
+        <li class="ai-item"><strong>Month 1:</strong> Mon/Tue = Apex. Wed/Thu = AI fundamentals (prompts, OpenAI API basics). AI Associate cert prep on Thursday evenings.</li>
+        <li class="ai-item"><strong>Month 2:</strong> Mon/Wed = Apex (PD1 prep). Tue/Thu = Build AI case summarization (Project 2). Weekends = complete project.</li>
+        <li class="ai-item"><strong>Month 3:</strong> Mon/Wed = LWC + integrations. Tue/Thu = Lead scoring project + Einstein study. Weekend = App Builder exam prep.</li>
+        <li class="ai-item"><strong>Month 4:</strong> Mon/Wed = Architecture patterns. Tue/Thu = Chatbot project (Project 4) + Agentforce study. Weekend = AI Specialist cert prep.</li>
+        <li class="ai-item"><strong>Month 5–6:</strong> Mon = Interview prep. Tue/Wed = Agentforce agent (Project 5). Thu = Applications. Weekend = PD2 prep + portfolio polish.</li>
       </ul>
     </div>
     <div>
-      <h3 style="margin-bottom: 14px;">Energy Management Rules</h3>
+      <h3 style="margin-bottom:12px;">Energy Management Rules</h3>
       <ul class="checklist">
-        <li><strong>Single focus:</strong> One cert at a time. One major project at a time. Split attention = mediocre everything.</li>
-        <li><strong>Hard stop at 10:00 PM:</strong> Sleep debt destroys learning efficiency. 7 hours sleep is non-negotiable.</li>
-        <li><strong>Friday evenings off:</strong> Full rest prevents burnout in Month 3, which is when most people quit.</li>
-        <li><strong>Track everything:</strong> Use a simple Notion board. "In Progress," "Done," "This Week." Weekly review every Sunday, 15 minutes.</li>
-        <li><strong>Day job as an asset:</strong> If you touch Salesforce at work, apply that week's learning there. Real-world application 10× accelerates retention.</li>
+        <li><strong>Single focus per session:</strong> SF night or AI night — not both. Mixing context kills depth.</li>
+        <li><strong>Hard stop 10:00 PM:</strong> Sleep debt is the enemy of learning. Non-negotiable.</li>
+        <li><strong>Friday evenings off:</strong> Prevents Month 3 burnout — the most common dropout point.</li>
+        <li><strong>Weekly review (Sunday, 20 min):</strong> What did I build? What's slipping? What's next week's one goal?</li>
+        <li class="ai-item"><strong>AI content diet:</strong> One AI newsletter (The Rundown AI or Ben's Bites) per week. No more. Avoid AI hype rabbit holes — they eat hours and produce no skill.</li>
+        <li><strong>Day job as lab:</strong> If you touch Salesforce at work, apply that week's learning. Real-world practice is 10× faster than dev org experiments alone.</li>
       </ul>
     </div>
   </div>
@@ -1693,138 +1204,138 @@
 
 <!-- SECTION 9: MILESTONES -->
 <section id="milestones">
-  <div class="section-label">09 / MILESTONES & COMMON MISTAKES</div>
-  <h2>Track Progress. Catch Drift Early.</h2>
-  <p class="section-intro">Use these checkpoints at the end of each month. If you're missing 2+ items, you need to adjust pace, not skip the checkpoint.</p>
+  <div class="section-label sl-sf">09 / MILESTONES &amp; REALITY CHECKS</div>
+  <h2>Track Progress at 3, 6, 9, and 12 Months</h2>
+  <p class="section-intro sf">Extended to 12 months because the Europe goal has real-world lead times (visa processing, notice periods, relocation). Month 6 is when you should be in the active hiring pipeline — not necessarily when you'll have the offer in hand.</p>
 
-  <div class="milestone-grid" style="margin-bottom: 36px;">
+  <div class="milestone-grid">
     <div class="milestone m1">
-      <div class="milestone-month">END OF MONTH 1</div>
+      <div class="milestone-month">MONTH 1 END · WEEK 4</div>
       <ul class="milestone-check">
-        <li>Apex trigger + handler pattern implemented in dev org</li>
-        <li>Batch + Queueable + Scheduled jobs built and tested</li>
+        <li>Apex: trigger + handler + batch + queueable built and tested</li>
         <li>SFDX project on GitHub with clean structure</li>
-        <li>PD1 mock exam score ≥ 68%</li>
-        <li>Trailhead PD1 Prep Superbadge complete</li>
-        <li>LWC: built first data-binding component</li>
+        <li>PD1 mock exam score ≥ 65%</li>
+        <li class="ai-check">✦ AI Associate certification PASSED</li>
+        <li class="ai-check">✦ OpenAI API called from Apex successfully (even just a test)</li>
+        <li class="ai-check">✦ Prompt engineering: written 5+ prompts for SF use cases</li>
       </ul>
     </div>
     <div class="milestone m2">
-      <div class="milestone-month">END OF MONTH 2</div>
+      <div class="milestone-month">MONTH 2 END · WEEK 8</div>
       <ul class="milestone-check">
         <li>✅ PD1 Certification PASSED</li>
         <li>Project 1 (Case Management) on GitHub with README</li>
         <li>GitHub Actions: basic SFDX deployment pipeline working</li>
-        <li>LWC: wire service, custom events, parent-child pattern</li>
-        <li>LinkedIn updated with PD1 cert + new skills</li>
-        <li>Connected with 5+ Salesforce professionals on LinkedIn</li>
+        <li class="ai-check">✦ Project 2 (Case Summarization) complete and on GitHub</li>
+        <li class="ai-check">✦ Loom walkthrough video of AI project recorded</li>
+        <li>LinkedIn updated with PD1 + AI Associate certs</li>
       </ul>
     </div>
     <div class="milestone m3">
-      <div class="milestone-month">END OF MONTH 3</div>
+      <div class="milestone-month">MONTH 3 END · WEEK 12</div>
       <ul class="milestone-check">
         <li>✅ App Builder Certification PASSED</li>
-        <li>Project 2 (LWC Library) live on GitHub Pages</li>
-        <li>Project 3 (Integration Hub) built and documented</li>
-        <li>First LinkedIn post published (at least 1)</li>
-        <li>AWS free tier account: built at least one Lambda function</li>
-        <li>PD2 study plan finalized, first module started</li>
+        <li>LWC component library: 3 components on GitHub Pages</li>
+        <li class="ai-check">✦ Project 3 (Lead Scoring) complete — Flow + Apex AI action</li>
+        <li class="ai-check">✦ Einstein ecosystem: understand Agentforce, Data Cloud, Prompt Builder</li>
+        <li class="ai-check">✦ First LinkedIn AI + SF post published (aim for 300+ impressions)</li>
+        <li>PD2 + AI Specialist study plans finalized</li>
       </ul>
     </div>
     <div class="milestone m4">
-      <div class="milestone-month">END OF MONTH 4</div>
+      <div class="milestone-month">MONTH 4–5 END · WEEK 18–20</div>
       <ul class="milestone-check">
-        <li>Project 4 (Order Management) 70% complete</li>
+        <li class="ai-check">✦ AI Specialist Certification PASSED</li>
+        <li class="ai-check">✦ Project 4 (SF Chatbot) complete — RAG architecture + live demo</li>
+        <li class="ai-check">✦ Agentforce: custom agent with 3 actions built (Project 5)</li>
         <li>PD2 mock exam score ≥ 60%</li>
-        <li>Enterprise Patterns book: 50% read</li>
-        <li>Architecture diagrams: can whiteboard any project in 5 mins</li>
-        <li>Resume v1 drafted in European format</li>
-        <li>Personal portfolio website live</li>
+        <li>Portfolio website live with all 4 projects</li>
+        <li>European CV drafted and reviewed</li>
       </ul>
     </div>
     <div class="milestone m5">
-      <div class="milestone-month">END OF MONTH 5</div>
+      <div class="milestone-month">MONTH 6 END · WEEK 24</div>
       <ul class="milestone-check">
         <li>✅ PD2 Certification PASSED</li>
-        <li>Project 4 complete with full documentation + Loom video</li>
-        <li>Resume finalized, reviewed by a peer</li>
-        <li>LinkedIn fully optimized, #OpenToWork set</li>
-        <li>15+ job applications submitted</li>
-        <li>Connected with 3+ EU-based Salesforce recruiters</li>
-        <li>First recruiter screening call completed</li>
+        <li class="ai-check">✦ 5 portfolio projects complete and documented</li>
+        <li>LinkedIn fully optimized — #OpenToWork for EU countries</li>
+        <li>20+ EU-targeted applications submitted</li>
+        <li>3+ recruiter conversations active (Mason Frank, Hays, etc.)</li>
+        <li class="ai-check">✦ At least 1 technical interview with an AI component completed</li>
       </ul>
     </div>
     <div class="milestone m6">
-      <div class="milestone-month">END OF MONTH 6</div>
+      <div class="milestone-month">MONTH 9 END · EXTENDED</div>
       <ul class="milestone-check">
-        <li>30+ applications submitted</li>
-        <li>3+ technical interviews completed</li>
-        <li>At least 1 offer received OR final stage pipeline</li>
-        <li>Weekly mock interviews ongoing</li>
-        <li>Salary research done per target country</li>
-        <li>Visa process understood for target country</li>
+        <li>30+ applications submitted, 5+ technical interviews</li>
+        <li>1–2 final stage interview processes active</li>
+        <li class="ai-check">✦ EU offer received OR strong pipeline with clear timeline</li>
+        <li>Visa process initiated with sponsoring employer</li>
+        <li class="ai-check">✦ LinkedIn content: 10+ posts published, 1,000+ followers</li>
+        <li class="ai-check">✦ Data Cloud Consultant study begun</li>
       </ul>
     </div>
   </div>
 
+  <div class="milestone-grid" style="margin-top:12px;">
+    <div class="milestone" style="border:1px solid rgba(34,211,238,0.25);">
+      <div class="milestone-month" style="color:var(--cyan);">MONTH 12 · FINAL CHECKPOINT</div>
+      <ul class="milestone-check">
+        <li>Employed in EU role with visa (or settled in remote EU-client role)</li>
+        <li class="ai-check">✦ Building AI features on SF in your day job</li>
+        <li class="ai-check">✦ Working toward Data Cloud Consultant cert</li>
+        <li>Architect track: planning Sharing & Visibility or Integration Architecture Designer</li>
+        <li class="ai-check">✦ Recognized in EU SF community for AI + SF content</li>
+        <li>Salary 40–60% above current India role</li>
+      </ul>
+    </div>
+    <div class="callout callout-amber" style="margin:0;">
+      ⚠️ REALITY CHECK: If you reach Month 4 without a passing PD1, a Project 2 on GitHub, and at least a basic OpenAI-Apex callout working — the 6-month timeline is at risk. This is not cause for panic but for recalibration: extend the timeline by 6 weeks and compress the job-search phase. A well-prepared 8-month job search beats a rushed 6-month one every time.
+    </div>
+  </div>
+
   <div class="divider"></div>
-  <h3 style="margin-bottom: 18px; font-size: 16px;">⚠️ Common Mistakes — Avoid These</h3>
+  <h3 style="margin-bottom:18px;">⚠️ Common Mistakes — Especially for SF + AI</h3>
   <div class="mistake-list">
     <div class="mistake">
       <div class="mistake-num">#01</div>
-      <div class="mistake-text">
-        <strong>Tutorial Hell: Learning without building</strong>
-        Watching 40 hours of Apex tutorials without writing code produces zero marketable skill. For every 1 hour of tutorial, spend 2 hours building something. Your fingers need to remember this, not just your brain.
-      </div>
+      <div class="mistake-text"><strong>Treating AI as a separate topic rather than a Salesforce skill</strong>
+      AI without Salesforce context is just ChatGPT usage. Salesforce without AI is a standard developer. The value is in combining them. Every AI thing you learn should immediately be applied inside Salesforce. If you've just learned about RAG, your next commit should be an Apex class that does context injection.</div>
     </div>
     <div class="mistake">
       <div class="mistake-num">#02</div>
-      <div class="mistake-text">
-        <strong>Cert Hoarding: Collecting certs instead of skills</strong>
-        3 certs with shallow depth loses to 1 cert with deep project experience. The PD2 you pass after actually building enterprise-pattern projects is a fundamentally different interview than a PD2 you cramble through.
-      </div>
+      <div class="mistake-text"><strong>Ignoring GDPR when designing AI features</strong>
+      In European interviews, if you propose sending raw Salesforce customer data to OpenAI without mentioning GDPR, data processing agreements, or anonymization — you will fail the architecture round. This is not optional knowledge in the EU. Study the basics: pseudonymization, data residency, legitimate interest, DPAs.</div>
     </div>
     <div class="mistake">
       <div class="mistake-num">#03</div>
-      <div class="mistake-text">
-        <strong>Applying too early with an empty GitHub</strong>
-        A European recruiter who clicks your GitHub and finds 0 repos will discard your application. Apply only after Project 1 is live. Wait for Project 4 before targeting senior roles.
-      </div>
+      <div class="mistake-text"><strong>Calling LLMs synchronously from Apex</strong>
+      The most common technical mistake when starting. Synchronous Apex callouts for LLMs will time out and hit governor limits. Always use Queueable (or Future as legacy). Always use Platform Events to return async results to the UI. If you don't know this pattern cold, your AI features will break in production.</div>
     </div>
     <div class="mistake">
       <div class="mistake-num">#04</div>
-      <div class="mistake-text">
-        <strong>Generic resume sent to 100 companies</strong>
-        European ATS systems score keyword match. A resume not tailored to the job description fails ATS before a human sees it. Send 10 highly tailored applications instead of 100 generic ones.
-      </div>
+      <div class="mistake-text"><strong>Building AI features without error handling</strong>
+      LLMs fail silently: 429 rate limits, unexpected JSON formats, empty responses, network timeouts. A portfolio project with no error handling looks amateur. Always: try-catch on callouts, validate AI response format before parsing, log every API call, have a graceful fallback message for the user.</div>
     </div>
     <div class="mistake">
       <div class="mistake-num">#05</div>
-      <div class="mistake-text">
-        <strong>Hiding visa requirement</strong>
-        Applying as if you're local and springing visa sponsorship mid-process wastes weeks of your time and destroys recruiter relationships. Be upfront in your cover letter and LinkedIn profile.
-      </div>
+      <div class="mistake-text"><strong>Chasing AI trends over Salesforce depth</strong>
+      You will see articles about fine-tuning, multimodal AI, autonomous AI agents doing everything. This is noise for your goal. Your AI depth should be: prompt engineering, REST API calls to LLMs, context injection (RAG), and Agentforce. Everything else is for after you're established in Europe.</div>
     </div>
     <div class="mistake">
       <div class="mistake-num">#06</div>
-      <div class="mistake-text">
-        <strong>No networking until Month 6</strong>
-        60–70% of tech jobs in Europe fill through referrals. Start engaging in Salesforce communities from Month 1. A warm introduction in Month 5 is worth 20 cold applications.
-      </div>
+      <div class="mistake-text"><strong>Ignoring cost in AI feature design</strong>
+      GPT-4o costs money per token. Sending an entire case history (10,000 tokens) to OpenAI for every case creation will bankrupt a client fast. Always think: What's the minimum context needed? Can we use GPT-4o-mini instead? Can we cache results? European companies ask about AI cost governance — have answers.</div>
     </div>
     <div class="mistake">
       <div class="mistake-num">#07</div>
-      <div class="mistake-text">
-        <strong>Month 3 burnout</strong>
-        Nearly everyone hits a wall at Month 3. The novelty has worn off but the results haven't arrived yet. This is the most common dropout point. Protect your Friday evenings. Take one full weekend off per month. This is not optional — it's structural maintenance for a 6-month sprint.
-      </div>
+      <div class="mistake-text"><strong>Tutorial Hell — applies double for AI</strong>
+      There are hundreds of AI YouTube channels. Watching them produces zero skill. For every 1 hour of AI content consumed, spend 2 hours building an AI feature in a Salesforce org. An Apex class that calls OpenAI and parses JSON teaches you more than 10 hours of LLM videos.</div>
     </div>
     <div class="mistake">
       <div class="mistake-num">#08</div>
-      <div class="mistake-text">
-        <strong>Underpricing yourself in salary negotiations</strong>
-        Indian developers in Europe consistently undervalue their skills relative to market rates. Research Glassdoor + LinkedIn Salary for the specific country. A Salesforce Senior Developer in UK commands £65–85k. Don't accept £45k to "get a foot in the door."
-      </div>
+      <div class="mistake-text"><strong>Claiming AI Architect without AI projects</strong>
+      Adding "AI Architect" or "ML Engineer" to your LinkedIn without portfolio evidence is the fastest way to fail a technical screen in Europe. European hiring is evidence-based. Claim what you can demonstrate. You are an AI-enabled Salesforce Developer — and you can demonstrate 5 projects that prove it.</div>
     </div>
   </div>
 </section>
@@ -1832,66 +1343,65 @@
 
 <!-- SECTION 10: LIFESTYLE -->
 <section id="lifestyle">
-  <div class="section-label">10 / LIFESTYLE STRATEGY</div>
-  <h2>Optimising Time, Energy & Consistency</h2>
-  <p class="section-intro">This is a 6-month marathon, not a sprint. The person who burns bright for 8 weeks then fades will lose to the person who does 2 hours of focused work every single day for 6 months.</p>
+  <div class="section-label sl-sf">10 / LIFESTYLE STRATEGY</div>
+  <h2>Optimising Time, Energy &amp; Consistency</h2>
+  <p class="section-intro sf">A 6-month sprint with AI added is a high cognitive load. The lifestyle principles from the original plan are unchanged and non-negotiable — they are load-bearing structure for everything above.</p>
 
   <div class="lifestyle-grid">
     <div class="life-card">
       <div class="life-icon">🧠</div>
       <div class="life-title">Protect Deep Work</div>
-      <div class="life-desc">Your 8:00–9:30 PM coding block is sacred. Phone on Do Not Disturb. Laptop notifications off. No WhatsApp groups during this time. Use a physical "do not disturb" signal if you live with family. This is non-negotiable — it's only 90 minutes but it compounds enormously over 6 months.</div>
+      <div class="life-desc">Your 8:00–9:30 PM coding block is sacred. Phone on Do Not Disturb. No WhatsApp groups. AI work especially needs sustained focus — debugging a Queueable + OpenAI response parsing issue cannot be interrupted. 90 minutes of unbroken focus produces more than 3 hours of fragmented work.</div>
     </div>
     <div class="life-card">
       <div class="life-icon">😴</div>
       <div class="life-title">Sleep is Learning Infrastructure</div>
-      <div class="life-desc">Sleep deprivation reduces memory consolidation by ~40%. If you sacrifice sleep for learning time, you're studying at 60% efficiency. 7 hours minimum. Study sessions after midnight are almost entirely wasted. The night before a certification exam, stop studying at 9 PM and sleep early — this is proven to improve recall.</div>
+      <div class="life-desc">Sleep deprivation reduces memory consolidation by ~40%. AI concepts (RAG, context injection, Agentforce architecture) are new mental models — your brain consolidates them during sleep. 7 hours minimum. The night before a certification exam, stop at 9 PM and sleep early. Proven to improve recall.</div>
     </div>
     <div class="life-card">
       <div class="life-icon">📋</div>
       <div class="life-title">Weekly Review Ritual (Sundays, 20 min)</div>
-      <div class="life-desc">Every Sunday: what did I build/learn? What's behind schedule? What does this week look like? Update your Notion/Trello board. This prevents silent drift — the pattern where you feel busy but aren't making progress. Most people skip this step and regret it at Month 3.</div>
+      <div class="life-desc">What SF skill did I build? What AI feature did I ship? What cert question type do I still struggle with? What EU applications went out? What's the one most important thing for next week? Update your Notion board. This prevents silent drift — feeling busy but not progressing. Most people skip this and regret it at Month 3.</div>
     </div>
     <div class="life-card">
       <div class="life-icon">🎯</div>
-      <div class="life-title">One Thing Per Session Rule</div>
-      <div class="life-desc">Each coding session has one specific goal: "Implement the trigger handler for Case with bulkification" — not "work on Apex." Specificity prevents the trap of feeling productive while actually context-switching between half-finished things. Write the goal before you open VS Code.</div>
+      <div class="life-title">One Specific Goal Per Session</div>
+      <div class="life-desc">Not "work on AI stuff." Write: "Write the Apex Queueable that parses OpenAI JSON response and stores result in AI_Log__c." Specificity prevents context-switching between half-finished things. Write the goal before you open VS Code. Your fingers need to remember this, not just your brain.</div>
     </div>
     <div class="life-card">
       <div class="life-icon">🔄</div>
       <div class="life-title">Public Accountability</div>
-      <div class="life-desc">Post your Trailhead milestone on LinkedIn. Tweet when you pass a cert. Share your GitHub commit streak. This is not vanity — it creates a social commitment mechanism. The days you don't feel like coding, your public streak will pull you through. The Salesforce community also actively engages with progress posts, giving you visibility with future employers.</div>
+      <div class="life-desc">Post your Trailhead milestones on LinkedIn. Tweet when you pass a cert. Share your GitHub AI project. This isn't vanity — it's a social commitment mechanism AND a job search tool. AI + Salesforce posts consistently get 2–3× more engagement than standard SF posts right now. Recruiters are watching for this exact content.</div>
     </div>
     <div class="life-card">
       <div class="life-icon">🏃</div>
-      <div class="life-title">Physical Reset (3× per week, minimum)</div>
-      <div class="life-desc">30-minute walk or any exercise. Non-negotiable. Sedentary deep work for 6 months leads to cognitive decline and mood issues that undermine everything else. Exercise is not a luxury you'll add when things calm down — it's load-bearing infrastructure for the plan. Morning walks before work are ideal; they prime the brain for the day.</div>
+      <div class="life-title">Physical Reset (3× per week minimum)</div>
+      <div class="life-desc">30-minute walk or any exercise. Non-negotiable. AI learning is cognitively taxing — your brain needs regular metabolic clearing. The walks are not wasted time — problems you've been stuck on often resolve during them. Exercise is infrastructure, not a reward.</div>
     </div>
     <div class="life-card">
       <div class="life-icon">📵</div>
-      <div class="life-title">Social Media Strategy</div>
-      <div class="life-desc">LinkedIn: 30 min/day MAX (use for networking, not scrolling). All other social media off during your learning hours. Install a browser extension like Freedom to block distracting sites during 7–10 PM. This single change recovers 1–2 hours per day for most people.</div>
+      <div class="life-title">AI Content Diet</div>
+      <div class="life-desc">One AI newsletter per week (The Rundown AI or Ben's Bites — both free). Zero AI YouTube rabbit holes during learning hours. The AI hype cycle is designed to keep you clicking, not building. Every 30 minutes on AI YouTube is 30 minutes not writing Apex. Install a site blocker during 7–10 PM.</div>
     </div>
     <div class="life-card">
       <div class="life-icon">🧩</div>
       <div class="life-title">Manage Expectations at Home</div>
-      <div class="life-desc">If you live with family, have an explicit conversation: "For the next 6 months, 7–10 PM is my work time. This is how I'm changing our financial trajectory." Getting buy-in from people around you removes the invisible friction that derails plans. Family support compounds your available energy.</div>
+      <div class="life-desc">If you live with family: have the conversation once. "For the next 6 months, 7–10 PM is my work time. This is how I'm changing our life trajectory." Getting buy-in from people around you removes invisible friction. Family support compounds your available energy across 180 days.</div>
     </div>
   </div>
 
-  <div class="callout-green callout" style="margin-top: 28px;">
-    🏁 FINAL THOUGHT: You have all the raw material — 4 years of experience, an Admin cert, API testing depth, and a clear target. What separates people who make this transition from those who don't is not intelligence or talent. It is consistency over 180 days. Build the system. Trust the system. Execute.
+  <div class="callout callout-green" style="margin-top:28px;">
+    🏁 FINAL WORD: You are entering the Salesforce + AI space at the perfect time. The Agentforce platform just launched. The AI Specialist cert is brand new. European companies are scrambling to find people who can do this. You have the Salesforce foundation. You have the API testing background. You have the ambition. What you're about to build over the next 6 months — 5 real projects, 6 certifications including two AI-specific ones, and a live Salesforce chatbot demo — is the exact profile that European companies will pay a premium for. The only thing between you and that outcome is 180 days of consistent execution. Start today.
   </div>
 </section>
-
 
 <!-- FOOTER -->
 <div class="doc-footer">
   <div>
-    <div class="footer-text">Salesforce Europe Roadmap · Personalised for your profile</div>
-    <div class="footer-text" style="margin-top: 4px;">ADM-201 holder · Apex + Flows + Admin exposure · 4 years experience · Remote + Relocation open</div>
+    <div class="footer-text">Salesforce + AI Europe Roadmap · V2 · AI-Augmented Edition</div>
+    <div class="footer-text" style="margin-top:4px;">ADM-201 ✓ · Apex+Flows+Admin exposure · 4 years experience · Remote + Relocation open</div>
   </div>
-  <div class="footer-emphasis">Month 6 target: Active offer stage in Europe</div>
+  <div class="footer-emphasis">Target: AI-Enabled Salesforce Engineer in Europe</div>
 </div>
 
 </body>
