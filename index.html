@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -38,261 +37,259 @@
   * { margin:0; padding:0; box-sizing:border-box; }
   body { background:var(--bg); color:var(--text); font-family:var(--body); font-size:14px; line-height:1.7; overflow-x:hidden; }
 
-/* HEADER */
-.header { background:var(–bg2); border-bottom:1px solid var(–border); padding:48px 60px 40px; position:relative; overflow:hidden; }
-.header::before { content:’’; position:absolute; top:-60px; right:-60px; width:400px; height:400px; background:radial-gradient(circle,rgba(34,211,238,0.07) 0%,transparent 70%); pointer-events:none; }
-.header::after { content:’’; position:absolute; bottom:-80px; left:200px; width:300px; height:300px; background:radial-gradient(circle,rgba(245,166,35,0.06) 0%,transparent 70%); pointer-events:none; }
-.header-tag { font-family:var(–mono); font-size:11px; color:var(–cyan); letter-spacing:3px; text-transform:uppercase; margin-bottom:16px; display:flex; align-items:center; gap:10px; }
-.header-tag::before { content:’’; display:inline-block; width:20px; height:1px; background:var(–cyan); }
-h1 { font-family:var(–display); font-size:clamp(28px,4vw,48px); font-weight:800; line-height:1.1; letter-spacing:-1px; color:#fff; margin-bottom:12px; }
-h1 .sf { color:var(–amber); }
-h1 .ai { color:var(–cyan); }
-.header-sub { font-size:15px; color:var(–text-dim); max-width:640px; margin-bottom:28px; }
-.header-meta { display:flex; gap:12px; flex-wrap:wrap; }
-.meta-chip { font-family:var(–mono); font-size:10px; padding:5px 12px; border-radius:2px; }
-.meta-amber { background:var(–amber-glow); border:1px solid rgba(245,166,35,0.25); color:var(–amber); }
-.meta-cyan { background:var(–cyan-dim); border:1px solid var(–cyan-border); color:var(–cyan); }
-.meta-green { background:var(–green-dim); border:1px solid rgba(61,214,140,0.25); color:var(–green); }
+  /* HEADER */
+  .header { background:var(--bg2); border-bottom:1px solid var(--border); padding:48px 60px 40px; position:relative; overflow:hidden; }
+  .header::before { content:''; position:absolute; top:-60px; right:-60px; width:400px; height:400px; background:radial-gradient(circle,rgba(34,211,238,0.07) 0%,transparent 70%); pointer-events:none; }
+  .header::after { content:''; position:absolute; bottom:-80px; left:200px; width:300px; height:300px; background:radial-gradient(circle,rgba(245,166,35,0.06) 0%,transparent 70%); pointer-events:none; }
+  .header-tag { font-family:var(--mono); font-size:11px; color:var(--cyan); letter-spacing:3px; text-transform:uppercase; margin-bottom:16px; display:flex; align-items:center; gap:10px; }
+  .header-tag::before { content:''; display:inline-block; width:20px; height:1px; background:var(--cyan); }
+  h1 { font-family:var(--display); font-size:clamp(28px,4vw,48px); font-weight:800; line-height:1.1; letter-spacing:-1px; color:#fff; margin-bottom:12px; }
+  h1 .sf { color:var(--amber); }
+  h1 .ai { color:var(--cyan); }
+  .header-sub { font-size:15px; color:var(--text-dim); max-width:640px; margin-bottom:28px; }
+  .header-meta { display:flex; gap:12px; flex-wrap:wrap; }
+  .meta-chip { font-family:var(--mono); font-size:10px; padding:5px 12px; border-radius:2px; }
+  .meta-amber { background:var(--amber-glow); border:1px solid rgba(245,166,35,0.25); color:var(--amber); }
+  .meta-cyan { background:var(--cyan-dim); border:1px solid var(--cyan-border); color:var(--cyan); }
+  .meta-green { background:var(--green-dim); border:1px solid rgba(61,214,140,0.25); color:var(--green); }
 
-/* NAV */
-.toc { background:var(–bg3); border-bottom:1px solid var(–border); padding:14px 60px; display:flex; gap:4px; flex-wrap:wrap; position:sticky; top:0; z-index:100; }
-.toc a { font-family:var(–mono); font-size:10px; color:var(–text-muted); text-decoration:none; padding:4px 10px; border-radius:2px; letter-spacing:0.5px; transition:all 0.15s; }
-.toc a:hover { color:var(–cyan); background:var(–cyan-dim); }
-.toc a.sf-link:hover { color:var(–amber); background:var(–amber-glow); }
+  /* NAV */
+  .toc { background:var(--bg3); border-bottom:1px solid var(--border); padding:14px 60px; display:flex; gap:4px; flex-wrap:wrap; position:sticky; top:0; z-index:100; }
+  .toc a { font-family:var(--mono); font-size:10px; color:var(--text-muted); text-decoration:none; padding:4px 10px; border-radius:2px; letter-spacing:0.5px; transition:all 0.15s; }
+  .toc a:hover { color:var(--cyan); background:var(--cyan-dim); }
+  .toc a.sf-link:hover { color:var(--amber); background:var(--amber-glow); }
 
-/* SECTIONS */
-section { padding:52px 60px; border-bottom:1px solid var(–border); }
-section:last-child { border-bottom:none; }
-.section-label { font-family:var(–mono); font-size:10px; letter-spacing:3px; text-transform:uppercase; margin-bottom:8px; }
-.sl-sf { color:var(–amber); }
-.sl-ai { color:var(–cyan); }
-.sl-mixed { background:linear-gradient(90deg,var(–amber),var(–cyan)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
-h2 { font-family:var(–display); font-size:24px; font-weight:800; color:#fff; margin-bottom:6px; letter-spacing:-0.5px; }
-h3 { font-family:var(–display); font-size:15px; font-weight:700; color:var(–text); margin-bottom:10px; }
-.section-intro { font-size:14px; color:var(–text-dim); max-width:720px; margin-bottom:32px; border-left:2px solid var(–cyan); padding-left:16px; }
-.section-intro.sf { border-left-color:var(–amber); }
+  /* SECTIONS */
+  section { padding:52px 60px; border-bottom:1px solid var(--border); }
+  section:last-child { border-bottom:none; }
+  .section-label { font-family:var(--mono); font-size:10px; letter-spacing:3px; text-transform:uppercase; margin-bottom:8px; }
+  .sl-sf { color:var(--amber); }
+  .sl-ai { color:var(--cyan); }
+  .sl-mixed { background:linear-gradient(90deg,var(--amber),var(--cyan)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+  h2 { font-family:var(--display); font-size:24px; font-weight:800; color:#fff; margin-bottom:6px; letter-spacing:-0.5px; }
+  h3 { font-family:var(--display); font-size:15px; font-weight:700; color:var(--text); margin-bottom:10px; }
+  .section-intro { font-size:14px; color:var(--text-dim); max-width:720px; margin-bottom:32px; border-left:2px solid var(--cyan); padding-left:16px; }
+  .section-intro.sf { border-left-color:var(--amber); }
 
-/* ROLE CARDS */
-.role-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:0; border:1px solid var(–border-bright); border-radius:4px; overflow:hidden; margin-bottom:28px; }
-.role-card { padding:28px 24px; border-right:1px solid var(–border-bright); position:relative; }
-.role-card:last-child { border-right:none; }
-.role-card.target { border:2px solid var(–cyan) !important; border-radius:4px; margin:-1px; }
-.role-badge { font-family:var(–mono); font-size:9px; letter-spacing:2px; text-transform:uppercase; margin-bottom:10px; }
-.role-title { font-family:var(–display); font-weight:800; font-size:15px; color:#fff; margin-bottom:6px; }
-.role-salary { font-family:var(–mono); font-size:11px; color:var(–text-muted); margin-bottom:14px; }
-.role-desc { font-size:12.5px; color:var(–text-dim); line-height:1.6; margin-bottom:14px; }
-.target-flag { position:absolute; top:12px; right:12px; font-family:var(–mono); font-size:9px; background:var(–cyan-dim); border:1px solid var(–cyan-border); color:var(–cyan); padding:3px 8px; border-radius:2px; }
+  /* ROLE CARDS */
+  .role-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:0; border:1px solid var(--border-bright); border-radius:4px; overflow:hidden; margin-bottom:28px; }
+  .role-card { padding:28px 24px; border-right:1px solid var(--border-bright); position:relative; }
+  .role-card:last-child { border-right:none; }
+  .role-card.target { border:2px solid var(--cyan) !important; border-radius:4px; margin:-1px; }
+  .role-badge { font-family:var(--mono); font-size:9px; letter-spacing:2px; text-transform:uppercase; margin-bottom:10px; }
+  .role-title { font-family:var(--display); font-weight:800; font-size:15px; color:#fff; margin-bottom:6px; }
+  .role-salary { font-family:var(--mono); font-size:11px; color:var(--text-muted); margin-bottom:14px; }
+  .role-desc { font-size:12.5px; color:var(--text-dim); line-height:1.6; margin-bottom:14px; }
+  .target-flag { position:absolute; top:12px; right:12px; font-family:var(--mono); font-size:9px; background:var(--cyan-dim); border:1px solid var(--cyan-border); color:var(--cyan); padding:3px 8px; border-radius:2px; }
 
-/* PHASE TIMELINE */
-.phase-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:0; border:1px solid var(–border-bright); border-radius:4px; overflow:hidden; margin-bottom:28px; }
-.phase { padding:22px 18px; border-right:1px solid var(–border-bright); }
-.phase:last-child { border-right:none; }
-.phase-1 { background:rgba(96,165,250,0.05); }
-.phase-2 { background:rgba(34,211,238,0.05); }
-.phase-3 { background:rgba(245,166,35,0.05); }
-.phase-4 { background:rgba(61,214,140,0.05); }
-.phase-num { font-family:var(–mono); font-size:10px; letter-spacing:2px; margin-bottom:6px; }
-.phase-1 .phase-num { color:var(–blue); }
-.phase-2 .phase-num { color:var(–cyan); }
-.phase-3 .phase-num { color:var(–amber); }
-.phase-4 .phase-num { color:var(–green); }
-.phase-title { font-family:var(–display); font-weight:700; font-size:13px; color:#fff; margin-bottom:4px; }
-.phase-weeks { font-family:var(–mono); font-size:10px; color:var(–text-muted); margin-bottom:10px; }
-.ptag { font-size:11px; color:var(–text-dim); padding-left:14px; position:relative; margin-bottom:4px; line-height:1.4; }
-.ptag::before { content:‘▸’; position:absolute; left:0; font-size:9px; color:var(–amber); }
-.ptag.ai-tag::before { color:var(–cyan); }
+  /* PHASE TIMELINE */
+  .phase-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:0; border:1px solid var(--border-bright); border-radius:4px; overflow:hidden; margin-bottom:28px; }
+  .phase { padding:22px 18px; border-right:1px solid var(--border-bright); }
+  .phase:last-child { border-right:none; }
+  .phase-1 { background:rgba(96,165,250,0.05); }
+  .phase-2 { background:rgba(34,211,238,0.05); }
+  .phase-3 { background:rgba(245,166,35,0.05); }
+  .phase-4 { background:rgba(61,214,140,0.05); }
+  .phase-num { font-family:var(--mono); font-size:10px; letter-spacing:2px; margin-bottom:6px; }
+  .phase-1 .phase-num { color:var(--blue); }
+  .phase-2 .phase-num { color:var(--cyan); }
+  .phase-3 .phase-num { color:var(--amber); }
+  .phase-4 .phase-num { color:var(--green); }
+  .phase-title { font-family:var(--display); font-weight:700; font-size:13px; color:#fff; margin-bottom:4px; }
+  .phase-weeks { font-family:var(--mono); font-size:10px; color:var(--text-muted); margin-bottom:10px; }
+  .ptag { font-size:11px; color:var(--text-dim); padding-left:14px; position:relative; margin-bottom:4px; line-height:1.4; }
+  .ptag::before { content:'▸'; position:absolute; left:0; font-size:9px; color:var(--amber); }
+  .ptag.ai-tag::before { color:var(--cyan); }
 
-/* CARDS */
-.card-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:16px; margin-bottom:24px; }
-.card { background:var(–card); border:1px solid var(–border); border-radius:4px; padding:20px 22px; }
-.card.full { grid-column:1/-1; }
-.card.ai-card { border-color:rgba(34,211,238,0.2); }
-.card.sf-card { border-color:rgba(245,166,35,0.15); }
-.card-header { display:flex; align-items:center; justify-content:space-between; margin-bottom:14px; gap:12px; }
-.card-title { font-family:var(–display); font-size:13px; font-weight:700; color:#fff; }
-.badge { font-family:var(–mono); font-size:10px; padding:3px 8px; border-radius:2px; letter-spacing:0.5px; white-space:nowrap; }
-.badge-blue { background:var(–blue-dim); color:var(–blue); border:1px solid rgba(96,165,250,0.2); }
-.badge-purple { background:var(–purple-dim); color:var(–purple); border:1px solid rgba(167,139,250,0.2); }
-.badge-amber { background:var(–amber-glow); color:var(–amber); border:1px solid rgba(245,166,35,0.2); }
-.badge-green { background:var(–green-dim); color:var(–green); border:1px solid rgba(61,214,140,0.2); }
-.badge-cyan { background:var(–cyan-dim); color:var(–cyan); border:1px solid var(–cyan-border); }
-.badge-red { background:var(–red-dim); color:var(–red); border:1px solid rgba(255,95,87,0.2); }
+  /* CARDS */
+  .card-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:16px; margin-bottom:24px; }
+  .card { background:var(--card); border:1px solid var(--border); border-radius:4px; padding:20px 22px; }
+  .card.full { grid-column:1/-1; }
+  .card.ai-card { border-color:rgba(34,211,238,0.2); }
+  .card.sf-card { border-color:rgba(245,166,35,0.15); }
+  .card-header { display:flex; align-items:center; justify-content:space-between; margin-bottom:14px; gap:12px; }
+  .card-title { font-family:var(--display); font-size:13px; font-weight:700; color:#fff; }
+  .badge { font-family:var(--mono); font-size:10px; padding:3px 8px; border-radius:2px; letter-spacing:0.5px; white-space:nowrap; }
+  .badge-blue { background:var(--blue-dim); color:var(--blue); border:1px solid rgba(96,165,250,0.2); }
+  .badge-purple { background:var(--purple-dim); color:var(--purple); border:1px solid rgba(167,139,250,0.2); }
+  .badge-amber { background:var(--amber-glow); color:var(--amber); border:1px solid rgba(245,166,35,0.2); }
+  .badge-green { background:var(--green-dim); color:var(--green); border:1px solid rgba(61,214,140,0.2); }
+  .badge-cyan { background:var(--cyan-dim); color:var(--cyan); border:1px solid var(--cyan-border); }
+  .badge-red { background:var(--red-dim); color:var(--red); border:1px solid rgba(255,95,87,0.2); }
 
-/* CHECKLIST */
-.checklist { list-style:none; display:flex; flex-direction:column; gap:7px; }
-.checklist li { font-size:12.5px; color:var(–text-dim); padding-left:18px; position:relative; line-height:1.5; }
-.checklist li::before { content:‘→’; position:absolute; left:0; color:var(–amber); font-size:10px; top:2px; }
-.checklist li.ai-item::before { color:var(–cyan); }
-.checklist li strong { color:var(–text); font-weight:600; }
+  /* CHECKLIST */
+  .checklist { list-style:none; display:flex; flex-direction:column; gap:7px; }
+  .checklist li { font-size:12.5px; color:var(--text-dim); padding-left:18px; position:relative; line-height:1.5; }
+  .checklist li::before { content:'→'; position:absolute; left:0; color:var(--amber); font-size:10px; top:2px; }
+  .checklist li.ai-item::before { color:var(--cyan); }
+  .checklist li strong { color:var(--text); font-weight:600; }
 
-/* TRAILHEAD BLOCKS */
-.trail-block { background:linear-gradient(135deg,rgba(34,211,238,0.04) 0%,rgba(245,166,35,0.04) 100%); border:1px solid rgba(245,166,35,0.18); border-radius:4px; padding:12px 14px; margin-top:14px; }
-.trail-block.ai-trail { border-color:rgba(34,211,238,0.22); background:linear-gradient(135deg,rgba(34,211,238,0.06) 0%,rgba(167,139,250,0.04) 100%); }
-.trail-header { font-family:var(–mono); font-size:9px; color:var(–amber); letter-spacing:2px; margin-bottom:8px; display:flex; align-items:center; gap:8px; }
-.trail-block.ai-trail .trail-header { color:var(–cyan); }
-.trail-header::before { content:‘▸’; font-size:10px; }
-.trail-list { list-style:none; display:grid; grid-template-columns:1fr 1fr; gap:3px 12px; }
-.trail-list.single-col { grid-template-columns:1fr; }
-.trail-list li { font-family:var(–mono); font-size:10px; color:var(–text-dim); padding-left:11px; position:relative; line-height:1.55; }
-.trail-list li::before { content:‘◆’; position:absolute; left:0; color:var(–amber); font-size:6px; top:5px; }
-.trail-block.ai-trail .trail-list li::before { color:var(–cyan); }
-.trail-list li.superbadge { color:var(–text); }
-.trail-list li.superbadge::before { content:‘★’; color:var(–green); font-size:9px; top:3px; }
+  /* TRAILHEAD BLOCKS */
+  .trail-block { background:linear-gradient(135deg,rgba(34,211,238,0.04) 0%,rgba(245,166,35,0.04) 100%); border:1px solid rgba(245,166,35,0.18); border-radius:4px; padding:12px 14px; margin-top:14px; }
+  .trail-block.ai-trail { border-color:rgba(34,211,238,0.22); background:linear-gradient(135deg,rgba(34,211,238,0.06) 0%,rgba(167,139,250,0.04) 100%); }
+  .trail-header { font-family:var(--mono); font-size:9px; color:var(--amber); letter-spacing:2px; margin-bottom:8px; display:flex; align-items:center; gap:8px; }
+  .trail-block.ai-trail .trail-header { color:var(--cyan); }
+  .trail-header::before { content:'▸'; font-size:10px; }
+  .trail-list { list-style:none; display:grid; grid-template-columns:1fr 1fr; gap:3px 12px; }
+  .trail-list.single-col { grid-template-columns:1fr; }
+  .trail-list li { font-family:var(--mono); font-size:10px; color:var(--text-dim); padding-left:11px; position:relative; line-height:1.55; }
+  .trail-list li::before { content:'◆'; position:absolute; left:0; color:var(--amber); font-size:6px; top:5px; }
+  .trail-block.ai-trail .trail-list li::before { color:var(--cyan); }
+  .trail-list li.superbadge { color:var(--text); }
+  .trail-list li.superbadge::before { content:'★'; color:var(--green); font-size:9px; top:3px; }
 
-/* AGENTBLAZER STATUS BANNER */
-.agentblazer-banner { background:linear-gradient(135deg,rgba(34,211,238,0.08) 0%,rgba(167,139,250,0.08) 50%,rgba(245,166,35,0.06) 100%); border:1px solid rgba(34,211,238,0.25); border-radius:4px; padding:18px 22px; margin-bottom:24px; }
-.ab-title { font-family:var(–display); font-size:13px; font-weight:700; color:#fff; margin-bottom:6px; letter-spacing:0.3px; display:flex; align-items:center; gap:10px; }
-.ab-title::before { content:‘⚡’; color:var(–cyan); }
-.ab-sub { font-size:12px; color:var(–text-dim); margin-bottom:14px; }
-.ab-tiers { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; }
-.ab-tier { background:var(–bg3); border:1px solid var(–border-bright); border-radius:3px; padding:12px 14px; position:relative; overflow:hidden; }
-.ab-tier::after { content:’’; position:absolute; left:0; top:0; bottom:0; width:3px; }
-.ab-tier.t1::after { background:var(–blue); }
-.ab-tier.t2::after { background:var(–purple); }
-.ab-tier.t3::after { background:var(–cyan); }
-.ab-tier-name { font-family:var(–display); font-weight:700; font-size:13px; color:#fff; margin-bottom:3px; }
-.ab-tier-when { font-family:var(–mono); font-size:10px; color:var(–text-muted); letter-spacing:0.5px; margin-bottom:6px; }
-.ab-tier-desc { font-size:11px; color:var(–text-dim); line-height:1.5; }
+  /* AGENTBLAZER STATUS BANNER */
+  .agentblazer-banner { background:linear-gradient(135deg,rgba(34,211,238,0.08) 0%,rgba(167,139,250,0.08) 50%,rgba(245,166,35,0.06) 100%); border:1px solid rgba(34,211,238,0.25); border-radius:4px; padding:18px 22px; margin-bottom:24px; }
+  .ab-title { font-family:var(--display); font-size:13px; font-weight:700; color:#fff; margin-bottom:6px; letter-spacing:0.3px; display:flex; align-items:center; gap:10px; }
+  .ab-title::before { content:'⚡'; color:var(--cyan); }
+  .ab-sub { font-size:12px; color:var(--text-dim); margin-bottom:14px; }
+  .ab-tiers { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; }
+  .ab-tier { background:var(--bg3); border:1px solid var(--border-bright); border-radius:3px; padding:12px 14px; position:relative; overflow:hidden; }
+  .ab-tier::after { content:''; position:absolute; left:0; top:0; bottom:0; width:3px; }
+  .ab-tier.t1::after { background:var(--blue); }
+  .ab-tier.t2::after { background:var(--purple); }
+  .ab-tier.t3::after { background:var(--cyan); }
+  .ab-tier-name { font-family:var(--display); font-weight:700; font-size:13px; color:#fff; margin-bottom:3px; }
+  .ab-tier-when { font-family:var(--mono); font-size:10px; color:var(--text-muted); letter-spacing:0.5px; margin-bottom:6px; }
+  .ab-tier-desc { font-size:11px; color:var(--text-dim); line-height:1.5; }
 
-@media (max-width:800px) {
-.trail-list { grid-template-columns:1fr; }
-.ab-tiers { grid-template-columns:1fr; }
-}
+  @media (max-width:800px) {
+    .trail-list { grid-template-columns:1fr; }
+    .ab-tiers { grid-template-columns:1fr; }
+  }
 
-/* AI INTEGRATION STRATEGY */
-.ai-layer { background:rgba(34,211,238,0.04); border:1px solid rgba(34,211,238,0.15); border-radius:4px; padding:20px 22px; margin-bottom:16px; }
-.ai-layer-title { font-family:var(–display); font-weight:700; font-size:14px; color:var(–cyan); margin-bottom:10px; display:flex; align-items:center; gap:10px; }
-.ai-layer-title::after { content:’’; flex:1; height:1px; background:rgba(34,211,238,0.15); }
-.ai-arch-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-top:12px; }
-.ai-arch-step { background:var(–bg3); border:1px solid var(–border); border-radius:4px; padding:14px; }
-.ai-arch-step-num { font-family:var(–mono); font-size:10px; color:var(–cyan); margin-bottom:6px; letter-spacing:1px; }
-.ai-arch-step-title { font-family:var(–display); font-weight:700; font-size:12px; color:#fff; margin-bottom:6px; }
-.ai-arch-step-desc { font-size:11.5px; color:var(–text-dim); line-height:1.5; }
+  /* AI INTEGRATION STRATEGY */
+  .ai-layer { background:rgba(34,211,238,0.04); border:1px solid rgba(34,211,238,0.15); border-radius:4px; padding:20px 22px; margin-bottom:16px; }
+  .ai-layer-title { font-family:var(--display); font-weight:700; font-size:14px; color:var(--cyan); margin-bottom:10px; display:flex; align-items:center; gap:10px; }
+  .ai-layer-title::after { content:''; flex:1; height:1px; background:rgba(34,211,238,0.15); }
+  .ai-arch-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-top:12px; }
+  .ai-arch-step { background:var(--bg3); border:1px solid var(--border); border-radius:4px; padding:14px; }
+  .ai-arch-step-num { font-family:var(--mono); font-size:10px; color:var(--cyan); margin-bottom:6px; letter-spacing:1px; }
+  .ai-arch-step-title { font-family:var(--display); font-weight:700; font-size:12px; color:#fff; margin-bottom:6px; }
+  .ai-arch-step-desc { font-size:11.5px; color:var(--text-dim); line-height:1.5; }
 
-/* CERT TRACK */
-.cert-track { display:flex; flex-direction:column; gap:0; position:relative; }
-.cert-track::before { content:’’; position:absolute; left:24px; top:0; bottom:0; width:1px; background:var(–border-bright); }
-.cert-item { display:flex; gap:20px; padding:0 0 26px 0; position:relative; }
-.cert-item:last-child { padding-bottom:0; }
-.cert-dot { width:48px; height:48px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-family:var(–mono); font-size:11px; font-weight:700; flex-shrink:0; position:relative; z-index:1; }
-.cert-done { background:var(–green-dim); border:1px solid rgba(61,214,140,0.3); color:var(–green); }
-.cert-ai { background:var(–cyan-dim); border:1px solid var(–cyan-border); color:var(–cyan); }
-.cert-pri { background:var(–amber-glow); border:1px solid rgba(245,166,35,0.3); color:var(–amber); }
-.cert-sec { background:var(–blue-dim); border:1px solid rgba(96,165,250,0.2); color:var(–blue); }
-.cert-str { background:var(–purple-dim); border:1px solid rgba(167,139,250,0.2); color:var(–purple); }
-.cert-body { flex:1; padding-top:10px; }
-.cert-name { font-family:var(–display); font-size:14px; font-weight:700; color:#fff; margin-bottom:3px; }
-.cert-meta { font-family:var(–mono); font-size:10px; color:var(–text-muted); margin-bottom:8px; letter-spacing:0.5px; }
-.cert-desc { font-size:12.5px; color:var(–text-dim); line-height:1.6; }
+  /* CERT TRACK */
+  .cert-track { display:flex; flex-direction:column; gap:0; position:relative; }
+  .cert-track::before { content:''; position:absolute; left:24px; top:0; bottom:0; width:1px; background:var(--border-bright); }
+  .cert-item { display:flex; gap:20px; padding:0 0 26px 0; position:relative; }
+  .cert-item:last-child { padding-bottom:0; }
+  .cert-dot { width:48px; height:48px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-family:var(--mono); font-size:11px; font-weight:700; flex-shrink:0; position:relative; z-index:1; }
+  .cert-done { background:var(--green-dim); border:1px solid rgba(61,214,140,0.3); color:var(--green); }
+  .cert-ai { background:var(--cyan-dim); border:1px solid var(--cyan-border); color:var(--cyan); }
+  .cert-pri { background:var(--amber-glow); border:1px solid rgba(245,166,35,0.3); color:var(--amber); }
+  .cert-sec { background:var(--blue-dim); border:1px solid rgba(96,165,250,0.2); color:var(--blue); }
+  .cert-str { background:var(--purple-dim); border:1px solid rgba(167,139,250,0.2); color:var(--purple); }
+  .cert-body { flex:1; padding-top:10px; }
+  .cert-name { font-family:var(--display); font-size:14px; font-weight:700; color:#fff; margin-bottom:3px; }
+  .cert-meta { font-family:var(--mono); font-size:10px; color:var(--text-muted); margin-bottom:8px; letter-spacing:0.5px; }
+  .cert-desc { font-size:12.5px; color:var(--text-dim); line-height:1.6; }
 
-/* PROJECT CARDS */
-.project-card { background:var(–card); border:1px solid var(–border); border-radius:4px; padding:24px; margin-bottom:16px; }
-.project-card.ai-project { border-color:rgba(34,211,238,0.2); }
-.project-card.flagship { border-color:rgba(34,211,238,0.4); background:rgba(34,211,238,0.03); }
-.project-header { display:flex; align-items:flex-start; justify-content:space-between; margin-bottom:12px; gap:12px; }
-.project-number { font-family:var(–mono); font-size:10px; color:var(–text-muted); letter-spacing:2px; }
-.project-title { font-family:var(–display); font-size:15px; font-weight:700; color:#fff; margin-bottom:3px; }
-.project-desc { font-size:13px; color:var(–text-dim); margin-bottom:16px; line-height:1.6; }
-.project-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
-.project-col-label { font-family:var(–mono); font-size:9px; letter-spacing:2px; color:var(–text-muted); text-transform:uppercase; margin-bottom:8px; }
-.tech-tags { display:flex; flex-wrap:wrap; gap:6px; }
-.tech-tag { font-family:var(–mono); font-size:10px; background:var(–bg3); border:1px solid var(–border-bright); color:var(–text-dim); padding:3px 8px; border-radius:2px; }
-.tech-tag.ai { background:var(–cyan-dim); border-color:var(–cyan-border); color:var(–cyan); }
-.tech-tag.sf { background:var(–amber-glow); border-color:rgba(245,166,35,0.2); color:var(–amber); }
+  /* PROJECT CARDS */
+  .project-card { background:var(--card); border:1px solid var(--border); border-radius:4px; padding:24px; margin-bottom:16px; }
+  .project-card.ai-project { border-color:rgba(34,211,238,0.2); }
+  .project-card.flagship { border-color:rgba(34,211,238,0.4); background:rgba(34,211,238,0.03); }
+  .project-header { display:flex; align-items:flex-start; justify-content:space-between; margin-bottom:12px; gap:12px; }
+  .project-number { font-family:var(--mono); font-size:10px; color:var(--text-muted); letter-spacing:2px; }
+  .project-title { font-family:var(--display); font-size:15px; font-weight:700; color:#fff; margin-bottom:3px; }
+  .project-desc { font-size:13px; color:var(--text-dim); margin-bottom:16px; line-height:1.6; }
+  .project-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
+  .project-col-label { font-family:var(--mono); font-size:9px; letter-spacing:2px; color:var(--text-muted); text-transform:uppercase; margin-bottom:8px; }
+  .tech-tags { display:flex; flex-wrap:wrap; gap:6px; }
+  .tech-tag { font-family:var(--mono); font-size:10px; background:var(--bg3); border:1px solid var(--border-bright); color:var(--text-dim); padding:3px 8px; border-radius:2px; }
+  .tech-tag.ai { background:var(--cyan-dim); border-color:var(--cyan-border); color:var(--cyan); }
+  .tech-tag.sf { background:var(--amber-glow); border-color:rgba(245,166,35,0.2); color:var(--amber); }
 
-/* ARCH FLOW */
-.arch-flow { display:flex; align-items:center; gap:0; margin:16px 0; flex-wrap:wrap; }
-.arch-node { background:var(–bg3); border:1px solid var(–border-bright); border-radius:4px; padding:10px 14px; font-size:11px; font-family:var(–mono); color:var(–text-dim); text-align:center; min-width:100px; }
-.arch-node.ai-node { background:var(–cyan-dim); border-color:var(–cyan-border); color:var(–cyan); }
-.arch-node.sf-node { background:var(–amber-glow); border-color:rgba(245,166,35,0.2); color:var(–amber); }
-.arch-arrow { color:var(–text-muted); font-size:16px; padding:0 6px; flex-shrink:0; }
+  /* ARCH FLOW */
+  .arch-flow { display:flex; align-items:center; gap:0; margin:16px 0; flex-wrap:wrap; }
+  .arch-node { background:var(--bg3); border:1px solid var(--border-bright); border-radius:4px; padding:10px 14px; font-size:11px; font-family:var(--mono); color:var(--text-dim); text-align:center; min-width:100px; }
+  .arch-node.ai-node { background:var(--cyan-dim); border-color:var(--cyan-border); color:var(--cyan); }
+  .arch-node.sf-node { background:var(--amber-glow); border-color:rgba(245,166,35,0.2); color:var(--amber); }
+  .arch-arrow { color:var(--text-muted); font-size:16px; padding:0 6px; flex-shrink:0; }
 
-/* SCHEDULE */
-.schedule-table { width:100%; border-collapse:collapse; font-size:13px; }
-.schedule-table thead th { font-family:var(–mono); font-size:10px; letter-spacing:2px; color:var(–text-muted); text-transform:uppercase; padding:10px 14px; text-align:left; border-bottom:1px solid var(–border-bright); background:var(–bg3); }
-.schedule-table tbody tr { border-bottom:1px solid var(–border); transition:background 0.1s; }
-.schedule-table tbody tr:hover { background:rgba(255,255,255,0.02); }
-.schedule-table tbody td { padding:12px 14px; color:var(–text-dim); vertical-align:top; }
-.schedule-table tbody td:first-child { color:var(–amber); font-family:var(–mono); font-size:11px; white-space:nowrap; }
-.schedule-table tbody td strong { color:var(–text); font-weight:500; display:block; margin-bottom:2px; }
+  /* SCHEDULE */
+  .schedule-table { width:100%; border-collapse:collapse; font-size:13px; }
+  .schedule-table thead th { font-family:var(--mono); font-size:10px; letter-spacing:2px; color:var(--text-muted); text-transform:uppercase; padding:10px 14px; text-align:left; border-bottom:1px solid var(--border-bright); background:var(--bg3); }
+  .schedule-table tbody tr { border-bottom:1px solid var(--border); transition:background 0.1s; }
+  .schedule-table tbody tr:hover { background:rgba(255,255,255,0.02); }
+  .schedule-table tbody td { padding:12px 14px; color:var(--text-dim); vertical-align:top; }
+  .schedule-table tbody td:first-child { color:var(--amber); font-family:var(--mono); font-size:11px; white-space:nowrap; }
+  .schedule-table tbody td strong { color:var(--text); font-weight:500; display:block; margin-bottom:2px; }
 
-/* MILESTONES */
-.milestone-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:12px; }
-.milestone { background:var(–card); border:1px solid var(–border); border-radius:4px; padding:18px; position:relative; overflow:hidden; }
-.milestone::after { content:’’; position:absolute; top:0; left:0; width:3px; height:100%; }
-.m1::after { background:var(–blue); }
-.m2::after { background:var(–cyan); }
-.m3::after { background:var(–amber); }
-.m4::after { background:var(–green); }
-.m5::after { background:#f472b6; }
-.m6::after { background:var(–purple); }
-.milestone-month { font-family:var(–mono); font-size:10px; color:var(–text-muted); letter-spacing:2px; margin-bottom:10px; }
-.milestone-check { list-style:none; display:flex; flex-direction:column; gap:6px; }
-.milestone-check li { font-size:12px; color:var(–text-dim); padding-left:16px; position:relative; }
-.milestone-check li::before { content:‘✓’; position:absolute; left:0; color:var(–green); font-size:10px; }
-.milestone-check li.ai-check::before { color:var(–cyan); content:‘✦’; }
+  /* MILESTONES */
+  .milestone-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:12px; }
+  .milestone { background:var(--card); border:1px solid var(--border); border-radius:4px; padding:18px; position:relative; overflow:hidden; }
+  .milestone::after { content:''; position:absolute; top:0; left:0; width:3px; height:100%; }
+  .m1::after { background:var(--blue); }
+  .m2::after { background:var(--cyan); }
+  .m3::after { background:var(--amber); }
+  .m4::after { background:var(--green); }
+  .m5::after { background:#f472b6; }
+  .m6::after { background:var(--purple); }
+  .milestone-month { font-family:var(--mono); font-size:10px; color:var(--text-muted); letter-spacing:2px; margin-bottom:10px; }
+  .milestone-check { list-style:none; display:flex; flex-direction:column; gap:6px; }
+  .milestone-check li { font-size:12px; color:var(--text-dim); padding-left:16px; position:relative; }
+  .milestone-check li::before { content:'✓'; position:absolute; left:0; color:var(--green); font-size:10px; }
+  .milestone-check li.ai-check::before { color:var(--cyan); content:'✦'; }
 
-/* MISTAKES */
-.mistake-list { display:flex; flex-direction:column; gap:12px; }
-.mistake { display:flex; gap:16px; align-items:flex-start; background:var(–card); border:1px solid var(–border); border-left:3px solid var(–red); border-radius:0 4px 4px 0; padding:14px 16px; }
-.mistake-num { font-family:var(–mono); font-size:11px; color:var(–red); flex-shrink:0; margin-top:1px; }
-.mistake-text { font-size:13px; color:var(–text-dim); line-height:1.5; }
-.mistake-text strong { color:var(–text); font-weight:600; display:block; margin-bottom:2px; }
+  /* MISTAKES */
+  .mistake-list { display:flex; flex-direction:column; gap:12px; }
+  .mistake { display:flex; gap:16px; align-items:flex-start; background:var(--card); border:1px solid var(--border); border-left:3px solid var(--red); border-radius:0 4px 4px 0; padding:14px 16px; }
+  .mistake-num { font-family:var(--mono); font-size:11px; color:var(--red); flex-shrink:0; margin-top:1px; }
+  .mistake-text { font-size:13px; color:var(--text-dim); line-height:1.5; }
+  .mistake-text strong { color:var(--text); font-weight:600; display:block; margin-bottom:2px; }
 
-/* EUROPE */
-.country-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
-.country-card { background:var(–card); border:1px solid var(–border); border-radius:4px; padding:18px; }
-.country-name { font-family:var(–display); font-weight:700; font-size:14px; color:#fff; margin-bottom:4px; }
-.country-visa { font-family:var(–mono); font-size:10px; color:var(–amber); letter-spacing:1px; margin-bottom:10px; }
-.country-facts { list-style:none; display:flex; flex-direction:column; gap:5px; }
-.country-facts li { font-size:12px; color:var(–text-dim); padding-left:14px; position:relative; }
-.country-facts li::before { content:’·’; position:absolute; left:4px; color:var(–text-muted); }
-.country-facts li.ai-fact { color:var(–cyan); opacity:.85; }
-.country-facts li.ai-fact::before { color:var(–cyan); content:‘✦’; font-size:8px; top:3px; }
+  /* EUROPE */
+  .country-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+  .country-card { background:var(--card); border:1px solid var(--border); border-radius:4px; padding:18px; }
+  .country-name { font-family:var(--display); font-weight:700; font-size:14px; color:#fff; margin-bottom:4px; }
+  .country-visa { font-family:var(--mono); font-size:10px; color:var(--amber); letter-spacing:1px; margin-bottom:10px; }
+  .country-facts { list-style:none; display:flex; flex-direction:column; gap:5px; }
+  .country-facts li { font-size:12px; color:var(--text-dim); padding-left:14px; position:relative; }
+  .country-facts li::before { content:'·'; position:absolute; left:4px; color:var(--text-muted); }
+  .country-facts li.ai-fact { color:var(--cyan); opacity:.85; }
+  .country-facts li.ai-fact::before { color:var(--cyan); content:'✦'; font-size:8px; top:3px; }
 
-/* LIFESTYLE */
-.lifestyle-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:14px; }
-.life-card { background:var(–card); border:1px solid var(–border); border-radius:4px; padding:18px 20px; }
-.life-icon { font-size:20px; margin-bottom:8px; }
-.life-title { font-family:var(–display); font-weight:700; font-size:13px; color:#fff; margin-bottom:8px; }
-.life-desc { font-size:12.5px; color:var(–text-dim); line-height:1.6; }
+  /* LIFESTYLE */
+  .lifestyle-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:14px; }
+  .life-card { background:var(--card); border:1px solid var(--border); border-radius:4px; padding:18px 20px; }
+  .life-icon { font-size:20px; margin-bottom:8px; }
+  .life-title { font-family:var(--display); font-weight:700; font-size:13px; color:#fff; margin-bottom:8px; }
+  .life-desc { font-size:12.5px; color:var(--text-dim); line-height:1.6; }
 
-/* CALLOUTS */
-.callout { border-radius:4px; padding:14px 18px; margin:16px 0; font-size:13px; font-family:var(–mono); line-height:1.6; }
-.callout-amber { background:var(–amber-glow); border:1px solid rgba(245,166,35,0.25); color:var(–amber); }
-.callout-cyan { background:var(–cyan-dim); border:1px solid var(–cyan-border); color:var(–cyan); }
-.callout-red { background:var(–red-dim); border:1px solid rgba(255,95,87,0.25); color:var(–red); }
-.callout-green { background:var(–green-dim); border:1px solid rgba(61,214,140,0.25); color:var(–green); }
+  /* CALLOUTS */
+  .callout { border-radius:4px; padding:14px 18px; margin:16px 0; font-size:13px; font-family:var(--mono); line-height:1.6; }
+  .callout-amber { background:var(--amber-glow); border:1px solid rgba(245,166,35,0.25); color:var(--amber); }
+  .callout-cyan { background:var(--cyan-dim); border:1px solid var(--cyan-border); color:var(--cyan); }
+  .callout-red { background:var(--red-dim); border:1px solid rgba(255,95,87,0.25); color:var(--red); }
+  .callout-green { background:var(--green-dim); border:1px solid rgba(61,214,140,0.25); color:var(--green); }
 
-/* UTILS */
-.two-col { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
-.three-col { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
-.divider { height:1px; background:var(–border); margin:28px 0; }
-.ai-accent { color:var(–cyan); }
-.sf-accent { color:var(–amber); }
+  /* UTILS */
+  .two-col { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+  .three-col { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+  .divider { height:1px; background:var(--border); margin:28px 0; }
+  .ai-accent { color:var(--cyan); }
+  .sf-accent { color:var(--amber); }
 
-/* FOOTER */
-.doc-footer { background:var(–bg2); border-top:1px solid var(–border); padding:28px 60px; display:flex; justify-content:space-between; align-items:center; }
-.footer-text { font-family:var(–mono); font-size:11px; color:var(–text-muted); }
-.footer-emphasis { font-family:var(–display); font-size:13px; font-weight:700; color:var(–cyan); }
+  /* FOOTER */
+  .doc-footer { background:var(--bg2); border-top:1px solid var(--border); padding:28px 60px; display:flex; justify-content:space-between; align-items:center; }
+  .footer-text { font-family:var(--mono); font-size:11px; color:var(--text-muted); }
+  .footer-emphasis { font-family:var(--display); font-size:13px; font-weight:700; color:var(--cyan); }
 
-@media (max-width:800px) {
-section { padding:36px 24px; }
-.header { padding:36px 24px 28px; }
-.toc { padding:12px 24px; }
-.phase-grid, .role-grid { grid-template-columns:1fr 1fr; }
-.card-grid, .two-col, .three-col, .lifestyle-grid, .country-grid, .milestone-grid, .ai-arch-grid { grid-template-columns:1fr; }
-.project-grid { grid-template-columns:1fr; }
-.arch-flow { flex-direction:column; }
-.doc-footer { flex-direction:column; gap:12px; text-align:center; }
-}
+  @media (max-width:800px) {
+    section { padding:36px 24px; }
+    .header { padding:36px 24px 28px; }
+    .toc { padding:12px 24px; }
+    .phase-grid, .role-grid { grid-template-columns:1fr 1fr; }
+    .card-grid, .two-col, .three-col, .lifestyle-grid, .country-grid, .milestone-grid, .ai-arch-grid { grid-template-columns:1fr; }
+    .project-grid { grid-template-columns:1fr; }
+    .arch-flow { flex-direction:column; }
+    .doc-footer { flex-direction:column; gap:12px; text-align:center; }
+  }
 </style>
-
 </head>
 <body>
 
 <!-- HEADER -->
-
 <div class="header">
   <div class="header-tag">V2 · AI-AUGMENTED EDITION · EXECUTION DOCUMENT</div>
   <h1>Your <span class="sf">Salesforce</span> + <span class="ai">AI</span><br>Europe Roadmap</h1>
@@ -307,7 +304,6 @@ section { padding:36px 24px; }
 </div>
 
 <!-- NAV -->
-
 <nav class="toc">
   <a href="#positioning">00 POSITIONING</a>
   <a href="#timeline" class="sf-link">01 TIMELINE</a>
@@ -322,8 +318,8 @@ section { padding:36px 24px; }
   <a href="#lifestyle" class="sf-link">10 LIFESTYLE</a>
 </nav>
 
-<!-- SECTION 0: CAREER POSITIONING -->
 
+<!-- SECTION 0: CAREER POSITIONING -->
 <section id="positioning">
   <div class="section-label sl-ai">00 / CAREER POSITIONING</div>
   <h2>What Role Should You Actually Target?</h2>
@@ -398,8 +394,8 @@ section { padding:36px 24px; }
   </div>
 </section>
 
-<!-- SECTION 1: TIMELINE -->
 
+<!-- SECTION 1: TIMELINE -->
 <section id="timeline">
   <div class="section-label sl-sf">01 / TIMELINE</div>
   <h2>The 6-Month Core + Extended View</h2>
@@ -484,15 +480,14 @@ section { padding:36px 24px; }
   </div>
 </section>
 
-<!-- SECTION 2: SKILLS -->
 
+<!-- SECTION 2: SKILLS -->
 <section id="skills">
   <div class="section-label sl-sf">02 / SKILL ROADMAP</div>
   <h2>What to Learn & In What Order</h2>
   <p class="section-intro sf">Two parallel tracks — Salesforce and AI — that converge in your projects. Learn enough AI to build with it, not enough to explain gradient descent at a whiteboard. Applied AI, not theoretical ML. Every skill below has paired Trailhead modules so you know exactly what to complete.</p>
 
   <!-- AGENTBLAZER STATUS BANNER -->
-
   <div class="agentblazer-banner">
     <div class="ab-title">Agentblazer Status — Your Free AI Credentialing Track</div>
     <p class="ab-sub">Salesforce's official AI learning recognition. Free, public on your Trailhead profile, and EU recruiters do check this. Aim for at least <strong>Innovator</strong> by Month 3, <strong>Legend</strong> by Month 5.</p>
@@ -545,312 +540,308 @@ section { padding:36px 24px; }
       </div>
     </div>
 
-```
-<!-- LWC -->
-<div class="card sf-card">
-  <div class="card-header"><div class="card-title">⚡ LWC (Component Development)</div><span class="badge badge-amber">MONTH 2–3</span></div>
-  <ul class="checklist">
-    <li><strong>Lifecycle Hooks:</strong> connectedCallback, renderedCallback — know when each fires.</li>
-    <li><strong>Wire + Imperative:</strong> Wire for reactive data; imperative for AI API calls (loading states matter).</li>
-    <li><strong>Custom Events:</strong> Component communication patterns.</li>
-    <li><strong>Async/Await in JS:</strong> Critical — AI callouts are async. Handle promises correctly in LWC.</li>
-    <li><strong>SLDS:</strong> Build clean UIs without fighting the design system.</li>
-    <li class="ai-item"><strong>AI Relevance:</strong> Your LWC is the chat UI, the AI response display, the "Generate Summary" button. It's the face of every AI feature you build. Loading spinners, streaming text display, error states — all LWC.</li>
-  </ul>
-  <div class="trail-block">
-    <div class="trail-header">TRAILHEAD · LWC TRACK</div>
-    <ul class="trail-list">
-      <li>Lightning Web Components Basics</li>
-      <li>Lightning Web Components and Salesforce Data</li>
-      <li>Lightning Web Components and Events</li>
-      <li>Lightning Web Components for Aura Developers</li>
-      <li>Build a Bear-Tracking App with LWC</li>
-      <li>Modern App Development</li>
-      <li>JavaScript Skills for Salesforce Developers</li>
-      <li>Salesforce Lightning Design System (SLDS)</li>
-      <li class="superbadge">Lightning Web Components Specialist (Superbadge)</li>
-      <li class="superbadge">Aura Components Specialist (Superbadge)</li>
-    </ul>
-  </div>
-</div>
-
-<!-- INTEGRATIONS -->
-<div class="card sf-card">
-  <div class="card-header"><div class="card-title">🔗 Integrations</div><span class="badge badge-amber">MONTH 3</span></div>
-  <ul class="checklist">
-    <li><strong>Named Credentials:</strong> ALWAYS use for LLM API endpoints. Never hardcode OpenAI keys.</li>
-    <li><strong>REST Callouts:</strong> HttpRequest/HttpResponse — you will use this for every LLM API call.</li>
-    <li><strong>Platform Events:</strong> Key for async AI processing — trigger the AI job, respond via event.</li>
-    <li><strong>External Services:</strong> OpenAPI schema import — can import OpenAI spec.</li>
-    <li class="ai-item"><strong>AI integration pattern:</strong> User triggers LWC → Apex Queueable → Named Credential → OpenAI/Anthropic API → Platform Event → LWC re-renders with result. Know this pattern cold.</li>
-  </ul>
-  <div class="trail-block">
-    <div class="trail-header">TRAILHEAD · INTEGRATIONS</div>
-    <ul class="trail-list">
-      <li>Apex Integration Services</li>
-      <li>Apex REST Callouts</li>
-      <li>External Services Basics</li>
-      <li>Named Credentials</li>
-      <li>Platform Events Basics</li>
-      <li>Change Data Capture Basics</li>
-      <li>API Basics</li>
-      <li>Connected App Basics</li>
-      <li>Identity Basics (OAuth)</li>
-      <li class="superbadge">Data Integration Specialist (Superbadge)</li>
-    </ul>
-  </div>
-</div>
-
-<!-- ARCHITECTURE -->
-<div class="card sf-card">
-  <div class="card-header"><div class="card-title">🏛️ Architecture</div><span class="badge badge-amber">MONTH 4–5</span></div>
-  <ul class="checklist">
-    <li><strong>Enterprise Patterns:</strong> Selector, Domain, Service, Application (Andy Fawcett book — non-negotiable).</li>
-    <li><strong>Sharing Model:</strong> OWD, role hierarchy, Apex managed sharing.</li>
-    <li><strong>Data Architecture:</strong> Record volumes, indexes, data skew — becomes very relevant when designing AI training datasets.</li>
-    <li><strong>Salesforce Well-Architected:</strong> Trusted, Easy, Adaptable pillars.</li>
-    <li class="ai-item"><strong>AI architecture:</strong> How to design systems that send data to LLMs, handle latency, manage cost, and fail gracefully. This is new and almost no one has written the playbook yet — you will.</li>
-  </ul>
-  <div class="trail-block">
-    <div class="trail-header">TRAILHEAD · ARCHITECTURE</div>
-    <ul class="trail-list">
-      <li>Salesforce Well-Architected: Trusted</li>
-      <li>Salesforce Well-Architected: Easy</li>
-      <li>Salesforce Well-Architected: Adaptable</li>
-      <li>Application Architect (Trail)</li>
-      <li>Data Modeling</li>
-      <li>Data Security</li>
-      <li>Sharing and Visibility</li>
-      <li>Large Data Volumes</li>
-      <li>Apex Patterns and Best Practices</li>
-      <li>Application Lifecycle Management</li>
-    </ul>
-  </div>
-</div>
-
-<!-- AI FUNDAMENTALS - FULL WIDTH -->
-<div class="card full ai-card">
-  <div class="card-header"><div class="card-title">🤖 AI / LLM Stack — Applied (Not Theoretical)</div><span class="badge badge-cyan">MONTH 1 → ONGOING</span></div>
-  <div class="three-col">
-    <div>
-      <div class="project-col-label" style="color:var(--cyan);">LLM Foundations (Month 1)</div>
+    <!-- LWC -->
+    <div class="card sf-card">
+      <div class="card-header"><div class="card-title">⚡ LWC (Component Development)</div><span class="badge badge-amber">MONTH 2–3</span></div>
       <ul class="checklist">
-        <li class="ai-item"><strong>How LLMs work conceptually:</strong> Tokens, context window, temperature. You don't need transformers math — you need to know why "context window" matters when building features.</li>
-        <li class="ai-item"><strong>Prompt engineering:</strong> System prompts, few-shot examples, chain-of-thought. This is your superpower. Practice: write prompts for case summarization, lead scoring, email drafting.</li>
-        <li class="ai-item"><strong>OpenAI API basics:</strong> Chat completions endpoint, models (GPT-4o, GPT-4o-mini), pricing, rate limits. Call it from Apex.</li>
-        <li class="ai-item"><strong>Anthropic Claude API:</strong> Alternative to OpenAI. Good to know both — enterprise clients use both.</li>
-      </ul>
-      <div class="trail-block ai-trail">
-        <div class="trail-header">TRAILHEAD · AGENTBLAZER CHAMPION TRAIL</div>
-        <ul class="trail-list single-col">
-          <li>Artificial Intelligence Fundamentals</li>
-          <li>Generative AI Basics</li>
-          <li>Natural Language Processing Basics</li>
-          <li>Large Language Models</li>
-          <li>Prompt Fundamentals</li>
-          <li>Responsible Creation of AI</li>
-          <li>Data and AI Ethics</li>
-          <li>Data + AI + CRM</li>
-        </ul>
-      </div>
-    </div>
-    <div>
-      <div class="project-col-label" style="color:var(--cyan);">RAG + Vector DBs (Month 2–3)</div>
-      <ul class="checklist">
-        <li class="ai-item"><strong>RAG (Retrieval-Augmented Generation):</strong> Instead of asking the LLM to remember facts, you retrieve relevant docs and inject them into the prompt context. This is how you build AI that knows about your Salesforce data.</li>
-        <li class="ai-item"><strong>Vector databases:</strong> Pinecone (simplest to start), Weaviate, or pgvector. Store embeddings. Search by semantic similarity. Understand: embedding → vector store → similarity search → context injection.</li>
-        <li class="ai-item"><strong>Embeddings:</strong> text-embedding-ada-002 (OpenAI) or similar. Convert text to numerical vectors. Use for semantic search over SF data.</li>
-        <li class="ai-item"><strong>Practical exercise:</strong> Build a simple RAG demo outside Salesforce first (Python + Pinecone + OpenAI). Then port the pattern into Apex.</li>
-      </ul>
-      <div class="trail-block ai-trail">
-        <div class="trail-header">TRAILHEAD · DATA 360 + RAG</div>
-        <ul class="trail-list single-col">
-          <li>Salesforce Data Cloud Basics</li>
-          <li>Get Started with Salesforce Data Cloud</li>
-          <li>Data Cloud Implementation</li>
-          <li>Data Cloud Identity Resolution</li>
-          <li>Build a Customer Profile in Data Cloud</li>
-          <li>Augmenting Agents with RAG</li>
-          <li>Data Cloud and AI for Sales Teams</li>
-          <li><em>Plus: Pinecone Learning Center (external)</em></li>
-        </ul>
-      </div>
-    </div>
-    <div>
-      <div class="project-col-label" style="color:var(--cyan);">Salesforce AI Ecosystem (Month 3–4)</div>
-      <ul class="checklist">
-        <li class="ai-item"><strong>Agentforce:</strong> Salesforce's AI agent platform. Build autonomous agents with custom Topics and Actions. Actions are Apex invocable methods. This is the hottest SF skill in 2025–26.</li>
-        <li class="ai-item"><strong>Einstein Copilot / Prompt Builder:</strong> Native SF tools to create and manage prompts across the org. Grounded prompts using SOQL merge fields.</li>
-        <li class="ai-item"><strong>Data Cloud:</strong> Salesforce's CDP. Unifies data from all sources. Powers AI personalisation. Know the basics: data streams, data model objects, calculated insights, segments.</li>
-        <li class="ai-item"><strong>Einstein Platform:</strong> Einstein Prediction Builder (no-code ML), Einstein Discovery (automated insights), Einstein for Service (case classification, recommended articles). Know what each does.</li>
-      </ul>
-      <div class="trail-block ai-trail">
-        <div class="trail-header">TRAILHEAD · AGENTBLAZER LEGEND TRAIL</div>
-        <ul class="trail-list single-col">
-          <li>Quick Start: Build Your First Agent with Agentforce</li>
-          <li>Agentforce: Agent Builder Basics</li>
-          <li>Setup with Agentforce</li>
-          <li>Prompt Builder Basics</li>
-          <li>Prompt Templates</li>
-          <li>Agentforce Service Agent</li>
-          <li>Agentforce Sales</li>
-          <li>Einstein Trust Layer</li>
-          <li>Agentforce DX</li>
-          <li>Agent API and Models API</li>
-          <li>Agentforce Testing Center</li>
-          <li>Custom Agent Actions with Apex</li>
-          <li>Custom Agent Actions with Flow</li>
-          <li>Multi-Agent Interoperability (MCP)</li>
-          <li>Agentforce Deployment to Slack</li>
-          <li>AgentExchange Marketplace</li>
-          <li>Cert Prep: Agentforce Specialist (5 modules)</li>
-          <li>Einstein Prediction Builder Basics</li>
-          <li>Einstein Discovery Basics</li>
-          <li>Einstein for Service</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- SUPPORTING SKILLS -->
-<div class="card full">
-  <div class="card-header"><div class="card-title">🛠️ Supporting Skills</div><span class="badge badge-amber">THROUGHOUT</span></div>
-  <div class="three-col">
-    <div>
-      <div class="project-col-label">Git + CI/CD</div>
-      <ul class="checklist">
-        <li><strong>Git:</strong> branching, PRs, merge conflicts</li>
-        <li><strong>GitHub Actions:</strong> SFDX deployment pipeline</li>
-        <li><strong>Salesforce DX:</strong> scratch orgs, source format</li>
-        <li class="ai-item"><strong>AI relevance:</strong> Version-control your prompt templates like code. Prompt versioning is a real practice now.</li>
+        <li><strong>Lifecycle Hooks:</strong> connectedCallback, renderedCallback — know when each fires.</li>
+        <li><strong>Wire + Imperative:</strong> Wire for reactive data; imperative for AI API calls (loading states matter).</li>
+        <li><strong>Custom Events:</strong> Component communication patterns.</li>
+        <li><strong>Async/Await in JS:</strong> Critical — AI callouts are async. Handle promises correctly in LWC.</li>
+        <li><strong>SLDS:</strong> Build clean UIs without fighting the design system.</li>
+        <li class="ai-item"><strong>AI Relevance:</strong> Your LWC is the chat UI, the AI response display, the "Generate Summary" button. It's the face of every AI feature you build. Loading spinners, streaming text display, error states — all LWC.</li>
       </ul>
       <div class="trail-block">
-        <div class="trail-header">TRAILHEAD · GIT + DX</div>
-        <ul class="trail-list single-col">
-          <li>Git and GitHub Basics</li>
-          <li>Salesforce DX Setup</li>
-          <li>Quick Start: Visual Studio Code</li>
-          <li>Application Lifecycle Management</li>
-          <li>Org Development Model</li>
-          <li>Package Development Model</li>
-          <li>Unlocked Packages for Customers</li>
-        </ul>
-      </div>
-    </div>
-    <div>
-      <div class="project-col-label">AWS (Basics Only)</div>
-      <ul class="checklist">
-        <li><strong>Lambda:</strong> Serverless — understand when to use vs Apex</li>
-        <li><strong>API Gateway:</strong> Expose endpoints for SF to call</li>
-        <li class="ai-item"><strong>Amazon Bedrock basics:</strong> AWS's LLM service. Enterprise EU companies (banks) often use Bedrock over OpenAI for data privacy reasons.</li>
-        <li class="ai-item"><strong>Azure OpenAI:</strong> OpenAI models on Azure — EU data residency. Know this exists and why it matters for GDPR.</li>
-      </ul>
-      <div class="trail-block">
-        <div class="trail-header">RESOURCES · AWS (EXTERNAL)</div>
-        <ul class="trail-list single-col">
-          <li>AWS Skill Builder · "Cloud Practitioner Essentials"</li>
-          <li>AWS · "Lambda Foundations" (digital course)</li>
-          <li>AWS · "API Gateway Workshop"</li>
-          <li>AWS Bedrock · "Getting Started" tutorial</li>
-          <li>Trailhead · "Heroku Enterprise" (SF + cloud bridge)</li>
-          <li>Trailhead · "MuleSoft Basics" (integration alternative)</li>
-        </ul>
-      </div>
-    </div>
-    <div>
-      <div class="project-col-label">REST APIs + OAuth</div>
-      <ul class="checklist">
-        <li><strong>OAuth 2.0 flows:</strong> Client credentials, auth code, JWT — for Salesforce integrations</li>
-        <li><strong>REST API design:</strong> Your API testing background — leverage it</li>
-        <li class="ai-item"><strong>AI API auth:</strong> OpenAI API keys, Anthropic auth. Always via Named Credentials in SF.</li>
-        <li><strong>Connected Apps:</strong> SF-native OAuth client. Understand scopes, tokens.</li>
-      </ul>
-      <div class="trail-block">
-        <div class="trail-header">TRAILHEAD · APIs + OAUTH</div>
-        <ul class="trail-list single-col">
-          <li>API Basics</li>
-          <li>Identity Basics</li>
-          <li>Identity for Customers</li>
-          <li>Connected App Basics</li>
-          <li>OAuth 2.0 JWT Bearer Flow</li>
-          <li>OAuth 2.0 Web Server Flow</li>
-          <li>Salesforce APIs (Bulk, REST, Streaming)</li>
-          <li>External Services Basics</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- CERT-PREP TRAILMIXES (FULL WIDTH) -->
-<div class="card full">
-  <div class="card-header"><div class="card-title">📜 Cert-Prep Trailmixes (Aligned to Cert Schedule)</div><span class="badge badge-amber">PHASE-LINKED</span></div>
-  <div class="three-col">
-    <div>
-      <div class="project-col-label" style="color:var(--amber);">PD1 PREP · WEEK 6–8</div>
-      <div class="trail-block">
-        <div class="trail-header">TRAILMIX</div>
-        <ul class="trail-list single-col">
-          <li>Prepare for Your Salesforce Platform Developer I Credential</li>
-          <li class="superbadge">Apex Specialist</li>
-          <li class="superbadge">Process Automation Specialist</li>
-          <li class="superbadge">Lightning Web Components Specialist</li>
-          <li>Apex Basics & Database</li>
-          <li>Apex Triggers</li>
-          <li>Apex Testing</li>
+        <div class="trail-header">TRAILHEAD · LWC TRACK</div>
+        <ul class="trail-list">
           <li>Lightning Web Components Basics</li>
+          <li>Lightning Web Components and Salesforce Data</li>
+          <li>Lightning Web Components and Events</li>
+          <li>Lightning Web Components for Aura Developers</li>
+          <li>Build a Bear-Tracking App with LWC</li>
+          <li>Modern App Development</li>
+          <li>JavaScript Skills for Salesforce Developers</li>
+          <li>Salesforce Lightning Design System (SLDS)</li>
+          <li class="superbadge">Lightning Web Components Specialist (Superbadge)</li>
+          <li class="superbadge">Aura Components Specialist (Superbadge)</li>
         </ul>
       </div>
     </div>
-    <div>
-      <div class="project-col-label" style="color:var(--cyan);">AGENTFORCE SPECIALIST · WEEK 12–15</div>
-      <div class="trail-block ai-trail">
-        <div class="trail-header">TRAILMIX (5 EXAM DOMAINS)</div>
-        <ul class="trail-list single-col">
-          <li>Cert Prep: Agentforce Specialist (parent module)</li>
-          <li>Get Started with Salesforce Agentforce Specialist Cert Prep</li>
-          <li>Prompt Engineering for Agentforce</li>
-          <li>AI Agents in Salesforce</li>
-          <li>Agentforce and Data Cloud</li>
-          <li>Development Lifecycle and Observability</li>
-          <li>Multi-Agent Interoperability</li>
-          <li>Einstein Trust Layer (deep dive)</li>
-        </ul>
-      </div>
-    </div>
-    <div>
-      <div class="project-col-label" style="color:var(--amber);">PD2 PREP · WEEK 18–21</div>
+
+    <!-- INTEGRATIONS -->
+    <div class="card sf-card">
+      <div class="card-header"><div class="card-title">🔗 Integrations</div><span class="badge badge-amber">MONTH 3</span></div>
+      <ul class="checklist">
+        <li><strong>Named Credentials:</strong> ALWAYS use for LLM API endpoints. Never hardcode OpenAI keys.</li>
+        <li><strong>REST Callouts:</strong> HttpRequest/HttpResponse — you will use this for every LLM API call.</li>
+        <li><strong>Platform Events:</strong> Key for async AI processing — trigger the AI job, respond via event.</li>
+        <li><strong>External Services:</strong> OpenAPI schema import — can import OpenAI spec.</li>
+        <li class="ai-item"><strong>AI integration pattern:</strong> User triggers LWC → Apex Queueable → Named Credential → OpenAI/Anthropic API → Platform Event → LWC re-renders with result. Know this pattern cold.</li>
+      </ul>
       <div class="trail-block">
-        <div class="trail-header">TRAILMIX</div>
-        <ul class="trail-list single-col">
-          <li>Prepare for Platform Developer II Credential</li>
-          <li class="superbadge">Advanced Apex Specialist</li>
-          <li class="superbadge">Aura Components Specialist</li>
-          <li class="superbadge">Data Integration Specialist</li>
+        <div class="trail-header">TRAILHEAD · INTEGRATIONS</div>
+        <ul class="trail-list">
+          <li>Apex Integration Services</li>
+          <li>Apex REST Callouts</li>
+          <li>External Services Basics</li>
+          <li>Named Credentials</li>
+          <li>Platform Events Basics</li>
+          <li>Change Data Capture Basics</li>
+          <li>API Basics</li>
+          <li>Connected App Basics</li>
+          <li>Identity Basics (OAuth)</li>
+          <li class="superbadge">Data Integration Specialist (Superbadge)</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ARCHITECTURE -->
+    <div class="card sf-card">
+      <div class="card-header"><div class="card-title">🏛️ Architecture</div><span class="badge badge-amber">MONTH 4–5</span></div>
+      <ul class="checklist">
+        <li><strong>Enterprise Patterns:</strong> Selector, Domain, Service, Application (Andy Fawcett book — non-negotiable).</li>
+        <li><strong>Sharing Model:</strong> OWD, role hierarchy, Apex managed sharing.</li>
+        <li><strong>Data Architecture:</strong> Record volumes, indexes, data skew — becomes very relevant when designing AI training datasets.</li>
+        <li><strong>Salesforce Well-Architected:</strong> Trusted, Easy, Adaptable pillars.</li>
+        <li class="ai-item"><strong>AI architecture:</strong> How to design systems that send data to LLMs, handle latency, manage cost, and fail gracefully. This is new and almost no one has written the playbook yet — you will.</li>
+      </ul>
+      <div class="trail-block">
+        <div class="trail-header">TRAILHEAD · ARCHITECTURE</div>
+        <ul class="trail-list">
+          <li>Salesforce Well-Architected: Trusted</li>
+          <li>Salesforce Well-Architected: Easy</li>
+          <li>Salesforce Well-Architected: Adaptable</li>
+          <li>Application Architect (Trail)</li>
+          <li>Data Modeling</li>
+          <li>Data Security</li>
+          <li>Sharing and Visibility</li>
+          <li>Large Data Volumes</li>
           <li>Apex Patterns and Best Practices</li>
           <li>Application Lifecycle Management</li>
-          <li>Large Data Volumes</li>
-          <li>Performance and Memory Best Practices</li>
         </ul>
       </div>
     </div>
-  </div>
-</div>
-```
 
+    <!-- AI FUNDAMENTALS - FULL WIDTH -->
+    <div class="card full ai-card">
+      <div class="card-header"><div class="card-title">🤖 AI / LLM Stack — Applied (Not Theoretical)</div><span class="badge badge-cyan">MONTH 1 → ONGOING</span></div>
+      <div class="three-col">
+        <div>
+          <div class="project-col-label" style="color:var(--cyan);">LLM Foundations (Month 1)</div>
+          <ul class="checklist">
+            <li class="ai-item"><strong>How LLMs work conceptually:</strong> Tokens, context window, temperature. You don't need transformers math — you need to know why "context window" matters when building features.</li>
+            <li class="ai-item"><strong>Prompt engineering:</strong> System prompts, few-shot examples, chain-of-thought. This is your superpower. Practice: write prompts for case summarization, lead scoring, email drafting.</li>
+            <li class="ai-item"><strong>OpenAI API basics:</strong> Chat completions endpoint, models (GPT-4o, GPT-4o-mini), pricing, rate limits. Call it from Apex.</li>
+            <li class="ai-item"><strong>Anthropic Claude API:</strong> Alternative to OpenAI. Good to know both — enterprise clients use both.</li>
+          </ul>
+          <div class="trail-block ai-trail">
+            <div class="trail-header">TRAILHEAD · AGENTBLAZER CHAMPION TRAIL</div>
+            <ul class="trail-list single-col">
+              <li>Artificial Intelligence Fundamentals</li>
+              <li>Generative AI Basics</li>
+              <li>Natural Language Processing Basics</li>
+              <li>Large Language Models</li>
+              <li>Prompt Fundamentals</li>
+              <li>Responsible Creation of AI</li>
+              <li>Data and AI Ethics</li>
+              <li>Data + AI + CRM</li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <div class="project-col-label" style="color:var(--cyan);">RAG + Vector DBs (Month 2–3)</div>
+          <ul class="checklist">
+            <li class="ai-item"><strong>RAG (Retrieval-Augmented Generation):</strong> Instead of asking the LLM to remember facts, you retrieve relevant docs and inject them into the prompt context. This is how you build AI that knows about your Salesforce data.</li>
+            <li class="ai-item"><strong>Vector databases:</strong> Pinecone (simplest to start), Weaviate, or pgvector. Store embeddings. Search by semantic similarity. Understand: embedding → vector store → similarity search → context injection.</li>
+            <li class="ai-item"><strong>Embeddings:</strong> text-embedding-ada-002 (OpenAI) or similar. Convert text to numerical vectors. Use for semantic search over SF data.</li>
+            <li class="ai-item"><strong>Practical exercise:</strong> Build a simple RAG demo outside Salesforce first (Python + Pinecone + OpenAI). Then port the pattern into Apex.</li>
+          </ul>
+          <div class="trail-block ai-trail">
+            <div class="trail-header">TRAILHEAD · DATA 360 + RAG</div>
+            <ul class="trail-list single-col">
+              <li>Salesforce Data Cloud Basics</li>
+              <li>Get Started with Salesforce Data Cloud</li>
+              <li>Data Cloud Implementation</li>
+              <li>Data Cloud Identity Resolution</li>
+              <li>Build a Customer Profile in Data Cloud</li>
+              <li>Augmenting Agents with RAG</li>
+              <li>Data Cloud and AI for Sales Teams</li>
+              <li><em>Plus: Pinecone Learning Center (external)</em></li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <div class="project-col-label" style="color:var(--cyan);">Salesforce AI Ecosystem (Month 3–4)</div>
+          <ul class="checklist">
+            <li class="ai-item"><strong>Agentforce:</strong> Salesforce's AI agent platform. Build autonomous agents with custom Topics and Actions. Actions are Apex invocable methods. This is the hottest SF skill in 2025–26.</li>
+            <li class="ai-item"><strong>Einstein Copilot / Prompt Builder:</strong> Native SF tools to create and manage prompts across the org. Grounded prompts using SOQL merge fields.</li>
+            <li class="ai-item"><strong>Data Cloud:</strong> Salesforce's CDP. Unifies data from all sources. Powers AI personalisation. Know the basics: data streams, data model objects, calculated insights, segments.</li>
+            <li class="ai-item"><strong>Einstein Platform:</strong> Einstein Prediction Builder (no-code ML), Einstein Discovery (automated insights), Einstein for Service (case classification, recommended articles). Know what each does.</li>
+          </ul>
+          <div class="trail-block ai-trail">
+            <div class="trail-header">TRAILHEAD · AGENTBLAZER LEGEND TRAIL</div>
+            <ul class="trail-list single-col">
+              <li>Quick Start: Build Your First Agent with Agentforce</li>
+              <li>Agentforce: Agent Builder Basics</li>
+              <li>Setup with Agentforce</li>
+              <li>Prompt Builder Basics</li>
+              <li>Prompt Templates</li>
+              <li>Agentforce Service Agent</li>
+              <li>Agentforce Sales</li>
+              <li>Einstein Trust Layer</li>
+              <li>Agentforce DX</li>
+              <li>Agent API and Models API</li>
+              <li>Agentforce Testing Center</li>
+              <li>Custom Agent Actions with Apex</li>
+              <li>Custom Agent Actions with Flow</li>
+              <li>Multi-Agent Interoperability (MCP)</li>
+              <li>Agentforce Deployment to Slack</li>
+              <li>AgentExchange Marketplace</li>
+              <li>Cert Prep: Agentforce Specialist (5 modules)</li>
+              <li>Einstein Prediction Builder Basics</li>
+              <li>Einstein Discovery Basics</li>
+              <li>Einstein for Service</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SUPPORTING SKILLS -->
+    <div class="card full">
+      <div class="card-header"><div class="card-title">🛠️ Supporting Skills</div><span class="badge badge-amber">THROUGHOUT</span></div>
+      <div class="three-col">
+        <div>
+          <div class="project-col-label">Git + CI/CD</div>
+          <ul class="checklist">
+            <li><strong>Git:</strong> branching, PRs, merge conflicts</li>
+            <li><strong>GitHub Actions:</strong> SFDX deployment pipeline</li>
+            <li><strong>Salesforce DX:</strong> scratch orgs, source format</li>
+            <li class="ai-item"><strong>AI relevance:</strong> Version-control your prompt templates like code. Prompt versioning is a real practice now.</li>
+          </ul>
+          <div class="trail-block">
+            <div class="trail-header">TRAILHEAD · GIT + DX</div>
+            <ul class="trail-list single-col">
+              <li>Git and GitHub Basics</li>
+              <li>Salesforce DX Setup</li>
+              <li>Quick Start: Visual Studio Code</li>
+              <li>Application Lifecycle Management</li>
+              <li>Org Development Model</li>
+              <li>Package Development Model</li>
+              <li>Unlocked Packages for Customers</li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <div class="project-col-label">AWS (Basics Only)</div>
+          <ul class="checklist">
+            <li><strong>Lambda:</strong> Serverless — understand when to use vs Apex</li>
+            <li><strong>API Gateway:</strong> Expose endpoints for SF to call</li>
+            <li class="ai-item"><strong>Amazon Bedrock basics:</strong> AWS's LLM service. Enterprise EU companies (banks) often use Bedrock over OpenAI for data privacy reasons.</li>
+            <li class="ai-item"><strong>Azure OpenAI:</strong> OpenAI models on Azure — EU data residency. Know this exists and why it matters for GDPR.</li>
+          </ul>
+          <div class="trail-block">
+            <div class="trail-header">RESOURCES · AWS (EXTERNAL)</div>
+            <ul class="trail-list single-col">
+              <li>AWS Skill Builder · "Cloud Practitioner Essentials"</li>
+              <li>AWS · "Lambda Foundations" (digital course)</li>
+              <li>AWS · "API Gateway Workshop"</li>
+              <li>AWS Bedrock · "Getting Started" tutorial</li>
+              <li>Trailhead · "Heroku Enterprise" (SF + cloud bridge)</li>
+              <li>Trailhead · "MuleSoft Basics" (integration alternative)</li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <div class="project-col-label">REST APIs + OAuth</div>
+          <ul class="checklist">
+            <li><strong>OAuth 2.0 flows:</strong> Client credentials, auth code, JWT — for Salesforce integrations</li>
+            <li><strong>REST API design:</strong> Your API testing background — leverage it</li>
+            <li class="ai-item"><strong>AI API auth:</strong> OpenAI API keys, Anthropic auth. Always via Named Credentials in SF.</li>
+            <li><strong>Connected Apps:</strong> SF-native OAuth client. Understand scopes, tokens.</li>
+          </ul>
+          <div class="trail-block">
+            <div class="trail-header">TRAILHEAD · APIs + OAUTH</div>
+            <ul class="trail-list single-col">
+              <li>API Basics</li>
+              <li>Identity Basics</li>
+              <li>Identity for Customers</li>
+              <li>Connected App Basics</li>
+              <li>OAuth 2.0 JWT Bearer Flow</li>
+              <li>OAuth 2.0 Web Server Flow</li>
+              <li>Salesforce APIs (Bulk, REST, Streaming)</li>
+              <li>External Services Basics</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CERT-PREP TRAILMIXES (FULL WIDTH) -->
+    <div class="card full">
+      <div class="card-header"><div class="card-title">📜 Cert-Prep Trailmixes (Aligned to Cert Schedule)</div><span class="badge badge-amber">PHASE-LINKED</span></div>
+      <div class="three-col">
+        <div>
+          <div class="project-col-label" style="color:var(--amber);">PD1 PREP · WEEK 6–8</div>
+          <div class="trail-block">
+            <div class="trail-header">TRAILMIX</div>
+            <ul class="trail-list single-col">
+              <li>Prepare for Your Salesforce Platform Developer I Credential</li>
+              <li class="superbadge">Apex Specialist</li>
+              <li class="superbadge">Process Automation Specialist</li>
+              <li class="superbadge">Lightning Web Components Specialist</li>
+              <li>Apex Basics & Database</li>
+              <li>Apex Triggers</li>
+              <li>Apex Testing</li>
+              <li>Lightning Web Components Basics</li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <div class="project-col-label" style="color:var(--cyan);">AGENTFORCE SPECIALIST · WEEK 12–15</div>
+          <div class="trail-block ai-trail">
+            <div class="trail-header">TRAILMIX (5 EXAM DOMAINS)</div>
+            <ul class="trail-list single-col">
+              <li>Cert Prep: Agentforce Specialist (parent module)</li>
+              <li>Get Started with Salesforce Agentforce Specialist Cert Prep</li>
+              <li>Prompt Engineering for Agentforce</li>
+              <li>AI Agents in Salesforce</li>
+              <li>Agentforce and Data Cloud</li>
+              <li>Development Lifecycle and Observability</li>
+              <li>Multi-Agent Interoperability</li>
+              <li>Einstein Trust Layer (deep dive)</li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <div class="project-col-label" style="color:var(--amber);">PD2 PREP · WEEK 18–21</div>
+          <div class="trail-block">
+            <div class="trail-header">TRAILMIX</div>
+            <ul class="trail-list single-col">
+              <li>Prepare for Platform Developer II Credential</li>
+              <li class="superbadge">Advanced Apex Specialist</li>
+              <li class="superbadge">Aura Components Specialist</li>
+              <li class="superbadge">Data Integration Specialist</li>
+              <li>Apex Patterns and Best Practices</li>
+              <li>Application Lifecycle Management</li>
+              <li>Large Data Volumes</li>
+              <li>Performance and Memory Best Practices</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- SECTION 3: SF + AI INTEGRATION STRATEGY -->
 
+<!-- SECTION 3: SF + AI INTEGRATION STRATEGY -->
 <section id="sf-ai">
   <div class="section-label sl-ai">03 / SALESFORCE + AI INTEGRATION STRATEGY</div>
   <h2>How to Bring AI Into Salesforce</h2>
   <p class="section-intro">There are four distinct ways to integrate AI into Salesforce. You need to understand all of them, build with at least three, and be able to choose between them in a system design conversation.</p>
 
   <!-- PATTERN 1: APEX CALLOUT -->
-
   <div class="ai-layer">
     <div class="ai-layer-title">Pattern 1 · Apex Callouts to LLM APIs</div>
     <div class="project-desc">The most powerful and flexible pattern. Your Apex code calls an external LLM API (OpenAI, Anthropic, Google Gemini) via an HTTP callout. You control everything — the prompt, the parsing, the error handling. This is what makes you a developer rather than a user of AI tools.</div>
@@ -889,7 +880,6 @@ section { padding:36px 24px; }
   </div>
 
   <!-- PATTERN 2: AI-POWERED FLOWS -->
-
   <div class="ai-layer">
     <div class="ai-layer-title">Pattern 2 · AI-Powered Flows & Automation</div>
     <div class="project-desc">Use Salesforce Flow as the orchestrator. Call Apex AI actions from Flow. This makes AI accessible to admins (declarative + Apex action hybrid). Extremely valuable for enterprise clients who want admin-configurable AI features.</div>
@@ -913,7 +903,6 @@ section { padding:36px 24px; }
   </div>
 
   <!-- PATTERN 3: AGENTFORCE -->
-
   <div class="ai-layer">
     <div class="ai-layer-title">Pattern 3 · Agentforce (Custom AI Agents)</div>
     <div class="project-desc">Agentforce is Salesforce's most important AI initiative in 2025. It lets you build autonomous AI agents that can take actions inside Salesforce on behalf of users. A custom Agentforce agent understands natural language requests, decides which actions to take, and executes them. This is where the market is heading — and where almost no developer has depth today.</div>
@@ -937,7 +926,6 @@ section { padding:36px 24px; }
   </div>
 
   <!-- PATTERN 4: EINSTEIN + DATA CLOUD -->
-
   <div class="ai-layer">
     <div class="ai-layer-title">Pattern 4 · Einstein Platform + Data Cloud (Know It, Don't Over-invest)</div>
     <div class="project-desc">The native Salesforce AI platform. Important to understand conceptually and able to discuss architecturally. You don't need to be a Data Cloud specialist — you need to know when to use it vs building custom AI, and be able to have an intelligent conversation with a client about it.</div>
@@ -958,15 +946,14 @@ section { padding:36px 24px; }
   </div>
 </section>
 
-<!-- SECTION 4: PROJECTS -->
 
+<!-- SECTION 4: PROJECTS -->
 <section id="projects">
   <div class="section-label sl-mixed">04 / HANDS-ON PROJECT ROADMAP</div>
   <h2>5 Portfolio Projects (SF + AI Integrated)</h2>
   <p class="section-intro">Every project is designed to demonstrate both Salesforce depth and AI capability. These are not toy demos — they are production-pattern implementations that any interviewer can relate to a real client problem.</p>
 
   <!-- PROJECT 1 -->
-
   <div class="project-card sf-card" style="margin-bottom:16px;">
     <div class="project-header">
       <div><div class="project-number">PROJECT 01 · MONTH 1–2 · WEEK 4–8</div><div class="project-title">⚙️ Enterprise Case Management System (SF Foundation)</div></div>
@@ -1003,7 +990,6 @@ section { padding:36px 24px; }
   </div>
 
   <!-- PROJECT 2 -->
-
   <div class="project-card ai-project">
     <div class="project-header">
       <div><div class="project-number">PROJECT 02 · MONTH 2–3 · WEEK 8–12</div><div class="project-title">🤖 AI Case Summarization + Response Draft Tool</div></div>
@@ -1043,7 +1029,6 @@ section { padding:36px 24px; }
   </div>
 
   <!-- PROJECT 3 -->
-
   <div class="project-card ai-project">
     <div class="project-header">
       <div><div class="project-number">PROJECT 03 · MONTH 3–4 · WEEK 12–16</div><div class="project-title">📊 AI-Powered Lead Scoring Engine</div></div>
@@ -1082,7 +1067,6 @@ section { padding:36px 24px; }
   </div>
 
   <!-- PROJECT 4 -->
-
   <div class="project-card flagship">
     <div class="project-header">
       <div><div class="project-number">PROJECT 04 · MONTH 4–5 · ⭐ PORTFOLIO CENTREPIECE</div><div class="project-title">💬 Intelligent Salesforce Data Chatbot (RAG Architecture)</div></div>
@@ -1123,7 +1107,6 @@ section { padding:36px 24px; }
   </div>
 
   <!-- PROJECT 5 -->
-
   <div class="project-card ai-project">
     <div class="project-header">
       <div><div class="project-number">PROJECT 05 · MONTH 5 · WEEK 19–22</div><div class="project-title">🕵️ Custom Agentforce Agent</div></div>
@@ -1161,8 +1144,8 @@ section { padding:36px 24px; }
   </div>
 </section>
 
-<!-- SECTION 5: CERTIFICATIONS -->
 
+<!-- SECTION 5: CERTIFICATIONS -->
 <section id="certs">
   <div class="section-label sl-sf">05 / CERTIFICATION STRATEGY</div>
   <h2>Updated Cert Order with AI Certs</h2>
@@ -1204,50 +1187,47 @@ section { padding:36px 24px; }
       </div>
     </div>
 
-```
-<div class="cert-track">
-  <div class="cert-item">
-    <div class="cert-dot cert-ai">AI</div>
-    <div class="cert-body">
-      <div class="cert-name">Salesforce AI Specialist</div>
-      <div class="cert-meta">TARGET: WEEK 18–20 (MONTH 4–5) · 3 WEEKS PREP</div>
-      <div class="cert-desc">The real differentiator. Covers: Einstein, Agentforce, Prompt Builder, Data Cloud AI, Model Builder (BYOLLM), ethical AI in practice. Very few candidates have this cert yet — supply is tiny vs demand. Prep: Trailhead AI Specialist trail + Agentforce hands-on. Build Projects 3–4 first, then the cert study will feel familiar. This cert in combination with PD1 is a stronger signal than PD2 alone for AI-focused roles.</div>
+    <div class="cert-track">
+      <div class="cert-item">
+        <div class="cert-dot cert-ai">AI</div>
+        <div class="cert-body">
+          <div class="cert-name">Salesforce AI Specialist</div>
+          <div class="cert-meta">TARGET: WEEK 18–20 (MONTH 4–5) · 3 WEEKS PREP</div>
+          <div class="cert-desc">The real differentiator. Covers: Einstein, Agentforce, Prompt Builder, Data Cloud AI, Model Builder (BYOLLM), ethical AI in practice. Very few candidates have this cert yet — supply is tiny vs demand. Prep: Trailhead AI Specialist trail + Agentforce hands-on. Build Projects 3–4 first, then the cert study will feel familiar. This cert in combination with PD1 is a stronger signal than PD2 alone for AI-focused roles.</div>
+        </div>
+      </div>
+      <div class="cert-item">
+        <div class="cert-dot cert-sec">3</div>
+        <div class="cert-body">
+          <div class="cert-name">Platform Developer II (PD2)</div>
+          <div class="cert-meta">TARGET: WEEK 21–22 (MONTH 5–6) · 4 WEEKS PREP</div>
+          <div class="cert-desc">Still the best differentiator for pure developer roles. Only ~12,000 active PD2s globally. Covers: enterprise patterns, advanced LWC, complex integrations, performance. Study: Andy Fawcett's Apex Enterprise Patterns book + Salesforce Ben PD2 guide. Do this AFTER AI Specialist — the AI cert opens more doors faster, then PD2 solidifies your developer depth.</div>
+        </div>
+      </div>
+      <div class="cert-item">
+        <div class="cert-dot cert-str">→</div>
+        <div class="cert-body">
+          <div class="cert-name">Data Cloud Consultant (Future)</div>
+          <div class="cert-meta">POST MONTH 6 · HIGH AI RELEVANCE</div>
+          <div class="cert-desc">Data Cloud is the engine behind Salesforce AI personalisation. This cert is becoming increasingly demanded in EU enterprise deals. Plan for Month 8–10 once you're in a role. Extremely high value in combination with AI Specialist.</div>
+        </div>
+      </div>
+      <div class="cert-item">
+        <div class="cert-dot cert-str">→</div>
+        <div class="cert-body">
+          <div class="cert-name">Architect Track (Long Game)</div>
+          <div class="cert-meta">YEAR 2 IN EUROPE · SHARING & VISIBILITY + INTEGRATION ARCH</div>
+          <div class="cert-desc">Sharing & Visibility Designer and Integration Architecture Designer are your next natural steps after settling in Europe. These + Data Cloud Consultant + PD2 form a very strong senior architect profile.</div>
+        </div>
+      </div>
     </div>
-  </div>
-  <div class="cert-item">
-    <div class="cert-dot cert-sec">3</div>
-    <div class="cert-body">
-      <div class="cert-name">Platform Developer II (PD2)</div>
-      <div class="cert-meta">TARGET: WEEK 21–22 (MONTH 5–6) · 4 WEEKS PREP</div>
-      <div class="cert-desc">Still the best differentiator for pure developer roles. Only ~12,000 active PD2s globally. Covers: enterprise patterns, advanced LWC, complex integrations, performance. Study: Andy Fawcett's Apex Enterprise Patterns book + Salesforce Ben PD2 guide. Do this AFTER AI Specialist — the AI cert opens more doors faster, then PD2 solidifies your developer depth.</div>
-    </div>
-  </div>
-  <div class="cert-item">
-    <div class="cert-dot cert-str">→</div>
-    <div class="cert-body">
-      <div class="cert-name">Data Cloud Consultant (Future)</div>
-      <div class="cert-meta">POST MONTH 6 · HIGH AI RELEVANCE</div>
-      <div class="cert-desc">Data Cloud is the engine behind Salesforce AI personalisation. This cert is becoming increasingly demanded in EU enterprise deals. Plan for Month 8–10 once you're in a role. Extremely high value in combination with AI Specialist.</div>
-    </div>
-  </div>
-  <div class="cert-item">
-    <div class="cert-dot cert-str">→</div>
-    <div class="cert-body">
-      <div class="cert-name">Architect Track (Long Game)</div>
-      <div class="cert-meta">YEAR 2 IN EUROPE · SHARING & VISIBILITY + INTEGRATION ARCH</div>
-      <div class="cert-desc">Sharing & Visibility Designer and Integration Architecture Designer are your next natural steps after settling in Europe. These + Data Cloud Consultant + PD2 form a very strong senior architect profile.</div>
-    </div>
-  </div>
-</div>
-```
-
   </div>
 
   <div class="callout callout-cyan" style="margin-top:20px;">✦ THE AI CERT ADVANTAGE: In EU job postings, "Salesforce AI Specialist" appears in only ~4% of requirements — because most companies don't know to ask for it yet. But every hiring manager who sees it on your CV will be intrigued. It's the cert equivalent of showing up to a party before everyone else.</div>
 </section>
 
-<!-- SECTION 6: EUROPE JOB STRATEGY -->
 
+<!-- SECTION 6: EUROPE JOB STRATEGY -->
 <section id="europe">
   <div class="section-label sl-sf">06 / EUROPE JOB STRATEGY</div>
   <h2>Targeting the European Market with an AI Edge</h2>
@@ -1331,8 +1311,8 @@ section { padding:36px 24px; }
   <div class="callout callout-cyan">✦ GDPR IS YOUR HIDDEN ADVANTAGE: Every EU company doing AI with customer data has GDPR concerns. If you understand GDPR basics (data residency, right to erasure, anonymization before LLM calls, Azure OpenAI for EU data sovereignty) and mention this in interviews — you will immediately stand out. European companies are terrified of GDPR violations. Being the candidate who thinks about this before they ask signals seniority.</div>
 </section>
 
-<!-- SECTION 7: INTERVIEWS -->
 
+<!-- SECTION 7: INTERVIEWS -->
 <section id="interviews">
   <div class="section-label sl-sf">07 / INTERVIEW PREPARATION</div>
   <h2>Technical Interview Playbook: SF + AI</h2>
@@ -1350,63 +1330,60 @@ section { padding:36px 24px; }
       </ul>
     </div>
 
-```
-<div class="card sf-card">
-  <div class="card-header"><div class="card-title">LWC + Integration Questions</div><span class="badge badge-amber">ROUND 2</span></div>
-  <ul class="checklist">
-    <li><strong>"How would you display streaming AI responses in LWC?"</strong> — Platform Events for real-time updates; polling pattern as fallback; wire to Platform Event channel.</li>
-    <li><strong>"Wire vs imperative Apex — when to use which?"</strong> — Wire for cacheable reactive data; imperative for AI calls (need loading state, error handling, non-cacheable).</li>
-    <li><strong>"How do siblings communicate?"</strong> — Through parent via custom events, or Lightning Message Service for unrelated components.</li>
-    <li><strong>"How would you show an AI loading state in LWC?"</strong> — isLoading reactive property, conditional template rendering, spinner component, disable button while processing.</li>
-    <li><strong>"REST vs SOAP, Platform Events vs CDC?"</strong> — REST: modern, JSON. PE: custom business events you define. CDC: system-generated record change events for sync.</li>
-  </ul>
-</div>
+    <div class="card sf-card">
+      <div class="card-header"><div class="card-title">LWC + Integration Questions</div><span class="badge badge-amber">ROUND 2</span></div>
+      <ul class="checklist">
+        <li><strong>"How would you display streaming AI responses in LWC?"</strong> — Platform Events for real-time updates; polling pattern as fallback; wire to Platform Event channel.</li>
+        <li><strong>"Wire vs imperative Apex — when to use which?"</strong> — Wire for cacheable reactive data; imperative for AI calls (need loading state, error handling, non-cacheable).</li>
+        <li><strong>"How do siblings communicate?"</strong> — Through parent via custom events, or Lightning Message Service for unrelated components.</li>
+        <li><strong>"How would you show an AI loading state in LWC?"</strong> — isLoading reactive property, conditional template rendering, spinner component, disable button while processing.</li>
+        <li><strong>"REST vs SOAP, Platform Events vs CDC?"</strong> — REST: modern, JSON. PE: custom business events you define. CDC: system-generated record change events for sync.</li>
+      </ul>
+    </div>
 
-<div class="card ai-card">
-  <div class="card-header"><div class="card-title" style="color:var(--cyan);">AI Practical Questions</div><span class="badge badge-cyan">ROUND 2–3</span></div>
-  <ul class="checklist">
-    <li class="ai-item"><strong>"What is RAG and how would you implement it in Salesforce?"</strong> — Explain: retrieve relevant data (SOQL or vector search) → inject as context → LLM generates grounded answer. Reference your chatbot project.</li>
-    <li class="ai-item"><strong>"What is Agentforce?"</strong> — AI agent platform on Salesforce. Topics define scope, Actions are Apex invocable methods, the LLM orchestrates which action to call. You've built one.</li>
-    <li class="ai-item"><strong>"How do you handle LLM hallucinations in a production feature?"</strong> — Grounding (inject real SF data), structured output (JSON schema), validation of response before displaying, confidence thresholds, human-in-the-loop for critical decisions.</li>
-    <li class="ai-item"><strong>"How do you ensure GDPR compliance when sending Salesforce data to an LLM?"</strong> — Anonymize/pseudonymize PII before sending, use Azure OpenAI (EU data residency), data processing agreements, consent management, audit logging. This answer alone will impress EU interviewers.</li>
-    <li class="ai-item"><strong>"What are the main risks of AI features in production?"</strong> — Hallucinations, cost (tokens), latency, GDPR/privacy, prompt injection attacks, model deprecations, vendor lock-in.</li>
-  </ul>
-</div>
+    <div class="card ai-card">
+      <div class="card-header"><div class="card-title" style="color:var(--cyan);">AI Practical Questions</div><span class="badge badge-cyan">ROUND 2–3</span></div>
+      <ul class="checklist">
+        <li class="ai-item"><strong>"What is RAG and how would you implement it in Salesforce?"</strong> — Explain: retrieve relevant data (SOQL or vector search) → inject as context → LLM generates grounded answer. Reference your chatbot project.</li>
+        <li class="ai-item"><strong>"What is Agentforce?"</strong> — AI agent platform on Salesforce. Topics define scope, Actions are Apex invocable methods, the LLM orchestrates which action to call. You've built one.</li>
+        <li class="ai-item"><strong>"How do you handle LLM hallucinations in a production feature?"</strong> — Grounding (inject real SF data), structured output (JSON schema), validation of response before displaying, confidence thresholds, human-in-the-loop for critical decisions.</li>
+        <li class="ai-item"><strong>"How do you ensure GDPR compliance when sending Salesforce data to an LLM?"</strong> — Anonymize/pseudonymize PII before sending, use Azure OpenAI (EU data residency), data processing agreements, consent management, audit logging. This answer alone will impress EU interviewers.</li>
+        <li class="ai-item"><strong>"What are the main risks of AI features in production?"</strong> — Hallucinations, cost (tokens), latency, GDPR/privacy, prompt injection attacks, model deprecations, vendor lock-in.</li>
+      </ul>
+    </div>
 
-<div class="card ai-card">
-  <div class="card-header"><div class="card-title" style="color:var(--cyan);">Architecture Scenarios (AI + SF)</div><span class="badge badge-cyan">ROUND 3</span></div>
-  <ul class="checklist">
-    <li class="ai-item"><strong>"Design an AI-powered service cloud for a 500-agent contact center."</strong> — Case classification on creation (Flow + Apex AI action). Live chat sentiment analysis. Response draft generation. Knowledge base search using RAG. Agent performance summarization. Each layer, explain the tech choice and fallback.</li>
-    <li class="ai-item"><strong>"Client wants AI features but is scared of GDPR. How do you approach it?"</strong> — Assess data sensitivity. Use Azure OpenAI (EU region). Anonymize PII in prompts. Implement audit logging. DPA with LLM vendor. Possibly on-premise model (Llama) for most sensitive data. Data Cloud for consented, unified profiles.</li>
-    <li class="ai-item"><strong>"When would you use Agentforce vs a custom Apex LLM callout?"</strong> — Agentforce: natural language interface, orchestrated multi-step workflows, declarative admin config. Custom Apex: specific prompt control, external LLM, performance-critical, complex business logic, unit testability.</li>
-    <li><strong>"Design a multi-org strategy for a global company that wants AI features."</strong> — One org per major region (EU data residency), shared integration layer, Data Cloud for unified AI insights across orgs, org-specific AI models vs shared prompts.</li>
-  </ul>
-</div>
+    <div class="card ai-card">
+      <div class="card-header"><div class="card-title" style="color:var(--cyan);">Architecture Scenarios (AI + SF)</div><span class="badge badge-cyan">ROUND 3</span></div>
+      <ul class="checklist">
+        <li class="ai-item"><strong>"Design an AI-powered service cloud for a 500-agent contact center."</strong> — Case classification on creation (Flow + Apex AI action). Live chat sentiment analysis. Response draft generation. Knowledge base search using RAG. Agent performance summarization. Each layer, explain the tech choice and fallback.</li>
+        <li class="ai-item"><strong>"Client wants AI features but is scared of GDPR. How do you approach it?"</strong> — Assess data sensitivity. Use Azure OpenAI (EU region). Anonymize PII in prompts. Implement audit logging. DPA with LLM vendor. Possibly on-premise model (Llama) for most sensitive data. Data Cloud for consented, unified profiles.</li>
+        <li class="ai-item"><strong>"When would you use Agentforce vs a custom Apex LLM callout?"</strong> — Agentforce: natural language interface, orchestrated multi-step workflows, declarative admin config. Custom Apex: specific prompt control, external LLM, performance-critical, complex business logic, unit testability.</li>
+        <li><strong>"Design a multi-org strategy for a global company that wants AI features."</strong> — One org per major region (EU data residency), shared integration layer, Data Cloud for unified AI insights across orgs, org-specific AI models vs shared prompts.</li>
+      </ul>
+    </div>
 
-<div class="card full sf-card">
-  <div class="card-header"><div class="card-title">Mock Interview Strategy</div><span class="badge badge-amber">MONTH 5–6</span></div>
-  <div class="two-col">
-    <ul class="checklist">
-      <li><strong>Week 19–20:</strong> Solo practice. Answer questions out loud, record yourself. Watch for filler words and vague AI answers.</li>
-      <li><strong>Week 21:</strong> Peer mock (Ohana Slack has mock interview channels). Full 45-min technical screen.</li>
-      <li><strong>Week 22+:</strong> Real interviews as practice. Apply to less-preferred companies first to calibrate.</li>
-      <li class="ai-item"><strong>AI demo readiness:</strong> Be able to share your screen and walk through your chatbot project or Agentforce agent live. Have it set up on a free developer org, ready to go in 30 seconds.</li>
-    </ul>
-    <ul class="checklist">
-      <li><strong>Prepare 3 technical stories:</strong> "A complex AI feature I built" (Project 4). "A time I had to make an architecture decision" (custom callout vs Einstein). "A delivery under tight constraints" (your day job).</li>
-      <li class="ai-item"><strong>Know your projects cold:</strong> Every line of the prompt templates. Why you used Queueable. How you handle errors. What it costs per API call. European interviewers drill deep on projects you claim to have built.</li>
-      <li><strong>Salary research:</strong> Glassdoor + LinkedIn Salary by country. UK: £70–90k for SF AI. NL: €70–90k. DE: €68–88k. Always negotiate.</li>
-      <li><strong>Questions to ask:</strong> "What's your current Agentforce roadmap?" "How does your team handle LLM API governance?" — These questions signal seniority.</li>
-    </ul>
-  </div>
-</div>
-```
-
+    <div class="card full sf-card">
+      <div class="card-header"><div class="card-title">Mock Interview Strategy</div><span class="badge badge-amber">MONTH 5–6</span></div>
+      <div class="two-col">
+        <ul class="checklist">
+          <li><strong>Week 19–20:</strong> Solo practice. Answer questions out loud, record yourself. Watch for filler words and vague AI answers.</li>
+          <li><strong>Week 21:</strong> Peer mock (Ohana Slack has mock interview channels). Full 45-min technical screen.</li>
+          <li><strong>Week 22+:</strong> Real interviews as practice. Apply to less-preferred companies first to calibrate.</li>
+          <li class="ai-item"><strong>AI demo readiness:</strong> Be able to share your screen and walk through your chatbot project or Agentforce agent live. Have it set up on a free developer org, ready to go in 30 seconds.</li>
+        </ul>
+        <ul class="checklist">
+          <li><strong>Prepare 3 technical stories:</strong> "A complex AI feature I built" (Project 4). "A time I had to make an architecture decision" (custom callout vs Einstein). "A delivery under tight constraints" (your day job).</li>
+          <li class="ai-item"><strong>Know your projects cold:</strong> Every line of the prompt templates. Why you used Queueable. How you handle errors. What it costs per API call. European interviewers drill deep on projects you claim to have built.</li>
+          <li><strong>Salary research:</strong> Glassdoor + LinkedIn Salary by country. UK: £70–90k for SF AI. NL: €70–90k. DE: €68–88k. Always negotiate.</li>
+          <li><strong>Questions to ask:</strong> "What's your current Agentforce roadmap?" "How does your team handle LLM API governance?" — These questions signal seniority.</li>
+        </ul>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- SECTION 8: WEEKLY SCHEDULE -->
 
+<!-- SECTION 8: WEEKLY SCHEDULE -->
 <section id="schedule">
   <div class="section-label sl-sf">08 / WEEKLY SCHEDULE</div>
   <h2>How to Fit This Around a 9–5</h2>
@@ -1483,8 +1460,8 @@ section { padding:36px 24px; }
   </div>
 </section>
 
-<!-- SECTION 9: MILESTONES -->
 
+<!-- SECTION 9: MILESTONES -->
 <section id="milestones">
   <div class="section-label sl-sf">09 / MILESTONES &amp; REALITY CHECKS</div>
   <h2>Track Progress at 3, 6, 9, and 12 Months</h2>
@@ -1622,8 +1599,8 @@ section { padding:36px 24px; }
   </div>
 </section>
 
-<!-- SECTION 10: LIFESTYLE -->
 
+<!-- SECTION 10: LIFESTYLE -->
 <section id="lifestyle">
   <div class="section-label sl-sf">10 / LIFESTYLE STRATEGY</div>
   <h2>Optimising Time, Energy &amp; Consistency</h2>
@@ -1678,7 +1655,6 @@ section { padding:36px 24px; }
 </section>
 
 <!-- FOOTER -->
-
 <div class="doc-footer">
   <div>
     <div class="footer-text">Salesforce + AI Europe Roadmap · V2 · AI-Augmented Edition</div>
